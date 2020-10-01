@@ -1,0 +1,28 @@
+%%%%%% generate table from https://truben.no/table/ and paste bwtween \begin{DT} and end
+%% use \input{./diffTable.tex}
+
+\usepackage[table]{xcolor}
+\usepackage{array}
+\rowcolors{2}{blue!20}{white}
+\newcommand{\head}[1]{%
+   \textcolor{black}{\textbf{#1}}}
+   
+\renewcommand{\arraystretch}{1.5}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\newenvironment{DT}[2]
+{\begin{table}[H]
+   \centering
+   \sffamily
+   \newcommand{\Cap}{\caption{#1 VS #2}}
+ \begin{tabular}{|>{\cellcolor{cyan!15}\color{black!100}\bfseries}m{3.5cm}| m{6.5cm}| m{6.5cm}|}
+     \rowcolor{cyan!15}
+     \hline
+     \head{KEYS} & \head{#1} & \head{#2} \\ \hline \hline
+    } 
+    {
+    \hline
+  \end{tabular}
+  \Cap
+\end{table}
+}
