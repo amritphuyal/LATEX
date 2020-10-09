@@ -1,0 +1,279 @@
+1.	 Write code to add the numbers 897F9AH and 34BC48H and save the result in internal RAM starting at 40H. The result should be displayed continuously on the LEDs of the development board starting from least significant byte with an appropriate timing interval between each byte. Use port zero (P0) of the micro-controller to interface with LEDs.   
+      
+Assembly Code:
+                        ORG 00H
+		MOV R0,#9AH
+		MOV R1,#48H
+		MOV R2,#7FH
+		MOV R3,#0BCH
+		MOV R4,#89H
+		MOV R5,#34H
+
+		MOV A,R0
+		ADD A,R1
+		MOV 40H,A
+		MOV A,R2
+		ADDC A,R3
+		MOV 41H,A
+		MOV A,R4
+		ADDC A,R5
+		MOV 42H,A
+		MOV A,#0H
+		ADDC A,#0H
+		MOV 43H,A	
+	
+REPEAT:	MOV R1,#04H
+		MOV R0,#40H
+
+NEXT:	            MOV P0,@R0
+		ACALL DELAY
+		INC R0
+		DJNZ R1,NEXT
+		AJMP REPEAT
+		
+DELAY: 	MOV R4,#7
+POS1:		MOV R5,#255
+POS2: 		MOV R7,#255
+POS3:		DJNZ R7,POS3
+		DJNZ R5,POS2
+		DJNZ R4,POS1
+		RET	
+		END
+Code in C:
+
+#include <reg51.h>
+char data d[4] _at_ 0x40;
+
+void delay(int time)
+{
+	unsigned int i,j;
+	for (i=0; i<time; i++)
+		for (j=0; j<125; j++);
+}
+
+void main(void)
+{
+	unsigned long a = 0x897f9a;
+ 	unsigned long b = 0x34bc48;
+	unsigned long c = a + b;
+	unsigned int i;
+	
+	for(i=0; i<4; i++)
+	{
+		d[i] = c%0x100;
+		c >>= 8;
+	}
+	
+	while(1)
+		for(i=0; i<4; i++)
+		{
+			P0 = d[i];
+			delay(1000);
+		}
+  }
+
+2.	Implement a subroutine that replaces the SWAP instruction using rotate right instructions. Test your program on the contents of the accumulator when it contains the number 6BH. The original number and the result should be displayed continuously on the LEDs of the development board one-by-one with an appropriate timing interval between them. Use port zero (P0) of the microcontroller to interface the LEDs.
+
+Assembly Code:
+        ORG 00H
+
+REPEAT:	MOV A,#6BH
+		MOV P0,A
+		ACALL DELAY
+		ACALL SWAP
+		MOV P0,A
+		ACALL DELAY
+		AJMP AGAIN
+		
+SWAP:	RR A
+		RR A
+		RR A
+		RR A
+		RET
+		
+DELAY: 	MOV R4,#7
+POS1:	MOV R5,#255
+POS2: 	MOV R7,#255
+POS3:	DJNZ R7,POS3
+		DJNZ R5,POS2
+		DJNZ R4,POS1
+		RET
+		
+		END
+
+Code in C:
+#include<reg51.h>
+
+void delay(int time)
+{
+	unsigned int i,j;
+	for (i=0; i<time; i++)
+		for (j=0; j<125; j++);
+}
+
+void main()
+{
+	unsigned char value = 0xb6;
+	unsigned char ivalue;
+	unsigned char a,b;
+	a = value / 0x10;
+	b = value % 0x10;
+	ivalue = b * (0x10) + a;
+	
+	while(1)
+	{
+		P0 = value;
+		delay(1000);
+		P0 = ivalue;
+		delay(1000);
+	}
+}
+
+3.	Multiply the data in RAM location 22H by the data in RAM location 15H and put the result in RAM locations 19H (low byte) and 1AH (high byte). Data in 22H should be FFH and data in 15H should be DEH. Use looping and successive addition technique. The product (high byte and low byte) should be displayed continuously on the LEDs of the development board one-by-one with an appropriate timing interval between them. Use port zero (P0) of the microcontroller to interface the LEDs.
+
+Assembly Code:
+                     ORG 00H
+		
+		MOV 22H,#0FFH
+		MOV 15H,#0DEH
+		
+		MOV A,#0H
+		MOV R1,#0H
+		
+		MOV R0,51H
+REPEAT:	ADD A,50H
+		JNC SKIP
+		INC R1
+SKIP:	DJNZ R0,REPEAT
+
+		MOV 19H,A
+		MOV 1AH,R1
+		
+LOOP:	MOV P0,A
+		ACALL DELAY
+		MOV P0,R1
+		ACALL DELAY
+		AJMP LOOP
+
+DELAY: 	MOV R4,#7
+POS1:	MOV R5,#255
+POS2: 	MOV R7,#255
+POS3:	DJNZ R7,POS3
+		DJNZ R5,POS2
+		DJNZ R4,POS1
+		RET
+		
+		END
+
+Code in C: 
+#include <reg51.h>
+char data multiplicand _at_ 0x22;
+char data multiplier _at_ 0x15;
+char data answer[2] _at_ 0x19;
+
+void delay(int time)
+{
+	unsigned int i,j;
+	for (i=0; i<time; i++)
+		for (j=0; j<125; j++);
+}
+
+void main(void)
+{
+	unsigned int result = 0x0;
+	unsigned char i;
+	
+	multiplicand = 0xff;
+	multiplier = 0xde;
+	
+	for(i=0x0; i<multiplier; i++)
+		result += multiplicand;
+	
+	answer[0] = result % 0x100;
+	result >>= 8;
+	answer[1] = result % 0x100;
+
+	while(1)
+	{
+		P0 = answer[0];
+		delay(1000);
+		P0 = answer[1];
+		delay(1000);
+	}	
+}
+
+4.	Divide the data in RAM location 3EH by the number 12H; put the quotient in R4 and the remainder in R5. Data in 3EH should be AFH. Use looping and successive subtraction technique. The quotient and remainder should be displayed continuously on the LEDs of the development board one-by-one with an appropriate timing interval between them. Use port zero (P0) of the microcontroller to interface the LEDs.
+
+  Assembly Code:
+		ORG 00H
+		
+		MOV 3EH,#0AFH
+		MOV A,3EH
+		MOV R4,#0H
+		
+REPEAT:	SUBB A,#12H
+		JC DONE
+		INC R4
+		AJMP REPEAT
+DONE:	ADD A,#12H
+		MOV R5,A
+		
+LOOP:	MOV P0,R4
+		ACALL DELAY
+		MOV P0,R5
+		ACALL DELAY
+		AJMP LOOP
+
+DELAY: 	MOV R1,#7
+POS1:	MOV R2,#255
+POS2: 	MOV R3,#255
+POS3:	DJNZ R3,POS3
+		DJNZ R2,POS2
+		DJNZ R1,POS1
+		RET
+		END
+
+Code in C:
+#include <reg51.h>
+unsigned int data dividend _at_ 0x3e;
+unsigned char data reg4 _at_ 0x04;
+unsigned char data reg5 _at_ 0x05;
+
+void delay(int time)
+{
+	unsigned int i,j;
+	for (i=0; i<time; i++)
+		for (j=0; j<125; j++);
+}
+
+void main(void)
+{
+	unsigned char divisor = 0x12;
+	unsigned char quotient = 0x00;
+unsigned char remainder;
+	
+	dividend = 0x00af;
+	
+	while(1)
+	{
+		dividend -= divisor;
+		if(dividend < 0x0)
+			break;
+		quotient += 0x1;
+	}
+	remainder = dividend + divisor;
+	
+	reg4 = quotient;
+	reg5 = remainder;
+
+	while(1)
+	{
+		P0 = quotient;
+		delay(1000);
+		P0 = remainder;
+		delay(1000);
+	}	
+}
+
+
+
