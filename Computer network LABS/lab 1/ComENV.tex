@@ -1,0 +1,31 @@
+%%%%%% generate table from https://truben.no/table/ and paste between \begin{CT} and end
+%% use \input{./ComENV.tex}
+
+
+\usepackage[table]{xcolor}
+\usepackage{array}
+\rowcolors{2}{blue!20}{white}
+\newcommand{\head}[1]{%
+   \textcolor{black}{\textbf{#1}}}
+   
+
+\renewcommand{\arraystretch}{1.7}
+
+
+\setlength{\arrayrulewidth}{0.5mm}
+\newenvironment{CT}[2]
+{\begin{table}[H]
+   \centering
+   \sffamily
+   \newcommand{\Cap}{\caption{Comparision between #1 and #2}}
+ \begin{tabular}{|>{\cellcolor{cyan!15}\color{black!100}\bfseries}m{3.5cm}| m{6.5cm}| m{6.5cm}|}
+     \rowcolor{cyan!15}
+     \hline
+     \head{KEYS} & \head{#1} & \head{#2} \\ \hline \hline
+    } 
+    {
+    \hline
+  \end{tabular}
+  \Cap
+\end{table}
+}
