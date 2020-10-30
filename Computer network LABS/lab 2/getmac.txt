@@ -1,0 +1,11 @@
+
+Physical Address    Transport Name                                            
+=================== ==========================================================
+00-FF-19-F6-C3-F4   Media disconnected                                        
+48-A4-72-53-1A-1F   \Device\Tcpip_{158893BC-53E1-4BDF-B222-4D6FF103BEE2}      
+3C-2C-30-A0-BC-A7   Media disconnected                                        
+0A-00-27-00-00-11   \Device\Tcpip_{97D72D2E-0627-4769-87AB-8BFF95B762ED}      
+00-15-5D-EA-5B-33   \Device\Tcpip_{E484151D-D408-4F26-9881-C2D08230C10F}      
+00-15-5D-86-6B-83   \Device\Tcpip_{117E296B-1FD1-423E-B3C5-4EAE07DF6B89}      
+00-15-5D-9B-E5-4C   \Device\Tcpip_{5D8ED97A-E288-402C-A7A5-4ED35BDFA62B}      
+00-15-5D-05-E3-12   \Device\Tcpip_{AF8E9B37-F82A-4B8A-BC33-7AE57DA0170E}      

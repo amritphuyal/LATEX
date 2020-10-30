@@ -1,0 +1,51 @@
+
+%%% For CMD output %%%
+
+%%%%%%%%% use  \include{CMD output.tex}
+%%%%%%%%% use \CMD{###filename}{##Caption}
+\usepackage{listings}
+
+\usepackage{mdframed}
+\usepackage{xcolor}
+%\definecolor{codegreen}{rgb}{0,0.6,0}
+%\definecolor{codegray}{rgb}{0.4,0.4,0.4}
+%\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{blackcolour}{rgb}{0,0,0}
+
+
+\definecolor{bluefront}{RGB}{10,214,255}
+\definecolor{blueback}{RGB}{25,24,96}
+
+
+\renewcommand{\lstlistlistingname}{List of CMD Outputs}
+\renewcommand{\lstlistingname}{Output}
+
+
+\lstdefinestyle{customa}{
+    backgroundcolor=\color{blueback},
+    %  keywordstyle=\color{magenta},
+    %numberstyle=\tiny\color{codegray},
+    %stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize\color{bluefront},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    %morekeywords={MOV,ADD,ADDC,ACALL,INC,DJNZ,AJMP,RET,END,ORG,RR,JNC,SUBB,JC,DEC},
+    keepspaces=true,
+    %numbers=left,
+    %numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\newcommand {\CMD}[2]{
+
+    \begin{mdframed}[backgroundcolor=blueback,innerbottommargin=-2.3em,innertopmargin=-0.1em]
+        \lstinputlisting[style=customa,caption={#2}]{#1}
+    \end{mdframed}
+}
+
+%%% For CMD output %%%
+

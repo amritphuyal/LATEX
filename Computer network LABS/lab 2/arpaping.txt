@@ -1,0 +1,13 @@
+
+Interface: 192.168.10.106 --- 0x4
+  Internet Address      Physical Address      Type
+  192.168.10.1          a8-32-9a-02-35-06     dynamic   
+  192.168.10.102        d8-0b-9a-3a-37-f4     dynamic   
+  192.168.10.104        ec-35-86-7e-4e-30     dynamic   
+  192.168.10.255        ff-ff-ff-ff-ff-ff     static    
+  224.0.0.2             01-00-5e-00-00-02     static    
+  224.0.0.22            01-00-5e-00-00-16     static    
+  224.0.0.251           01-00-5e-00-00-fb     static    
+  224.0.0.252           01-00-5e-00-00-fc     static    
+  239.255.255.250       01-00-5e-7f-ff-fa     static    
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static    

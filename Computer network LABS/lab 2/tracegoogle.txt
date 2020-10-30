@@ -1,0 +1,20 @@
+
+Tracing route to google.com [172.217.167.174]
+over a maximum of 30 hops:
+
+  1     1 ms     1 ms     2 ms  192.168.10.1 
+  2     5 ms     4 ms     6 ms  103.10.30.153 
+  3     4 ms     3 ms     3 ms  103.10.29.1 
+  4     4 ms     3 ms     4 ms  ae0-bg1.vianet.com.np [110.44.112.65] 
+  5     7 ms     6 ms     6 ms  125.16.219.33 
+  6    50 ms    49 ms    57 ms  182.79.142.206 
+  7    58 ms    58 ms    57 ms  72.14.208.234 
+  8    61 ms    62 ms    61 ms  72.14.239.61 
+  9    58 ms    57 ms    60 ms  108.170.253.121 
+ 10    62 ms    62 ms    62 ms  172.253.72.137 
+ 11    59 ms    60 ms    62 ms  172.253.74.112 
+ 12    57 ms    58 ms    58 ms  108.170.248.177 
+ 13    55 ms    60 ms    56 ms  108.170.232.205 
+ 14    57 ms    57 ms    57 ms  bom12s01-in-f14.1e100.net [172.217.167.174] 
+
+Trace complete.

@@ -1,0 +1,10 @@
+
+Tracing route to vianet.com.np [110.44.112.54]
+over a maximum of 30 hops:
+
+  1     2 ms     1 ms     4 ms  192.168.10.1 
+  2     4 ms     3 ms     3 ms  103.10.30.153 
+  3     4 ms     3 ms     4 ms  103.10.28.3 
+  4     5 ms     4 ms     4 ms  110.44.112.54 
+
+Trace complete.

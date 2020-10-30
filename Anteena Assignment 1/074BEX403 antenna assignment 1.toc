@@ -1,0 +1,13 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Question -1}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Collinear array}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Broad side array}{2}{}%
+\contentsline {subsection}{\numberline {1.3}End fire array}{3}{}%
+\contentsline {subsection}{\numberline {1.4}Parasitic array}{4}{}%
+\contentsline {subsection}{\numberline {1.5}Yagi-Uda array}{5}{}%
+\contentsline {subsection}{\numberline {1.6}Log-peroidic array}{6}{}%
+\contentsline {section}{\numberline {2}Question -2}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Directivity}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Aperture efficiency}{8}{}%
+\contentsline {subsection}{\numberline {2.3}Antenna Efficiency}{8}{}%
+\contentsline {subsection}{\numberline {2.4}Gain}{9}{}%

@@ -1,0 +1,7 @@
+Server:  resolver1.opendns.com
+Address:  208.67.222.222
+
+Non-authoritative answer:
+Name:    myip.opendns.com
+Address:  43.245.87.194
+

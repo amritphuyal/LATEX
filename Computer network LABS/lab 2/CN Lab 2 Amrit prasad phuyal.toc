@@ -1,0 +1,10 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Title}{1}{}%
+\contentsline {section}{\numberline {2}Objective}{1}{}%
+\contentsline {section}{\numberline {3}Requirement}{1}{}%
+\contentsline {section}{\numberline {4}Procedure}{1}{}%
+\contentsline {section}{\numberline {5}Exercises}{2}{}%
+\contentsline {subsection}{\numberline {5.1}Question -1}{2}{}%
+\contentsline {subsection}{\numberline {5.2}Question -2}{7}{}%
+\contentsline {subsection}{\numberline {5.3}Question -3}{20}{}%
+\contentsline {section}{\numberline {6}Conclusion}{20}{}%

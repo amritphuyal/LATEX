@@ -1,0 +1,67 @@
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:135            AMRIT:0                LISTENING
+  TCP    0.0.0.0:445            AMRIT:0                LISTENING
+  TCP    0.0.0.0:50246          AMRIT:0                LISTENING
+  TCP    0.0.0.0:62227          AMRIT:0                LISTENING
+  TCP    127.0.0.1:6463         AMRIT:0                LISTENING
+  TCP    127.0.0.1:28385        AMRIT:0                LISTENING
+  TCP    127.0.0.1:28390        AMRIT:0                LISTENING
+  TCP    172.28.144.1:139       AMRIT:0                LISTENING
+  TCP    192.168.10.106:139     AMRIT:0                LISTENING
+  TCP    192.168.10.106:50183   sc-in-f188:5228        ESTABLISHED
+  TCP    192.168.10.106:50718   edge-star-shv-01-hkg4:https  ESTABLISHED
+  TCP    192.168.10.106:50985   stackoverflow:https    ESTABLISHED
+  TCP    192.168.10.106:51569   162.159.133.234:https  ESTABLISHED
+  TCP    192.168.10.106:52390   server-13-227-141-197:https  TIME_WAIT
+  TCP    192.168.10.106:52391   162.159.135.232:https  ESTABLISHED
+  TCP    192.168.10.106:52426   162.159.135.232:https  ESTABLISHED
+  TCP    192.168.10.106:52427   server-13-227-141-197:https  ESTABLISHED
+  TCP    192.168.10.106:64971   40.119.211.203:https   ESTABLISHED
+  TCP    192.168.56.1:139       AMRIT:0                LISTENING
+  TCP    192.168.96.1:139       AMRIT:0                LISTENING
+  TCP    [::]:135               AMRIT:0                LISTENING
+  TCP    [::]:445               AMRIT:0                LISTENING
+  TCP    [::]:50246             AMRIT:0                LISTENING
+  TCP    [::]:62227             AMRIT:0                LISTENING
+  TCP    [::1]:57406            AMRIT:0                LISTENING
+  UDP    0.0.0.0:1900           *:*                    
+  UDP    0.0.0.0:3702           *:*                    
+  UDP    0.0.0.0:3702           *:*                                       
+  UDP    0.0.0.0:5353           *:*                    
+  UDP    0.0.0.0:5353           *:*                    
+  UDP    0.0.0.0:5353           *:*                    
+  UDP    0.0.0.0:5355           *:*                    
+  UDP    0.0.0.0:51967          *:*                    
+  UDP    0.0.0.0:56378          *:*                    
+  UDP    0.0.0.0:63801          *:*                    
+  UDP    127.0.0.1:1900         *:*                    
+  UDP    127.0.0.1:54174        *:*                    
+  UDP    127.0.0.1:54864        *:*                                       
+  UDP    192.168.10.106:1900    *:*                    
+  UDP    192.168.10.106:2177    *:*                    
+  UDP    192.168.10.106:54863   *:*                    
+  UDP    192.168.56.1:137       *:*                    
+  UDP    192.168.56.1:138       *:*                    
+  UDP    192.168.56.1:1900      *:*                    
+  UDP    192.168.56.1:2177      *:*                    
+  UDP    192.168.56.1:54862     *:*                    
+  UDP    192.168.96.1:137       *:*                    
+  UDP    192.168.96.1:138       *:*                    
+  UDP    192.168.96.1:1900      *:*                    
+  UDP    192.168.96.1:2177      *:*                    
+  UDP    192.168.96.1:54866     *:*                    
+  UDP    [::]:3702              *:*                                       
+  UDP    [::]:51968             *:*                    
+  UDP    [::]:56379             *:*                    
+  UDP    [::1]:1900             *:*                    
+  UDP    [::1]:54857            *:*                    
+  UDP    [fe80::86f:1a00:39b4:de89%45]:1900  *:*                                       
+  UDP    [fe80::b005:433c:267:66f8%4]:1900  *:*                    
+  UDP    [fe80::b005:433c:267:66f8%4]:2177  *:*                    
+  UDP    [fe80::b005:433c:267:66f8%4]:54856  *:*                    
+  UDP    [fe80::ed9c:ca62:7dc5:3d7d%27]:1900  *:*                    
+  UDP    [fe80::ed9c:ca62:7dc5:3d7d%27]:2177  *:*                    
+  UDP    [fe80::ed9c:ca62:7dc5:3d7d%27]:54858  *:*                    

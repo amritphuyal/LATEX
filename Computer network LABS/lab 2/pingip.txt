@@ -1,0 +1,11 @@
+
+Pinging 103.5.150.3 with 32 bytes of data:
+Reply from 103.5.150.3: bytes=32 time=11ms TTL=56
+Reply from 103.5.150.3: bytes=32 time=4ms TTL=56
+Reply from 103.5.150.3: bytes=32 time=4ms TTL=56
+Reply from 103.5.150.3: bytes=32 time=4ms TTL=56
+
+Ping statistics for 103.5.150.3:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 4ms, Maximum = 11ms, Average = 5ms

@@ -1,0 +1,68 @@
+Manipulates network routing tables.
+
+ROUTE [-f] [-p] [-4|-6] command [destination]
+                  [MASK netmask]  [gateway] [METRIC metric]  [IF interface]
+
+  -f           Clears the routing tables of all gateway entries.  If this is
+               used in conjunction with one of the commands, the tables are
+               cleared prior to running the command.
+
+  -p           When used with the ADD command, makes a route persistent across
+               boots of the system. By default, routes are not preserved
+               when the system is restarted. Ignored for all other commands,
+               which always affect the appropriate persistent routes.
+
+  -4           Force using IPv4.
+
+  -6           Force using IPv6.
+
+  command      One of these:
+                 PRINT     Prints  a route
+                 ADD       Adds    a route
+                 DELETE    Deletes a route
+                 CHANGE    Modifies an existing route
+  destination  Specifies the host.
+  MASK         Specifies that the next parameter is the 'netmask' value.
+  netmask      Specifies a subnet mask value for this route entry.
+               If not specified, it defaults to 255.255.255.255.
+  gateway      Specifies gateway.
+  interface    the interface number for the specified route.
+  METRIC       specifies the metric, ie. cost for the destination.
+
+All symbolic names used for destination are looked up in the network database
+file NETWORKS. The symbolic names for gateway are looked up in the host name
+database file HOSTS.
+
+If the command is PRINT or DELETE. Destination or gateway can be a wildcard,
+(wildcard is specified as a star '*'), or the gateway argument may be omitted.
+
+If Dest contains a * or ?, it is treated as a shell pattern, and only
+matching destination routes are printed. The '*' matches any string,
+and '?' matches any one char. Examples: 157.*.1, 157.*, 127.*, *224*.
+
+Pattern match is only allowed in PRINT command.
+Diagnostic Notes:
+    Invalid MASK generates an error, that is when (DEST & MASK) != DEST.
+    Example> route ADD 157.0.0.0 MASK 155.0.0.0 157.55.80.1 IF 1
+             The route addition failed: The specified mask parameter is invalid. (Destination & Mask) != Destination.
+
+Examples:
+
+    > route PRINT
+    > route PRINT -4
+    > route PRINT -6
+    > route PRINT 157*          .... Only prints those matching 157*
+
+    > route ADD 157.0.0.0 MASK 255.0.0.0  157.55.80.1 METRIC 3 IF 2
+             destination^      ^mask      ^gateway     metric^    ^
+                                                         Interface^
+      If IF is not given, it tries to find the best interface for a given
+      gateway.
+    > route ADD 3ffe::/32 3ffe::1
+
+    > route CHANGE 157.0.0.0 MASK 255.0.0.0 157.55.80.5 METRIC 2 IF 2
+
+      CHANGE is used to modify gateway and/or metric only.
+
+    > route DELETE 157.0.0.0
+    > route DELETE 3ffe::/32

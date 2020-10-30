@@ -1,0 +1,342 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{LAB -2}}
+\lhead{\textit{Pul074BEX004}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+\input{./AnsENV.tex} %% Answer environment 
+\input{./QueENV.tex} %% Question Environment 
+\input{./CoverPage.tex} %%% cover page
+\include{./CMD output.tex} %%% Cmd OUTPUT blue background
+\newcommand{\SYN}[1]{\quad Command used:-$\textbf{#1}$}
+
+\begin{document}
+
+%%%%  COver page 
+\CP{Computer Network}{Lab \#2}{Study of Basic Networking Commands}
+{SHARAD KUMAR GHIMIRE}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+%\pagebreak
+%\listoffigures
+%\pagebreak
+%\listoftables
+\pagebreak
+\lstlistoflistings
+\pagebreak
+\pagenumbering{arabic}
+
+\section{Title} \textbf{Study of Basic Networking Commands}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+\begin{itemize}
+    \item To be familiar with basic networking commands and their uses
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+\section{Requirement}
+\begin{itemize}
+    \item Computer with Internet Connectivity
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%
+
+\section {Procedure}
+This lab session is code along so , we coded along with the instructor and
+noted the output of some useful network command . Command line interface "CMD" for windows and for Linux "Terminal" is used .
+Some code used are same and some differ as per the platforms. We study different command and their varient/parameters
+some of them are :-
+
+
+\begin{itemize}
+    \item ipconfig
+    \item ping
+    \item getmac
+    \item tracert
+    \item arp
+    \item hostname
+    \item netstat
+    \item route
+\end{itemize}
+
+\pagebreak
+\section{Exercises}
+
+%%%%%%%%%%%%%%%11111111111111
+\begin{Q}
+    {Explain the following commands briefly with their functions and few syntaxes.}
+\end{Q}
+\begin{enumerate}
+
+    \item \textsc {\bfseries{ipconfig:}}
+          As per the Documentation provided in Microsoft website it displays all TCP/IP current setup and refreshes
+          DHCP and DNS settings. with the help of command prompt help statement all syntaxes and some of the function
+          are listed below.
+
+          \SYN{ipconfig /?}
+
+          \CMD{Ipconfighelp.txt}{ipconfig Syntaxes and Uses}
+          \pagebreak
+    \item \textsc {\bfseries{ping:}}
+          It is used along with url or Ip address. Source device will send packets,Internet Control Message Protocol (ICMP),
+          to destination and waits for response.
+          If the destination device responds it shows the round trip time in ms.Ping has various uses in troubleshoot Connectivity and name resolution.
+          generally used to test whether the targeted domain or Ip has access to internet and if it loose any packet during transfer.
+          All ping syntaxes ,parameters and its uses are listed below:
+
+          \SYN{ping /?}
+
+          \CMD{pinghelp.txt}{ping Syntaxes and Uses}
+
+
+    \item \textsc {\bfseries{getmac:}}
+          This command retrieves the MAC (Media Access Control) Address or Physical Address  of connected adapters .
+          This command can also obtain the MAC address of Remote device/computer too.
+          All getmac syntaxes ,parameters and its uses are listed below:
+
+          \SYN{getmac /?}
+
+          \CMD{./getmachelp.txt}{getmac Syntaxes and Uses}
+
+    \item \textsc {\bfseries{tracert:}}
+          It shows  different information about the path taken by packets to reach the destination.
+          Each packets has TTL which decreases as it passes the Routers.
+          All tracert syntaxes ,parameters and its uses are listed below:
+
+          \SYN{tracert /?}
+
+          \CMD{tracerthelp.txt}{tracert Syntaxes and Uses}
+
+    \item \textsc {\bfseries {arp:}}
+          ARP{Address Resolution Protocol} is used to pair MAC address with Ip address and save for future uses.
+          This command has ability to display and modify the Cache of Address translation table if needed.
+          All arp syntaxes ,parameters and its uses are listed below:
+
+          \SYN{arp /?}
+
+          \CMD{arphelp.txt}{arp Syntaxes and Uses}
+
+    \item \textsc {\bfseries {hostname:}}
+          Hostname is the device name in the network so this command displays the hostname of the device.
+          it doesn't  have any other parameter other than help.
+
+          \SYN{hostname /?}
+
+          \CMD{hostnamehelp.txt}{hostname Syntaxes and Uses}
+
+
+    \item \textsc {\bfseries {netstat:}}
+          It shows the statistics about the connected network and devices.
+          It informs about the current Working TCP/Ip  Connection including ports and addresses.
+          It displays the open ports or ports listening (can establish connection).
+          All netstat syntaxes ,parameters and its uses are listed below:
+          \SYN{netstat /?}
+
+          \CMD{netstathelp.txt}{netstat Syntaxes and Uses}
+
+    \item \textsc {\bfseries{route:}}
+          It has ability to print the content in IP routing tables and modify it if needed.
+          All route syntaxes ,parameters and its uses are listed below:\\
+          \SYN{route /?}
+
+          \CMD{routehelp.txt}{route Syntaxes and Uses}
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%222222222222222222222
+\begin{Q}
+    {Note down the observation of each steps with necessary commands specified in activities B
+        mentioned above and comment on it.}
+\end{Q}
+\begin{enumerate}
+    \item \textbf{Using ipconfig:}
+          \begin{enumerate}
+              \item \textbf{ipconfig:}
+                    Displays Windows ip configuration including IPv6/v4 address ,Subnet mask ,default gateway etc.
+                    \CMD{ipconfig.txt}{ipconfig}
+
+              \item \textbf{ipconfig/all:} Similar to $ipconfig$ but with additional information like Description, DHCP, Physical Address, Dns server etc.
+                    \CMD{ipconfigall.txt}{ipconfig/all}
+
+
+          \end{enumerate}
+
+    \item \textbf{Using ping:}
+          \begin{enumerate}
+              \item \textbf{Obtain the IP address of your default gateway (refer qu. 1) and ping to that IP address.:}
+
+                    My default gateway Ip address is 192.168.10.1 so command is  $ ping 192.168.10.1$.
+                    It display the round trip time to and from my default gateway (Router). It also displays
+                    no of data sent and received along with loss.
+
+                    \CMD{pinggateway.txt}{ping Default Gateway}
+
+              \item \textbf{ping “your ISP”:}
+                    My ISP is Vianet so I should use $ ping$ $vianet.com.np $
+
+                    \CMD{pingvianet.txt}{ping vianet.com.np}
+
+              \item \textbf{ping google.com:}
+                    \CMD{pinggoogle.txt}{ping google.com}
+
+              \item \textbf{ping 103.5.150.3:}
+                    \CMD {pingip.txt}{ ping 103.5.150.3}
+
+          \end{enumerate}
+
+    \item \textbf{Using getmac:}
+          \begin{enumerate}
+              \item \textbf{getmac:}
+                    It displays MAC address (physical address) for all the available Network Adapters in the system .
+                    It also display the mac address assigned for virtual adapter created by Virtual machine and VPN's in the system.
+
+
+                    \CMD{getmac.txt}{getmac}
+
+          \end{enumerate}
+
+    \item \textbf{Using tracert:}
+          \begin{enumerate}
+              \item \textbf{Obtain the IP address of your default gateway (refer qu. 1) and use tracert to that IP
+                        address.:} \\
+                    My default gateway ip(Router)  is 192.168.10.1 so below is the output of the tracert command on Router.
+
+                    \CMD{tracert.txt}{tracert Deafault Gateway}
+
+              \item \textbf{tracert “your ISP”:}
+                    \CMD{traceisp.txt}{tracert ISP}
+
+              \item \textbf{tracert google.com:}
+                    \CMD{tracegoogle.txt}{tracert google.com}
+
+              \item \textbf{tracert 103.5.150.3:}
+
+                    \CMD{traceip.txt}{tracert 103.5.150.3 }
+
+
+          \end{enumerate}
+
+    \item \textbf{Using arp:}
+          \begin{enumerate}
+              \item \textbf{arp -a:} Display ARP table
+
+                    \CMD{arpa.txt}{arp -a}
+
+
+              \item \textbf{Use ping to any another device within your network such as another computer or laptop
+                        or mobile phone or tablet etc. and again use arp –a (if there are multiple devices in your
+                        network you can ping one by one by observing the output of arp -a after each ping)}\\
+                    I am pinging my phone with Ip asssigned 192.168.10.102 and physical address d8:0b:9a:3a:37:f4.
+                    I also pinged another device with 192.168.10.104 and  MAC address ec:35:86:7e:4e:30.
+                    In ARP table both the devices are visible with their corresponding MAC address
+                    just after my default gateway 192.168.10.1 with type Dynanic\\
+                    **** Only changes from arp -a are included in output
+
+                    \CMD{arpaping.txt}{arp -a after pinging another device}
+          \end{enumerate}
+
+    \item \textbf{Using hostname:}
+          \begin{enumerate}
+              \item \textbf{hostname:} Displays my System Hostname.
+                    \CMD{hostname.txt}{hostname}
+
+
+          \end{enumerate}
+
+    \item \textbf{Using netstat:}
+          \begin{enumerate}
+              \item \textbf{netstat -a:} Display all connection and listening Ports\\
+                    **** some entries are deleted  to meet the memory requirement for TEX.
+                    \CMD{netstata.txt}{netstat -a}
+
+              \item \textbf{netstat -e:}
+                    Display ethernet statistics like Size of packet received and send in Bytes,
+                    errors uni and non- unicast packets etc.
+                    \CMD{netstate.txt}{netstat -e}
+
+              \item \textbf{netstat -r:}
+                    Display Interface list along with IPv6 and IPv4 Routing table.
+                    \CMD{netstatr.txt}{netstat -r}
+
+          \end{enumerate}
+
+    \item \textbf{Using route:}
+          \begin{enumerate}
+              \item \textbf{route print:}
+                    Dispaly interface list along with IPv4 and IPv6 Routing Table.
+
+                    \CMD{routep.txt}{route print}
+
+              \item \textbf{route print -4:}
+                    Display only IPv4 Routing Table
+
+                    \CMD{routep4.txt}{route print -4}
+
+              \item \textbf{route print -6:}
+                    Display only IPv6 Routing Table
+                    \CMD{routep6.txt}{route print -6}
+
+          \end{enumerate}
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+%%%%%%%%%%%%%%%333333333333333333333333
+\begin{Q}
+    {What is the actual IP address of your computer? Also find the Public IP address that is being
+        used for your computer’s Internet connectivity. Note down both the IP addresses.}
+\end{Q}
+\begin{A}
+    {
+        My actual ip of my computer is provided in ipconfig output i.e 192.168.10.106
+
+        \CMD{pcip.txt}{IP address of my PC}
+
+        There are different methods and sites to find Public IP used for internet connectivity .\\
+
+        I choose  nslookup  command  and used \textit{nslookup myip.opendns.com resolver1.opendns.com}
+        to generate following output . So, my public ip is 43.245.87.194 and confirmed with external sites too.
+
+        \CMD{pubip.txt}{Public IP address}
+
+    }
+\end{A}
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Conclusion}
+In this LAB -2 we get familiar with different network commands and their uses in Linux and windows platform.
+We learned 8 commands with majority of them having some additional argument.
+We learned to ping the computer or device in and outside the network. We learned to extract IP and MAC addresses of connected adapters .
+We also learned about ping , trace routing,ip configuration and many other tools useful for troubleshooting and connectivity.
+We familiarized ourself with public and private ip and methods to find them.
+
+
+
+\end{document}
