@@ -1,0 +1,12 @@
+
+%%% Question Environment%%%  use \input{./QueENV.tex}   to include
+%% Use \begin{Q}....\end{Q}
+
+\newcounter{QC}
+\setcounter{QC}{1}
+\newenvironment{Q}[1]{
+    \subsection{Question -\arabic{QC}} \stepcounter{QC}\textbf{#1}
+}
+
+%%% Question Environment%%%
+
