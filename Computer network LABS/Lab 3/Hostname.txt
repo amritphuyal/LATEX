@@ -1,0 +1,10 @@
+PC4>enable
+PC4#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+PC4(config)#hostname ?
+  WORD  This system's network name
+
+PC4(config)#hostname AMRIT
+
+AMRIT(config)#

@@ -1,0 +1,22 @@
+
+AMRIT>enable
+AMRIT#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+AMRIT(config)#interface ?
+  Dialer            Dialer interface
+  Dot11Radio        Dot11 interface
+  Ethernet          IEEE 802.3
+  FastEthernet      FastEthernet IEEE 802.3
+  GigabitEthernet   GigabitEthernet IEEE 802.3z
+  Loopback          Loopback interface
+  Port-channel      Ethernet Channel of interfaces
+  Serial            Serial
+  Tunnel            Tunnel interface
+  Virtual-Template  Virtual Template interface
+  Vlan              Catalyst Vlans
+  range             interface range command
+
+AMRIT(config)#interface GigabitEthernet0/0
+AMRIT(config-if)#ip address 200.10.8.1 255.255.255.0
+AMRIT(config-if)#no shutdown

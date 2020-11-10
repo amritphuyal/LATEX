@@ -1,0 +1,13 @@
+PC4#disable
+PC4>enable
+PC4#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+PC4(config)#interface gigabitEthernet0/0 
+PC4(config-if)#ip address 200.10.8.1 255.255.255.0
+PC4(config-if)#no shutdown
+PC4(config-if)#exit
+
+PC4(config)#interface gigabitEthernet0/1
+PC4(config-if)#ip address 200.10.9.1 255.255.255.0
+PC4(config-if)#no shutdown
