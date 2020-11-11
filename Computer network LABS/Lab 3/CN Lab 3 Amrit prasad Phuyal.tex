@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper,12pt]{article}
 \usepackage{geometry}
  \geometry{
  a4paper,
@@ -169,6 +169,7 @@ This do-along Lab session Includes Introduction to Routers its Functions and dif
             Performing Ping from PC0 to all other PCs and Router.
             \begin{itemize}
                   \item PCO to GigabitEthernet 0/0
+                        \addtocontents{lol}{\protect\subsection*{Before setting Default Gateway}}
                         \CMD{p0-r0.txt}{Ping PCO to GigabitEthernet 0/0}
                   \item PCO to PC1
                         \CMD{p0-1.txt}{Ping PCO to PC1}
@@ -212,10 +213,12 @@ This do-along Lab session Includes Introduction to Routers its Functions and dif
             \end{itemize}
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \HRule\\
             \HRule
 
             {\large Set the default gateway of PC0 and PC1 as \textbf{200.10.8.1} Similarly set the default gateway of PC2 and PC3 as \textbf{200.10.9.1 }and repeating activity D.3, D.4, D.5 once again }
 
+            \HRule\\
             \HRule
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       \item \textbf{Repeating Activity D.3}
@@ -223,6 +226,7 @@ This do-along Lab session Includes Introduction to Routers its Functions and dif
             Performing Ping from PC0 to all other PCs and Router.
             \begin{itemize}
                   \item PCO to GigabitEthernet 0/0
+                        \addtocontents{lol}{\protect\subsection*{After setting Default Gateway}}
                         \CMD{gp0-r0.txt}{Ping PCO to GigabitEthernet 0/0}
                   \item PCO to PC1
                         \CMD{gp0-1.txt}{Ping PCO to PC1}
