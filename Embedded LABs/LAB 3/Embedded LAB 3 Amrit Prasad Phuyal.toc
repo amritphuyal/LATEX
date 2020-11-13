@@ -1,0 +1,17 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Introduction}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Microcontroller}{1}{}%
+\contentsline {subsection}{\numberline {1.2}8051 Microcontroller}{1}{}%
+\contentsline {subsection}{\numberline {1.3}7-Segment LED Display}{2}{}%
+\contentsline {subsection}{\numberline {1.4}Applications of Seven Segment Display}{3}{}%
+\contentsline {subsection}{\numberline {1.5}Timers in 8051}{3}{}%
+\contentsline {subsection}{\numberline {1.6}Timer Mode Register(TMOD)}{4}{}%
+\contentsline {subsection}{\numberline {1.7}Timer Control Register (TCON)}{4}{}%
+\contentsline {subsection}{\numberline {1.8}Clock Sources for Timer}{5}{}%
+\contentsline {section}{\numberline {2}Objectives}{5}{}%
+\contentsline {section}{\numberline {3}Equipment Required}{5}{}%
+\contentsline {section}{\numberline {4}LAB problems}{6}{}%
+\contentsline {subsection}{\numberline {4.1}Question -1}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Question -2}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Question -3}{16}{}%
+\contentsline {section}{\numberline {5}Conclusion}{18}{}%

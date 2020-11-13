@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+ \usepackage{caption}
+\usepackage[export]{adjustbox} %% for picture frame
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+%%%question enviroment 
+\input{./QueENV.tex}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{LAB-2}}
+\lhead{\textit{Pul074BEX004}}
+\rfoot{\thepage}
+
+%%% format and command for lab ans c and assembly
+\input{./asm c.tex}
+%%%%>>>>>>>........
+\input{./CoverPage.tex}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\CP{Embedded system}{LAB \#2}
+{Interfacing 7-Segment LED Display with 8051/8052 Micro-controller}
+{Department of Electronics and Computer Engineering}
+
+
+
+
+%----------------------------------------------------------------------------------------
+\pagenumbering{gobble}
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak
+\lstlistoflistings
+\pagebreak
+\pagenumbering{arabic}
+\section{Introduction}
+\subsection{Microcontroller}
+
+A microcontroller is an integrated circuit ( IC), usually via an MPU, memory and certain peripherals, to control other parts of an electronic system .
+These devices are optimized for embed-in applications that require agile and agile processing, digital, analog or electromechanical interactions.
+\subsection{8051 Microcontroller}
+In 1981, Intel introduced an 8-bit microcontroller called the 8051. It was referred as system on a chip because it had 128 bytes of RAM, 4K byte of on-chip ROM,
+two timers, one serial port, and 4 ports (8-bit wide), all on a single chip.\\\\
+The different features of the 8051 microcontroller include:
+\begin{itemize}
+    \item 4KB bytes on-chip program memory (ROM)
+    \item 128 bytes on-chip data memory (RAM)
+    \item Four register banks
+    \item 128 user defined software flags
+    \item 8-bit bidirectional data bus
+    \item 16-bit unidirectional address bus
+    \item 32 general purpose registers each of 8-bit
+    \item 16 bit Timers (usually 2, but may have more or less)
+    \item Three internal and two external Interrupts
+    \item Four 8-bit ports,(short model have two 8-bit ports)
+    \item 16-bit program counter and data pointer
+    \item 8051 may also have a number of special features such as UARTs, ADC, Op-amp, etc.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.52,cframe=blue 0.5pt 3pt]{./block_diagram.jpg}
+    \textit{\caption{Block diagram of 8051 microcontroller}}
+
+\end{figure}
+
+\subsection{7-Segment LED Display}
+A seven segment display module is an electronic device used to display digital numbers and
+it is made up of seven LED segments. LEDs are PN-junction diodes which emit energy by a process called electroluminescence.
+Because of the small size of the LEDs, it is really easy for a number of them to be connected together to make a unit like seven segment display.
+The light energy is emitted as ‘photons’ when it is forward biased by a voltage applied across its junctions.
+In a seven segment display module, seven LED s are arranged in a rectangle. Sometimes,
+an additional LED is seen in a seven segment display unit which is meant for displaying a decimal point.
+
+Features of seven segment Display:-
+
+\begin{itemize}
+    \item Available in two modes Common Cathode (CC) and Common Anode (CA)
+    \item Available in many different sizes like 9.14mm,14.20mm,20.40mm,38.10mm,57.0mm and 100mm (Commonly used/available size is 14.20mm)
+    \item Available colours: White, Blue, Red, Yellow and Green (Res is commonly used)
+    \item Low current operation
+    \item Better, brighter and larger display than conventional LCD displays.
+    \item Current consumption : 30mA / segment
+    \item Peak current : 70mA
+\end{itemize}
+
+The displays common pin is generally used to identify which type of 7-segment display it is. As each LED has two connecting pins,
+one called the “Anode” and the other called the “Cathode”, there are therefore two types of LED 7-segment display called: Common Cathode (CC) and Common Anode (CA).
+The difference between the two displays, as their name suggests,
+is that the common cathode has all the cathodes of the 7-segments connected directly together and the common anode has all the anodes of the 7-segments connected together
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1.1,cframe=blue 0.5pt 3pt]{./Common cathode vs common anode.png}
+    \textit{\caption{Common cathode vs Common anode 7 segment display}}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.65,cframe=blue 0.5pt 3pt]{./Dispaly codes.png}
+    \textit{\caption{Lookup table for Common anode and Common Cathode}}
+\end{figure}
+
+\subsection{Applications}
+\begin{itemize}
+    \item Used in applications where font size is required to be bigger
+    \item Microcontroller Independent, hence used in small circuit projects
+    \item Used in combination with four segments to display measurement/sensor value  with four characters
+    \item Has bright illumination, hence used where display are required to work in low light or dark conditions
+\end{itemize}
+
+
+\end{document}
