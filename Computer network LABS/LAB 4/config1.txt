@@ -1,0 +1,18 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname Phuyal
+	
+Phuyal(config)#line console 0
+Phuyal(config-line)#password amrit
+Phuyal(config-line)#login
+Phuyal(config-line)#exit
+
+Phuyal(config)#enable password 403
+
+Phuyal(config)#line vty 0 4
+Phuyal(config-line)#password phuyal
+Phuyal(config-line)#login
+Phuyal(config-line)#exit
+
+Phuyal(config)#service password-encryption

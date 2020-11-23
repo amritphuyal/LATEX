@@ -1,0 +1,14 @@
+C:\>telnet 200.200.20.1
+Trying 200.200.20.1 ...Open
+
+
+User Access Verification
+
+Password: 
+AMRIT>enable 
+Password: 
+AMRIT#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+AMRIT(config)#ip route 200.200.20.96 255.255.255.224 200.200.20.66
+AMRIT(config)#^Z
+AMRIT#
