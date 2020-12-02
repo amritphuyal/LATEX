@@ -1,0 +1,14 @@
+Router#show ip route
+
+Gateway of last resort is 200.20.22.2 to network 0.0.0.0
+
+     200.20.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C       200.20.20.0/24 is directly connected, GigabitEthernet0/0
+L       200.20.20.1/32 is directly connected, GigabitEthernet0/0
+     200.20.21.0/24 is variably subnetted, 2 subnets, 2 masks
+C       200.20.21.0/24 is directly connected, GigabitEthernet0/1
+L       200.20.21.1/32 is directly connected, GigabitEthernet0/1
+     200.20.22.0/24 is variably subnetted, 2 subnets, 2 masks
+C       200.20.22.0/24 is directly connected, GigabitEthernet0/2
+L       200.20.22.1/32 is directly connected, GigabitEthernet0/2
+S*   0.0.0.0/0 [1/0] via 200.20.22.2

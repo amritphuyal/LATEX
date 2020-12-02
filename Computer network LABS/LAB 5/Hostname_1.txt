@@ -1,0 +1,4 @@
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname AMRIT_1
+AMRIT_1(config)#

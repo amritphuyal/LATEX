@@ -1,0 +1,14 @@
+PHUYAL_0>enable
+Password: 
+PHUYAL_0#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+PHUYAL_0(config)#
+PHUYAL_0(config)#no ip route 202.60.2.0 255.255.255.0 202.60.1.2
+PHUYAL_0(config)#no ip route 202.60.3.0 255.255.255.0 202.60.1.2
+PHUYAL_0(config)#no ip route 202.60.4.0 255.255.255.0 202.60.1.2
+PHUYAL_0(config)#no ip route 202.60.5.0 255.255.255.0 202.60.1.2
+PHUYAL_0(config)#no ip route 202.60.6.0 255.255.255.0 202.60.1.2
+PHUYAL_0(config)#ip route 0.0.0.0 0.0.0.0 202.60.1.2
+PHUYAL_0(config)#^Z
+PHUYAL_0#
+%SYS-5-CONFIG_I: Configured from console by console

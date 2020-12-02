@@ -1,0 +1,12 @@
+AMRIT_3>enable
+Password: 
+AMRIT_3#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+AMRIT_3(config)#ip route 202.60.0.0 255.255.255.0 202.60.5.1
+AMRIT_3(config)#ip route 202.60.1.0 255.255.255.0 202.60.5.1
+AMRIT_3(config)#ip route 202.60.2.0 255.255.255.0 202.60.5.1
+AMRIT_3(config)#ip route 202.60.3.0 255.255.255.0 202.60.5.1
+AMRIT_3(config)#ip route 202.60.4.0 255.255.255.0 202.60.5.1
+AMRIT_3(config)#^Z
+AMRIT_3#
+%SYS-5-CONFIG_I: Configured from console by console

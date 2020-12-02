@@ -1,0 +1,10 @@
+PHUYAL_2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+PHUYAL_2(config)#
+PHUYAL_2(config)#no ip route 202.60.1.0 255.255.255.0 202.60.3.1
+PHUYAL_2(config)#no ip route 202.60.2.0 255.255.255.0 202.60.3.1
+PHUYAL_2(config)#no ip route 202.60.0.0 255.255.255.0 202.60.3.1
+PHUYAL_2(config)#ip route 0.0.0.0 0.0.0.0 202.60.3.1
+PHUYAL_2(config)#^Z
+PHUYAL_2#
+%SYS-5-CONFIG_I: Configured from console by console
