@@ -1,0 +1,71 @@
+%% File names should be adder-1, adder-2, and so on for adder and subtractor-1, subtractor-2, and so on for subtractor
+%% use as \figures{adder} or \figures{substractor}
+\usepackage{float}
+\usepackage{pgffor}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newcommand{\figures}[1]{
+    \begin{figure}[H]
+        \centering
+        \foreach \i in {1,2,3}
+            {
+                \begin{subfigure}{\linewidth}
+                    \includegraphics[width=.95\linewidth, frame]{../Figures/#1-\i.pdf}
+                    \caption{}
+                    \label{fig:obs7-\i}
+                \end{subfigure}
+            }
+        \caption{Observed waveform for Problem 7}
+        \label{fig:obs7}
+    \end{figure}
+    \begin{figure}[H]\ContinuedFloat
+        \centering
+        \foreach \i in {4,5,6}
+            {
+                \begin{subfigure}{\linewidth}
+                    \includegraphics[width=.95\linewidth, frame]{../Figures/#1-\i.pdf}
+                    \caption{}
+                    \label{fig:obs7-\i}
+                \end{subfigure}
+            }
+        \caption*{Figure~\ref{fig:obs7}:~Observed waveform for Problem 7- #1 (continued)}
+    \end{figure}
+    \begin{figure}[H]\ContinuedFloat
+        \centering
+        \foreach \i in {7,8,9}
+            {
+                \begin{subfigure}{\linewidth}
+                    \includegraphics[width=.95\linewidth, frame]{../Figures/#1-\i.pdf}
+                    \caption{}
+                    \label{fig:obs7-\i}
+                \end{subfigure}
+            }
+        \caption*{Figure~\ref{fig:obs7}:~Observed waveform for Problem 7- #1 (continued)}
+    \end{figure}
+    \begin{figure}[H]\ContinuedFloat
+        \centering
+        \foreach \i in {10,11,12}
+            {
+                \begin{subfigure}{\linewidth}
+                    \includegraphics[width=.95\linewidth, frame]{../Figures/#1-\i.pdf}
+                    \caption{}
+                    \label{fig:obs7-\i}
+                \end{subfigure}
+            }
+        \caption*{Figure~\ref{fig:obs7}:~Observed waveform for Problem 7- #1 (continued)}
+    \end{figure}
+    \begin{figure}[H]\ContinuedFloat
+        \centering
+        \foreach \i in {13,14,15}
+            {
+                \begin{subfigure}{\linewidth}
+                    \includegraphics[width=.95\linewidth, frame]{../Figures/#1-\i.pdf}
+                    \caption{}
+                    \label{fig:obs7-\i}
+                \end{subfigure}
+            }
+        \caption*{Figure~\ref{fig:obs7}:~Observed waveform for Problem 7- #1 (continued)}
+    \end{figure}
+}
