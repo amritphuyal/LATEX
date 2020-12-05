@@ -1,0 +1,54 @@
+\babel@toc {english}{}
+\subsection *{\rule {\linewidth }{0.4mm}\\ Activities A\\ \rule {\linewidth }{0.4mm}}
+\subsubsection *{A.1: Assign IP to Interfaces}
+\contentsline {table}{\numberline {1}{\ignorespaces Name and assigned IP Activity A}}{5}{table.1}%
+\subsubsection *{A.2: Ping from PC2}
+\contentsline {table}{\numberline {2}{\ignorespaces Ping Status PC2 to all others}}{6}{table.2}%
+\subsubsection *{A.3: Ping from PC4}
+\contentsline {table}{\numberline {3}{\ignorespaces Ping Status PC4 to all others}}{7}{table.3}%
+\subsubsection *{A.4 :Ping from PC6}
+\contentsline {table}{\numberline {4}{\ignorespaces Ping Status PC6 to all others}}{7}{table.4}%
+\subsubsection *{A.6: Repeating A.2 to A.4 After Default Route Configuration}
+\contentsline {table}{\numberline {5}{\ignorespaces Ping Status PC2 to all others after Default route Configuration}}{9}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Ping Status PC4 to all others after Default route Configuration}}{10}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Ping Status PC6 to all others after Default route Configuration}}{10}{table.7}%
+\subsection *{\rule {\linewidth }{0.4mm}\\Activities B\\ \rule {\linewidth }{0.4mm}}
+\subsubsection *{B.1 : Routers Configuration}
+\contentsline {table}{\numberline {8}{\ignorespaces Table for hostname, console password , enable password,vty password}}{12}{table.8}%
+\subsubsection *{B.2 : Assign IP to Interfaces}
+\contentsline {table}{\numberline {9}{\ignorespaces Assigned IPs and description for all interfaces}}{14}{table.9}%
+\subsubsection *{B.3 : Configure the IP address and default gateway}
+\contentsline {table}{\numberline {10}{\ignorespaces Table for Name, assigned ip, Default gateway}}{14}{table.10}%
+\subsubsection *{B.6 : Ping from PC0}
+\contentsline {table}{\numberline {11}{\ignorespaces Ping from PC0 to all Routers,PCs and Servers }}{16}{table.11}%
+\subsubsection *{B.7 : Ping from PC1}
+\contentsline {table}{\numberline {12}{\ignorespaces Ping from PC1 to all Routers,PCs and Servers }}{17}{table.12}%
+\subsubsection *{B.8 : Ping from PC2}
+\contentsline {table}{\numberline {13}{\ignorespaces Ping from PC2 to all Routers,PCs and Servers }}{18}{table.13}%
+\subsubsection *{B.9 : Ping from PC3}
+\contentsline {table}{\numberline {14}{\ignorespaces Ping from PC3 to all Routers,PCs and Servers}}{20}{table.14}%
+\subsubsection *{B.10 : Ping from Router 0}
+\contentsline {table}{\numberline {15}{\ignorespaces Ping from Router 0 to all Routers,PCs and Servers }}{21}{table.15}%
+\subsubsection *{B.11 : Ping from Router 1}
+\contentsline {table}{\numberline {16}{\ignorespaces Ping from Router 1 to all Routers,PCs and Servers }}{22}{table.16}%
+\subsubsection *{B.12 : Ping from Router 2}
+\contentsline {table}{\numberline {17}{\ignorespaces Ping from Router 2 to all Routers,PCs and Servers }}{23}{table.17}%
+\subsubsection *{B.11 : Ping from Router 3}
+\contentsline {table}{\numberline {18}{\ignorespaces Ping from Router 3 to all Routers,PCs and Servers }}{24}{table.18}%
+\subsubsection *{B.17 : Repeating Activities B.6 to B.13 after Static Route Configuration}
+\contentsline {table}{\numberline {19}{\ignorespaces Ping from PC0 to all Routers,PCs and Servers }}{26}{table.19}%
+\contentsline {table}{\numberline {20}{\ignorespaces Ping from PC1 to all Routers,PCs and Servers }}{27}{table.20}%
+\contentsline {table}{\numberline {21}{\ignorespaces Ping from PC2 to all Routers,PCs and Servers }}{28}{table.21}%
+\contentsline {table}{\numberline {22}{\ignorespaces Ping from PC3 to all Routers,PCs and Servers }}{29}{table.22}%
+\contentsline {table}{\numberline {23}{\ignorespaces Ping from Router 0 to all Routers,PCs and Servers }}{29}{table.23}%
+\contentsline {table}{\numberline {24}{\ignorespaces Ping from Router 1 to all Routers,PCs and Servers }}{30}{table.24}%
+\contentsline {table}{\numberline {25}{\ignorespaces Ping from Router 2 to all Routers,PCs and Servers }}{31}{table.25}%
+\contentsline {table}{\numberline {26}{\ignorespaces Ping from Router 3 to all Routers,PCs and Servers }}{31}{table.26}%
+\subsubsection *{B.19 : Hostname Change }
+\contentsline {table}{\numberline {27}{\ignorespaces Changing Hostname to pattern \textit {Lastname\_}}}{33}{table.27}%
+\subsection *{\rule {\linewidth }{0.4mm}\\ Activities C: Default Route\\ \rule {\linewidth }{0.4mm}}
+\subsubsection *{C.2 : Ping from PC0, PC1, PC2,PC3 to all others }
+\contentsline {table}{\numberline {28}{\ignorespaces Ping from PC0 to all Routers,PCs and Servers }}{36}{table.28}%
+\contentsline {table}{\numberline {29}{\ignorespaces Ping from PC1 to all Routers,PCs and Servers }}{37}{table.29}%
+\contentsline {table}{\numberline {30}{\ignorespaces Ping from PC2 to all Routers,PCs and Servers }}{38}{table.30}%
+\contentsline {table}{\numberline {31}{\ignorespaces Ping from PC3 to all Routers,PCs and Servers }}{39}{table.31}%
