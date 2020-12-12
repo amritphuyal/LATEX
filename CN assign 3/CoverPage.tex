@@ -1,0 +1,90 @@
+%%%%%% include  Titles.%%%% use \input{./CP}%%%
+%%%use """"""""    \CP{}{}{}{}   """" %%%% and 4 argument to craete Title page 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%argument number
+%% 1=major header ## Course name 
+%% 2=minor4 heading ## lab/assignmet no
+%% 3=Title  ## Assignment or Lab title
+%% 4=submitted to::## input receiver Name"
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+%%% format and command for lab ans c and assembly
+
+\newcommand{\HRule}{\rule{\linewidth}{0.4mm}} % Defines a new command for horizontal lines, change thickness here
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand{\CP}[4]{ \begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+		%%%%  univerdity logo%%
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.13]{tulogo.jpg}
+		\end{figure}
+		%%% end university logo
+
+		\center % Centre everything on the page
+
+		%------------------------------------------------
+		%	Headings
+		%------------------------------------------------
+
+		\textsc{\huge Institute of Engineering \\ Central Campus,Pulchowk}\\[1.5cm] % Main heading such as the name of your university/college
+
+		\textsc{\Large #1}\\[0.5cm] % Major heading such as course name
+
+		\textsc{\large #2}\\[0.5cm] % Minor heading such as assignment no./ lab no.
+
+		%------------------------------------------------
+		%	Title
+		%------------------------------------------------
+
+		\HRule\\[0.4cm]
+
+		{\Huge\bfseries #3}\\[0.4cm] % Title of your document
+
+		\HRule\\[1.5cm]
+
+		%------------------------------------------------
+		%	Author(s)
+		%------------------------------------------------
+		\vfill\vfill
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushleft}
+				\large{
+				\textbf{Submitted BY:}\\
+				{\normalsize AMRIT PRASAD PHUYAL}\\ % NAME
+				{\normalsize Roll: PULL074BEX004}} % Roll
+			\end{flushleft}
+		\end{minipage}
+		~
+		\begin{minipage}{0.4\textwidth}
+			\begin{flushright}
+				\large
+				\textbf{Submitted To:}\\
+				{ \normalsize{#4}\\ }% recepent's  Name 
+				{\normalsize Department of Electronics and Computer Engineering}
+			\end{flushright}
+		\end{minipage}
+
+		%------------------------------------------------
+		%	Date
+		%------------------------------------------------
+
+		\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+
+		{\large\today} % Date, change the \today to a set date if you want to be precise
+
+		\vfill % Push the date up 1/4 of the remaining page
+
+	\end{titlepage}
+}
