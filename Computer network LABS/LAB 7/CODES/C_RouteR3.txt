@@ -1,0 +1,8 @@
+AMRIT_3#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+AMRIT_3(config)#router ospf 1
+AMRIT_3(config-router)#network 200.100.50.128   0.0.0.15   area 0
+AMRIT_3(config-router)#network 200.100.50.152   0.0.0.3    area 0
+AMRIT_3(config-router)#end
+AMRIT_3#
+%SYS-5-CONFIG_I: Configured from console by console

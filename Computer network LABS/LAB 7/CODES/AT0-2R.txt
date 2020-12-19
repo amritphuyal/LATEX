@@ -1,0 +1,20 @@
+AMRIT_1(config-router)#exit
+AMRIT_1(config)#exit
+AMRIT_1#telnet 202.60.3.2
+Trying 202.60.3.2 ...Open
+
+
+User Access Verification
+
+Password: 
+AMRIT_2>enable
+Password: 
+AMRIT_2#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+AMRIT_2(config)#router rip
+AMRIT_2(config-router)#network 202.60.3.0
+AMRIT_2(config-router)#network 202.60.5.0
+AMRIT_2(config-router)#network 202.60.4.0
+
+AMRIT_2(config-router)#passive-interface GigabitEthernet 0/2

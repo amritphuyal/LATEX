@@ -1,0 +1,8 @@
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ospf 1
+Router(config-router)#network 200.100.50.0  0.0.0.63   area 0
+Router(config-router)#network 200.100.50.128   0.0.0.15   area 0
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console

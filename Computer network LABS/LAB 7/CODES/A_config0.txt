@@ -1,0 +1,17 @@
+Router>enable 
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname AMRIT_0
+
+AMRIT_0(config)#line console 0
+AMRIT_0(config-line)#password amrit
+AMRIT_0(config-line)#login
+AMRIT_0(config-line)#exit
+
+AMRIT_0(config)#enable password 403
+
+AMRIT_0(config)#line vty 0 4
+AMRIT_0(config-line)#password phuyal
+AMRIT_0(config-line)#login
+AMRIT_0(config-line)#exit
+AMRIT_0(config)#

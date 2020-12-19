@@ -1,0 +1,34 @@
+AMRIT_2(config-router)#exit
+AMRIT_2(config)#exit
+AMRIT_2#telnet 202.60.5.2
+Trying 202.60.5.2 ...Open
+
+User Access Verification
+
+Password: 
+AMRIT_3>enable
+Password: 
+AMRIT_3#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+AMRIT_3(config)#router rip
+AMRIT_3(config-router)#network 202.60.5.0
+AMRIT_3(config-router)#network 202.60.6.0
+
+AMRIT_3(config-router)#passive-interface GigabitEthernet 0/1
+
+AMRIT_3(config-router)#exit
+AMRIT_3(config)#exit
+AMRIT_3#exit
+
+[Connection to 202.60.5.2 closed by foreign host]
+AMRIT_2#exit
+
+[Connection to 202.60.3.2 closed by foreign host]
+AMRIT_1#exit
+
+[Connection to 202.60.1.2 closed by foreign host]
+AMRIT_0#exit
+
+[Connection to 202.60.0.1 closed by foreign host]
+C:\>
