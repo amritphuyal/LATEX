@@ -1,0 +1,6 @@
+Switch1>enable
+
+Switch1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch1(config)#interface FastEthernet0/20
+Switch1(config-if)#switchport mode trunk

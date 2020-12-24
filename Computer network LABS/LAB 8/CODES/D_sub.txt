@@ -1,0 +1,16 @@
+Router>enable
+Router#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface GigabitEthernet 0/0.1
+Router(config-subif)#encapsulation dot1Q 1
+Router(config-subif)#ip address 200.1.1.1 255.255.255.192
+Router(config-subif)#exit
+Router(config)#interface GigabitEthernet 0/0.2
+Router(config-subif)#encapsulation dot1Q 2
+Router(config-subif)#ip address 200.1.1.65 255.255.255.192
+Router(config-subif)#exit
+Router(config)#interface GigabitEthernet 0/0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.2, changed state to up

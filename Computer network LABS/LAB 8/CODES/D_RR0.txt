@@ -1,0 +1,17 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+Router(config)#interface GigabitEthernet0/0
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no ip address 200.1.1.1 255.255.255.192
+Router(config-if)#shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+
+Router(config-if)#exit
+Router(config)#interface GigabitEthernet0/1
+Router(config-if)#no ip address 200.1.1.65 255.255.255.192
+Router(config-if)#shutdown
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to administratively down

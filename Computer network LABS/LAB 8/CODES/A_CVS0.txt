@@ -1,0 +1,8 @@
+Switch0>enable
+Switch0#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch0(config)#vlan 2
+Switch0(config-vlan)#name Vlan_2
+Switch0(config-vlan)#end
+Switch0#
+%SYS-5-CONFIG_I: Configured from console by console

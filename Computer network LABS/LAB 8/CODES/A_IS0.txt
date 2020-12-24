@@ -1,0 +1,17 @@
+Switch0>enable
+Switch0#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch0(config)#interface FastEthernet 0/11
+Switch0(config-if)#switchport access vlan 2
+Switch0(config-if)#exit
+Switch0(config)#interface FastEthernet 0/12
+Switch0(config-if)#switchport access vlan 2
+Switch0(config-if)#exit
+Switch0(config)#interface FastEthernet 0/13
+Switch0(config-if)#switchport access vlan 2
+Switch0(config-if)#exit
+Switch0(config)#interface FastEthernet 0/14
+Switch0(config-if)#switchport access vlan 2
+Switch0(config-if)#end
+Switch0#
+%SYS-5-CONFIG_I: Configured from console by console
