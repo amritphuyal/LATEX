@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.12.16)  24 DEC 2020 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.12.16)  24 DEC 2020 20:54
 entering extended mode
 **"c:/Users/074be/Documents/aaaaaaaaaImportant Files/Computer network LABS/LAB 8/CN LAB 8 Amrit prasad Phuyal.tex"
 ("c:/Users/074be/Documents/aaaaaaaaaImportant Files/Computer network LABS/LAB 8/CN LAB 8 Amrit prasad Phuyal.tex"
@@ -648,11 +648,11 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
  [1] ("c:/Users\074be\Documents\aaaaaaaaaImportant Files\Computer network LABS\LAB 8\CN LAB 8 Amrit prasad Phuyal.lol"pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ... for trunk in switch 1}{13}{lstlisting.30}
+l.39 ... for trunk in switch 1}{14}{lstlisting.30}
                                                   % [2]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.74 ...and 0/0.2 and activate}{26}{lstlisting.59}
+l.74 ...and 0/0.2 and activate}{28}{lstlisting.59}
                                                   % [3])
 \tf@lol=\write5
 \openout5 = `"CN LAB 8 Amrit prasad Phuyal.lol"'.
@@ -711,46 +711,42 @@ Package mdframed Info: Not enough space on this page on input line 255.
 l.255 ...{./CODES/AP0-3.txt}{Ping from PC0 to PC3}
                                                    <./FIG/Lab8A.jpg>]
 Package mdframed Info: Not enough space on this page on input line 255.
- (CODES/AP1-2.txt) (CODES/AP1-3.txt) (CODES/AP2-3.txt) (CODES/A_CVS0.txt) [5] (CODES/A_CVS1.txt) (CODES/A_IS1.txt) (CODES/A_IS0.txt) (CODES/APV0-1.txt) [6] (CODES/APV0-2.txt) (CODES/APV0-3.txt) (CODES/APV1-2.txt) (CODES/APV1-3.txt)
-Package mdframed Info: Not enough space on this page on input line 295.
- [7]
-Package mdframed Info: Not enough space on this page on input line 295.
+ (CODES/AP1-2.txt) (CODES/AP1-3.txt) (CODES/AP2-3.txt) [5] (CODES/A_CVS0.txt) (CODES/A_CVS1.txt) (CODES/A_IS1.txt) (CODES/A_IS0.txt) [6] (CODES/APV0-1.txt) (CODES/APV0-2.txt) (CODES/APV0-3.txt) (CODES/APV1-2.txt) (CODES/APV1-3.txt) [7]
+Package mdframed Info: Not enough space on this page on input line 298.
  (CODES/APV2-3.txt)
 <./FIG/Lab8A7.jpg, id=493, 747.9945pt x 405.31425pt>
 File: ./FIG/Lab8A7.jpg Graphic file (type jpg)
 <use ./FIG/Lab8A7.jpg>
-Package pdftex.def Info: ./FIG/Lab8A7.jpg  used on input line 312.
+Package pdftex.def Info: ./FIG/Lab8A7.jpg  used on input line 317.
 (pdftex.def)             Requested size: 508.62953pt x 275.61005pt.
 
-Overfull \hbox (31.9327pt too wide) in paragraph at lines 312--313
+Overfull \hbox (31.9327pt too wide) in paragraph at lines 317--318
  [][] 
  []
 
-(CODES/APE0-1.txt) [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+[8] (CODES/APE0-1.txt) (CODES/APE0-2.txt) (CODES/APE0-3.txt) [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.325 ..../CODES/APE0-1.txt}{Ping from PC0 to PC1}
+l.334 ..../CODES/APE0-3.txt}{Ping from PC0 to PC3}
                                                    <./FIG/Lab8A7.jpg>]
-Package mdframed Info: Not enough space on this page on input line 325.
- (CODES/APE0-2.txt) (CODES/APE0-3.txt) (CODES/APE1-2.txt) (CODES/APE1-3.txt) [9] (CODES/APE2-3.txt)
-<./FIG/Lab8A11.jpg, id=579, 746.79pt x 399.29175pt>
+Package mdframed Info: Not enough space on this page on input line 334.
+ (CODES/APE1-2.txt) (CODES/APE1-3.txt) (CODES/APE2-3.txt) [10]
+<./FIG/Lab8A11.jpg, id=603, 784.1295pt x 392.667pt>
 File: ./FIG/Lab8A11.jpg Graphic file (type jpg)
 <use ./FIG/Lab8A11.jpg>
-Package pdftex.def Info: ./FIG/Lab8A11.jpg  used on input line 361.
-(pdftex.def)             Requested size: 507.81047pt x 271.51479pt.
+Package pdftex.def Info: ./FIG/Lab8A11.jpg  used on input line 363.
+(pdftex.def)             Requested size: 517.52707pt x 259.16103pt.
 
-Overfull \hbox (31.11363pt too wide) in paragraph at lines 361--362
+Overfull \hbox (40.83023pt too wide) in paragraph at lines 363--364
  [][] 
  []
 
-(CODES/APE0-1.txt) [10pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+(CODES/AP0-1.txt) (CODES/AP0-2.txt) [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.376 ..../CODES/APE0-1.txt}{Ping from PC0 to PC1}
-                                                   <./FIG/Lab8A11.jpg>]
-Package mdframed Info: Not enough space on this page on input line 376.
- (CODES/APE0-2.txt) (CODES/APE0-3.txt) (CODES/APE1-2.txt) (CODES/APE1-3.txt) [11] (CODES/APE2-3.txt) [12]
-<./FIG/Lab8B1.jpg, id=687, 781.11826pt x 377.0085pt>
+l.381 ...{./CODES/AP0-2.txt}{Ping from PC0 to PC2}
+                                                   <./FIG/Lab8A11.jpg>] (CODES/AP0-3.txt) (CODES/AP1-2.txt) (CODES/AP1-3.txt) (CODES/AP2-3.txt) [12] [13]
+<./FIG/Lab8B1.jpg, id=699, 781.11826pt x 377.0085pt>
 File: ./FIG/Lab8B1.jpg Graphic file (type jpg)
 <use ./FIG/Lab8B1.jpg>
 Package pdftex.def Info: ./FIG/Lab8B1.jpg  used on input line 439.
@@ -760,137 +756,129 @@ Overfull \hbox (46.64967pt too wide) in paragraph at lines 439--440
  [][] 
  []
 
-(CODES/B_CI0.txt) (CODES/B_CI1.txt) (CODES/BPT0-1.txt) [13pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+(CODES/B_CI0.txt) (CODES/B_CI1.txt) (CODES/BPT0-1.txt) [14pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.455 ..../CODES/BPT0-1.txt}{Ping from PC0 to PC1}
-                                                   <./FIG/Lab8B1.jpg>] (CODES/BPT0-2.txt) (CODES/BPT0-3.txt) (CODES/BPT1-2.txt) (CODES/BPT1-3.txt) [14] (CODES/BPT2-3.txt)
-<./FIG/Lab8B7.jpg, id=770, 787.14075pt x 386.6445pt>
+l.457 ..../CODES/BPT0-1.txt}{Ping from PC0 to PC1}
+                                                   <./FIG/Lab8B1.jpg>] (CODES/BPT0-2.txt) (CODES/BPT0-3.txt) (CODES/BPT1-2.txt) (CODES/BPT1-3.txt) [15] (CODES/BPT2-3.txt)
+<./FIG/Lab8B7.jpg, id=780, 787.14075pt x 386.6445pt>
 File: ./FIG/Lab8B7.jpg Graphic file (type jpg)
 <use ./FIG/Lab8B7.jpg>
-Package pdftex.def Info: ./FIG/Lab8B7.jpg  used on input line 490.
+Package pdftex.def Info: ./FIG/Lab8B7.jpg  used on input line 493.
 (pdftex.def)             Requested size: 511.63542pt x 251.31595pt.
 
-Overfull \hbox (34.93858pt too wide) in paragraph at lines 490--491
+Overfull \hbox (34.93858pt too wide) in paragraph at lines 493--494
  [][] 
  []
 
-(CODES/BPS0-1.txt) [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+[16] (CODES/BPS0-1.txt) (CODES/BPS0-2.txt) (CODES/BPS0-3.txt)
+Package mdframed Info: Not enough space on this page on input line 507.
+ [17pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.500 ..../CODES/BPS0-1.txt}{Ping from PC0 to PC1}
-                                                   <./FIG/Lab8B7.jpg>] (CODES/BPS0-2.txt) (CODES/BPS0-3.txt) (CODES/BPS1-2.txt) (CODES/BPS1-3.txt) [16] (CODES/BPS2-3.txt) [17]
-<./FIG/C_SP0.jpg, id=882, 386.6445pt x 365.56575pt>
+l.507 ..../CODES/BPS0-3.txt}{Ping from PC0 to PC3}
+                                                   <./FIG/Lab8B7.jpg>]
+Package mdframed Info: Not enough space on this page on input line 507.
+ (CODES/BPS1-2.txt) (CODES/BPS1-3.txt) (CODES/BPS2-3.txt) [18] [19]
+<./FIG/C_SP0.jpg, id=898, 386.6445pt x 365.56575pt>
 File: ./FIG/C_SP0.jpg Graphic file (type jpg)
 <use ./FIG/C_SP0.jpg>
-Package pdftex.def Info: ./FIG/C_SP0.jpg  used on input line 566.
+Package pdftex.def Info: ./FIG/C_SP0.jpg  used on input line 577.
 (pdftex.def)             Requested size: 317.05054pt x 299.76585pt.
-<./FIG/Lab8C.jpg, id=883, 763.05075pt x 380.622pt>
+<./FIG/Lab8C.jpg, id=899, 823.27576pt x 404.10976pt>
 File: ./FIG/Lab8C.jpg Graphic file (type jpg)
 <use ./FIG/Lab8C.jpg>
-Package pdftex.def Info: ./FIG/Lab8C.jpg  used on input line 573.
-(pdftex.def)             Requested size: 518.86765pt x 258.81952pt.
-
-Overfull \hbox (42.1708pt too wide) in paragraph at lines 573--574
- [][] 
- []
-
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+Package pdftex.def Info: ./FIG/Lab8C.jpg  used on input line 584.
+(pdftex.def)             Requested size: 526.89468pt x 258.62935pt.
+ (CODES/APE0-1.txt) [20pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.583 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+l.599 ..../CODES/APE0-1.txt}{Ping from PC0 to PC1}
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.583 
-       <./FIG/C_SP0.jpg> <./FIG/Lab8C.jpg>] (CODES/APE0-1.txt) (CODES/APE0-2.txt) (CODES/APE0-3.txt) (CODES/APE1-2.txt) (CODES/APE1-3.txt)
-Package mdframed Info: Not enough space on this page on input line 595.
- [19]
-Package mdframed Info: Not enough space on this page on input line 595.
- (CODES/APE2-3.txt)
-<./FIG/C_DP0.jpg, id=941, 384.2355pt x 365.56575pt>
+l.599 ..../CODES/APE0-1.txt}{Ping from PC0 to PC1}
+                                                   <./FIG/C_SP0.jpg> <./FIG/Lab8C.jpg>]
+Package mdframed Info: Not enough space on this page on input line 599.
+ (CODES/APE0-2.txt) (CODES/APE0-3.txt) (CODES/APE1-2.txt) (CODES/APE1-3.txt) [21] (CODES/APE2-3.txt)
+<./FIG/C_DP0.jpg, id=961, 384.2355pt x 365.56575pt>
 File: ./FIG/C_DP0.jpg Graphic file (type jpg)
 <use ./FIG/C_DP0.jpg>
-Package pdftex.def Info: ./FIG/C_DP0.jpg  used on input line 608.
+Package pdftex.def Info: ./FIG/C_DP0.jpg  used on input line 620.
 (pdftex.def)             Requested size: 315.07515pt x 299.76585pt.
-<./FIG/C_DP1.jpg, id=942, 384.2355pt x 364.9635pt>
+<./FIG/C_DP1.jpg, id=962, 384.2355pt x 364.9635pt>
 File: ./FIG/C_DP1.jpg Graphic file (type jpg)
 <use ./FIG/C_DP1.jpg>
-Package pdftex.def Info: ./FIG/C_DP1.jpg  used on input line 614.
+Package pdftex.def Info: ./FIG/C_DP1.jpg  used on input line 626.
 (pdftex.def)             Requested size: 315.07515pt x 299.272pt.
- [20pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+ [22pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.617 
+l.629 
        <./FIG/C_DP0.jpg>]
-Overfull \hbox (2.92842pt too wide) in paragraph at lines 626--627
+Overfull \hbox (2.92842pt too wide) in paragraph at lines 638--639
 \OT1/ppl/b/n/10.95 Ad-dress of 200.1.1.1/26, sim-i-larly con-nect in-ter-face FastEth-er-net0/14 of Switch1 to Gi-ga-bitEth-
  []
 
-<./FIG/Lab8C4.jpg, id=972, 769.07326pt x 397.485pt>
+<./FIG/Lab8C4.jpg, id=987, 723.9045pt x 404.10976pt>
 File: ./FIG/Lab8C4.jpg Graphic file (type jpg)
 <use ./FIG/Lab8C4.jpg>
-Package pdftex.def Info: ./FIG/Lab8C4.jpg  used on input line 630.
-(pdftex.def)             Requested size: 522.9629pt x 270.28622pt.
+Package pdftex.def Info: ./FIG/Lab8C4.jpg  used on input line 642.
+(pdftex.def)             Requested size: 492.24855pt x 274.79099pt.
 
-Overfull \hbox (46.26607pt too wide) in paragraph at lines 630--631
+Overfull \hbox (15.55171pt too wide) in paragraph at lines 642--643
  [][] 
  []
 
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.633 
-       <./FIG/C_DP1.jpg>] (CODES/C_IP0.txt) (CODES/C_IP1.txt) (CODES/BPS0-1.txt) [22pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+l.645 
+       <./FIG/C_DP1.jpg>] (CODES/C_IP0.txt) (CODES/C_IP1.txt) (CODES/BPS0-1.txt) [24pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.649 ..../CODES/BPS0-1.txt}{Ping from PC0 to PC1}
-                                                   <./FIG/Lab8C4.jpg>] (CODES/BPS0-2.txt) (CODES/BPS0-3.txt) (CODES/BPS1-2.txt) (CODES/BPS1-3.txt) [23] (CODES/BPS2-3.txt) [24]
-<./FIG/Lab8D.jpg, id=1088, 783.52725pt x 391.4625pt>
+l.661 ..../CODES/BPS0-1.txt}{Ping from PC0 to PC1}
+                                                   <./FIG/Lab8C4.jpg>] (CODES/BPS0-2.txt) (CODES/BPS0-3.txt) (CODES/BPS1-2.txt) (CODES/BPS1-3.txt) [25] (CODES/BPS2-3.txt) [26]
+<./FIG/Lab8D.jpg, id=1104, 840.13875pt x 410.13225pt>
 File: ./FIG/Lab8D.jpg Graphic file (type jpg)
 <use ./FIG/Lab8D.jpg>
-Package pdftex.def Info: ./FIG/Lab8D.jpg  used on input line 701.
-(pdftex.def)             Requested size: 524.96053pt x 262.2785pt.
-
-Overfull \hbox (48.26369pt too wide) in paragraph at lines 701--702
- [][] 
- []
-
-(CODES/D_RR0.txt) (CODES/D_TS1.txt) [25pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.716 ...1.txt}{Configuring Trunk port to Fa 0/21}
-                                                   <./FIG/Lab8D.jpg>]
-<./FIG/Lab8D1.jpg, id=1116, 766.062pt x 395.67825pt>
+Package pdftex.def Info: ./FIG/Lab8D.jpg  used on input line 713.
+(pdftex.def)             Requested size: 672.11192pt x 328.10623pt.
+ (CODES/D_RR0.txt) (CODES/D_TS1.txt)
+<./FIG/Lab8D1.jpg, id=1105, 811.23074pt x 373.99725pt>
 File: ./FIG/Lab8D1.jpg Graphic file (type jpg)
 <use ./FIG/Lab8D1.jpg>
-Package pdftex.def Info: ./FIG/Lab8D1.jpg  used on input line 720.
-(pdftex.def)             Requested size: 513.25887pt x 265.10304pt.
+Package pdftex.def Info: ./FIG/Lab8D1.jpg  used on input line 732.
+(pdftex.def)             Requested size: 519.1859pt x 239.3574pt.
 
-Overfull \hbox (36.56203pt too wide) in paragraph at lines 720--721
+Overfull \hbox (42.48906pt too wide) in paragraph at lines 732--733
  [][] 
  []
 
-(CODES/D_sub.txt) [26pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.743 ...-interfaces 0/0.1 and 0/0.2 and activate}
-                                                   <./FIG/Lab8D1.jpg>] (CODES/BPS0-1.txt) (CODES/BPS0-2.txt) (CODES/BPS0-3.txt) (CODES/BPS1-2.txt) [27] (CODES/BPS1-3.txt) (CODES/BPS2-3.txt) [28] [29] ("c:/Users\074be\Documents\aaaaaaaaaImportant Files\Computer network LABS\LAB 8\CN LAB 8 Amrit prasad Phuyal.aux")
+l.735 
+       <./FIG/Lab8D.jpg>] (CODES/D_sub.txt) [28pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.763 
+       <./FIG/Lab8D1.jpg>] (CODES/BPS0-1.txt) (CODES/BPS0-2.txt) (CODES/BPS0-3.txt) (CODES/BPS1-2.txt) [29] (CODES/BPS1-3.txt) (CODES/BPS2-3.txt) [30] [31] ("c:/Users\074be\Documents\aaaaaaaaaImportant Files\Computer network LABS\LAB 8\CN LAB 8 Amrit prasad Phuyal.aux")
 Package rerunfilecheck Info: File `"CN LAB 8 Amrit prasad Phuyal".out' has not changed.
 (rerunfilecheck)             Checksum: EAE075F25150D7D0B32FDE7FE9673A11;854.
  ) 
 Here is how much of TeX's memory you used:
- 13500 strings out of 480236
- 218688 string characters out of 2880557
- 1036172 words of memory out of 3000000
+ 13509 strings out of 480236
+ 218795 string characters out of 2880557
+ 1039593 words of memory out of 3000000
  28612 multiletter control sequences out of 15000+200000
  557865 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,101p,627b,1556s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/074be/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on "c:/Users\074be\Documents\aaaaaaaaaImportant Files\Computer network LABS\LAB 8\CN LAB 8 Amrit prasad Phuyal.pdf" (35 pages, 1511589 bytes).
+Output written on "c:/Users\074be\Documents\aaaaaaaaaImportant Files\Computer network LABS\LAB 8\CN LAB 8 Amrit prasad Phuyal.pdf" (37 pages, 1520236 bytes).
 PDF statistics:
- 1447 PDF objects out of 1728 (max. 8388607)
- 960 named destinations out of 1000 (max. 500000)
+ 1467 PDF objects out of 1728 (max. 8388607)
+ 969 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

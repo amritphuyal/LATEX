@@ -1,17 +1,17 @@
 \babel@toc {english}{}
 \subsection *{\rule {\linewidth }{0.4mm}\\ Activities A\\ \rule {\linewidth }{0.4mm}}
 \contentsline {figure}{\numberline {1}{\ignorespaces Network topology Lab 8A}}{4}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Network topology Lab 8A after interconnecting additional interface between Switch0 and Switch 1 }}{8}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Network topology Lab 8A after interconnecting 2 additional interface between Switch0 and Switch 1 }}{10}{figure.3}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Network topology Lab 8A after interconnecting additional interface between Switch0 and Switch 1 }}{9}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Network topology Lab 8A after interconnecting 2 additional interface between Switch0 and Switch 1 }}{11}{figure.3}%
 \subsection *{\rule {\linewidth }{0.4mm}\\ Activities B\\ \rule {\linewidth }{0.4mm}}
-\contentsline {figure}{\numberline {4}{\ignorespaces Network topology Lab 8B after configuring Trunk port }}{13}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Network topology Lab 8B after connecting Switch 2 }}{15}{figure.5}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Network topology Lab 8B after configuring Trunk port }}{14}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Network topology Lab 8B after connecting Switch 2 }}{17}{figure.5}%
 \subsection *{\rule {\linewidth }{0.4mm}\\ Activities C\\ \rule {\linewidth }{0.4mm}}
-\contentsline {figure}{\numberline {6}{\ignorespaces Changing Subnet for Lab 8c in PC0 to 255.255.255.192 or /26 }}{18}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Network topology Lab 8C}}{18}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Changing Changing Default gateway of PC0 to 200.1.1.1 }}{20}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Changing Changing Default gateway of PC0 to 200.1.1.65 }}{21}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Replacing Switch with Router in Lab 8C}}{22}{figure.10}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Changing Subnet for Lab 8c in PC0 to 255.255.255.192 or /26 }}{20}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Network topology Lab 8C}}{20}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Changing Changing Default gateway of PC0 to 200.1.1.1 }}{22}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Changing Changing Default gateway of PC0 to 200.1.1.65 }}{23}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Replacing Switch with Router in Lab 8C}}{24}{figure.10}%
 \subsection *{\rule {\linewidth }{0.4mm}\\ Activities D\\ \rule {\linewidth }{0.4mm}}
-\contentsline {figure}{\numberline {11}{\ignorespaces Network topology Lab 8D after removing all connection}}{25}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Network topology Lab 8D Connection after Trunk configuraton}}{26}{figure.12}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Network topology Lab 8D after removing all connection}}{27}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Network topology Lab 8D Connection after Trunk configuraton}}{28}{figure.12}%

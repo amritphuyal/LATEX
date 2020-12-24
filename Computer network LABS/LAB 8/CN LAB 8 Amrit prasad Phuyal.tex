@@ -260,6 +260,9 @@ Switch#  \end{verbatim}
 
           \CMD{./CODES/AP2-3.txt}{Ping from PC2 to PC3}
 
+
+          Since all PCs falls under same VLAN \textit{i.e.} 1 and all assigned IPs belongs to same subnet all PCs can communicate with each other.
+
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA333333333333333333333333
     \item\textbf{ Create the VLAN 2 in both switches i.e. Switch0 and Switch1}
 
@@ -296,11 +299,13 @@ Switch#  \end{verbatim}
 
           \CMD{./CODES/APV2-3.txt}{Ping from PC2 to PC3}
 
+          Though the assigned IPs belongs to same subnet the  PC0 and PC2 falls under same VLAN \textit{i.e.} 1 and (PC1 and PC3) falls under another  VLAN \textit{i.e.} 2. PCs of different VlAN cant communicate with each other as only one interface corresponding to VlAN 1 is connected between switch.
+
 
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA666666666666666666666666
     \item\textbf{ Does the ping from PC1 to PC3 succeed? State reason.}
 
-
+          Ping failed as shown in above Output. Though, they both belongs to same VLAN and same subnet only interface for VLAN 1 is connected between switch 0 and switch 1 ping failed.
 
 
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA777777777777777777777777777777777
@@ -339,16 +344,13 @@ Switch#  \end{verbatim}
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA999999999999999999999999999999999
     \item\textbf{ Does the ping from PC1 to PC3 succeed? State reason.}
 
-
-
-
-
+          Yes ping from PC1 to PC3 succeed. Here we introduced additional interface between the switches FastEthernet 0/12 belonging to VLAN 2 the communication between the PCs belonging to same VLAN but connected to different switches is possible.
 
 
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA10 10 10 10 10 10 10 10
     \item\textbf{ Does the ping from PC0 to PC1 succeed? State reason.}
 
-
+          No, the Ping failed simply because they belong to different VLAN.
 
 
 
@@ -358,7 +360,7 @@ Switch#  \end{verbatim}
 
           \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.68,cframe=blue 0.5pt 3pt]{./FIG/Lab8A11.jpg}
+              \includegraphics[scale=0.66,cframe=blue 0.5pt 3pt]{./FIG/Lab8A11.jpg}
               \caption{Network topology Lab 8A after interconnecting 2 additional interface between Switch0  and Switch 1 }
           \end{figure}
 
@@ -369,30 +371,28 @@ Switch#  \end{verbatim}
     \item\textbf{ Observe the result by testing the connectivity between each computers}
 
 
-          \addtocontents{lol}{\protect\subsubsection*{A.12 : Testing connectivity after interconnecting 2 additional interface Between Switches}}
+          \addtocontents{lol}{\protect\subsubsection*{A.12 : Testing connectivity after interconnecting 2 additional interface Between Switches 1 and 2}}
 
-          %%%%%%%%%%%%%%%%%%%%Copied from A.8 dont make changes, if needed create new
-
-          \CMD{./CODES/APE0-1.txt}{Ping from PC0 to PC1}
-
-          \CMD{./CODES/APE0-2.txt}{Ping from PC0 to PC2}
-
-          \CMD{./CODES/APE0-3.txt}{Ping from PC0 to PC3}
-
-          \CMD{./CODES/APE1-2.txt}{Ping from PC1 to PC2}
-
-          \CMD{./CODES/APE1-3.txt}{Ping from PC1 to PC3}
-
-          \CMD{./CODES/APE2-3.txt}{Ping from PC2 to PC3}
+          %%%%%%%%%%%%%%%%%%%%Copied from A.8 don't make changes, if needed create new
 
 
+          \CMD{./CODES/AP0-1.txt}{Ping from PC0 to PC1}
+
+          \CMD{./CODES/AP0-2.txt}{Ping from PC0 to PC2}
+
+          \CMD{./CODES/AP0-3.txt}{Ping from PC0 to PC3}
+
+          \CMD{./CODES/AP1-2.txt}{Ping from PC1 to PC2}
+
+          \CMD{./CODES/AP1-3.txt}{Ping from PC1 to PC3}
+
+          \CMD{./CODES/AP2-3.txt}{Ping from PC2 to PC3}
+
+          Ping is successful between all PCs when third switch is used to interconnect VLAN 1 and VLAN 2. The third switch simply acts as switch to connect two different LAN. Additionally, all assigned IPs falls under same subnet.
 
           %%%%%%%%%%%%%%%%%%%%%%AAAAAAAAAAAAAAAAAAAAAA13 13 13 13 13 13 13 13 13 13
     \item\textbf{ Does the ping from PC0 to PC1 succeed? State reason.}
-
-
-
-
+          As shown in above outputs the ping success. Though PC0 and PC1 belongs to different VLAN the new switch connects these VLAN as normal LAN and enable communication between them.
 
 \end{enumerate}
 
@@ -431,7 +431,7 @@ Switch#  \end{verbatim}
     \item\textbf{ Configure interfaces FastEthernet0/20 of both switches Switch0 and Switch1 as Trunk
               port and establish connection between two switches using these ports}
 
-          \addtocontents{lol}{\protect\subsubsection*{A.1 : Configuring Trunk port in both switches }}
+          \addtocontents{lol}{\protect\subsubsection*{B.1 : Configuring Trunk port in both switches }}
 
 
           \begin{figure}[H]
@@ -440,6 +440,8 @@ Switch#  \end{verbatim}
               \caption{Network topology Lab 8B after configuring Trunk port }
           \end{figure}
 
+
+          Here we reduced the number of interface needed to connect both VLAN in Both switches with the help of trunk protocol.
 
           \CMD{./CODES/B_CI0.txt}{Configure Fa 0/20 for trunk in switch 0}
 
@@ -464,20 +466,21 @@ Switch#  \end{verbatim}
 
           \CMD{./CODES/BPT2-3.txt}{Ping from PC2 to PC3}
 
+          In this activity we only reduced the number of Interface connected between Switch 0 and Switch 1 and additionally disconnect the switch 1 and switch 2 which make the communication between VLAN 1 and VLAN 2 impossible.
+
           %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB33333333333333333333333333333
     \item\textbf{  Does the ping from PC0 to PC1 succeed? State reason}
-
+          PC0 and PC1 falls under same subnet but belongs to different VLAN and here we disconnected the interfaces with switch 2 that was previously used to make connection between VLANs.
 
 
           %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB444444444444444444444444444444
     \item\textbf{  Does the ping from PC0 to PC2 succeed? State reason}
-
-
+          Yes the ping between PC0 and PC2 succeed as they belong to same VLAN, same Subnet and there is trunk to connect two switches.
 
           %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB555555555555555555555555555555
     \item\textbf{  Does the ping from PC1 to PC3 succeed? State reason}
 
-
+          Yes the ping between PC1 and PC3 succeed as they belong to same VLAN, same Subnet and there is trunk to connect two switches.
 
           %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB66666666666666666666666666666666
     \item\textbf{  Interconnect two VLANs using another switch as: Connect interface FastEthernet0/9 of
@@ -509,12 +512,20 @@ Switch#  \end{verbatim}
 
                     \CMD{./CODES/BPS2-3.txt}{Ping from PC2 to PC3}
 
+                    In this activity we only reduced the number of Interface connected between Switch 0 and Switch 1 with the help of Trunk mode and additionally connect the switch 1 and switch 2 which make the communication between VLAN 1 and VLAN 2 possible.
 
-              \item\textbf{ Does the ping from PC0 to PC1 succeed? State reason}
+              \item\textbf{  Does the ping from PC0 to PC1 succeed? State reason}
+                    Ping is successful as PC0 and PC1 falls under same subnet but belongs to different VLAN and here we connected the interfaces with switch 2 that is used to make connection between VLANs.
 
-              \item\textbf{ Does the ping from PC0 to PC2 succeed? State reason}
 
-              \item\textbf{ Does the ping from PC1 to PC3 succeed? State reason}
+                    %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB444444444444444444444444444444
+              \item\textbf{  Does the ping from PC0 to PC2 succeed? State reason}
+                    Yes the ping between PC0 and PC2 succeed as they belong to same VLAN, same Subnet and there is trunk to connect two switches.
+
+                    %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB555555555555555555555555555555
+              \item\textbf{  Does the ping from PC1 to PC3 succeed? State reason}
+
+                    Yes the ping between PC1 and PC3 succeed as they belong to same VLAN, same Subnet and there is trunk to connect two switches.
 
           \end{enumerate}
 
@@ -523,7 +534,7 @@ Switch#  \end{verbatim}
           %%%%%%%%%%%%%%%%%%%%%%BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB7777777777777777777777777777
     \item\textbf{  Compare the current configuration with above}
 
-
+          Here we have Introduced the Switch 2 that connect VLAN 1 and VLAN 2 and make connection possible between them.
 
 \end{enumerate}
 
@@ -570,7 +581,7 @@ Switch#  \end{verbatim}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.68,cframe=blue 0.5pt 3pt]{./FIG/Lab8C.jpg}
+    \includegraphics[scale=0.64,cframe=blue 0.5pt 3pt,width=\linewidth]{./FIG/Lab8C.jpg}
     \caption{Network topology Lab 8C}
 \end{figure}
 
@@ -582,6 +593,7 @@ Switch#  \end{verbatim}
               cases? State reason}
 
           %%%%%%%%%%%%%%%%%%%%Copied from A.8 dont make changes, if needed create new
+
           \addtocontents{lol}{\protect\subsubsection*{C 1 : Testing connectivity  after changing subnet mask to 255.255.255.192}}
 
           \CMD{./CODES/APE0-1.txt}{Ping from PC0 to PC1}
@@ -596,7 +608,7 @@ Switch#  \end{verbatim}
 
           \CMD{./CODES/APE2-3.txt}{Ping from PC2 to PC3}
 
-
+          Here we created the two subnets each having usable 62  host . So VLAN 1 and VLAN 2 falls under different subnet and switch is incapable to forward packets between different network. Hence Ping between PCs of same VLAN only succeed.
 
           %%%%%%%%%%%%%%%%%%%%%%CCCCCCCCCCCCCCCCCCCCC222222222222222222222222222222222
     \item\textbf{ Now the different computers became on different networks, so routing is necessary to
@@ -643,7 +655,7 @@ Switch#  \end{verbatim}
           \addtocontents{lol}{\protect\subsubsection*{C.5 : Testing connectivity  after connecting Router 0}}
 
 
-          %%%%%%%%%%%%%%% Dont edit this .. copied from B.6
+          %%%%%%%%%%%%%%% Don't edit this .. copied from B.6
 
 
           \CMD{./CODES/BPS0-1.txt}{Ping from PC0 to PC1}
@@ -658,7 +670,7 @@ Switch#  \end{verbatim}
 
           \CMD{./CODES/BPS2-3.txt}{Ping from PC2 to PC3}
 
-
+          Ping between and among all PCs is successful because Router is introduced and Configured  both interface 0/0 and 0/1  to forward packets between two VLAN1 and VLAN 2 belonging to different subnet.
 
 \end{enumerate}
 
@@ -698,7 +710,7 @@ Switch#  \end{verbatim}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.67,cframe=blue 0.5pt 3pt]{./FIG/Lab8D.jpg}
+    \includegraphics[scale=0.8,cframe=blue 0.5pt 3pt,width=\linewidth]{./FIG/Lab8D.jpg}
     \caption{Network topology Lab 8D after removing all connection}
 \end{figure}
 
@@ -717,7 +729,7 @@ Switch#  \end{verbatim}
 
           \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.67,cframe=blue 0.5pt 3pt]{./FIG/Lab8D1.jpg}
+              \includegraphics[scale=0.64,cframe=blue 0.5pt 3pt]{./FIG/Lab8D1.jpg}
               \caption{Network topology Lab 8D Connection after Trunk configuraton}
           \end{figure}
 
@@ -768,11 +780,14 @@ Switch#  \end{verbatim}
           \CMD{./CODES/BPS2-3.txt}{Ping from PC2 to PC3}
 
 
-
+          Here we configured Fa 0/21 of switch 1 in Trunk mode and configured the interface 0/0 of router as sub interfaces 0/0.1 and 0/0.2  having IP belonging to VLAN 1 and VLAN 2 respectively and different subnet too. Here Router forwards packets between those sub interfaces.
 
           %%%%%%%%%%%%%%%%%%%%%DDDDDDDDDDDDDDDDDDDD4444444444444444444444444
           %
     \item\textbf{ Compare this configuration with previous (i.e. in question no 3).}
+
+          The only physical difference with activity C is it has single interface consisting sub interface in trunk mode between switch 1 and Router 0.
+
 
 \end{enumerate}
 
@@ -789,6 +804,7 @@ Switch#  \end{verbatim}
 
 \section{Conclusion}
 
+In this Lab we familiarize ourselves with VLAN , its uses and importance. We also learned to communicate between VLANs on same and different subnets.
 
 
 
