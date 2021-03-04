@@ -1,0 +1,55 @@
+
+%%% Formating And Command for Embedded Lab  VHDl
+%% \ancode{caption}{Filename}
+
+
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{mdframed}
+
+\renewcommand{\lstlistlistingname}{List of MATLAB Codes}
+\renewcommand{\lstlistingname}{MATLAB Code}
+
+\setlength{\columnsep}{0.5cm}
+
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.3,0.3,0.3}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.99,0.92}
+\definecolor{backcolour}{rgb}{0,0,0}
+
+\lstdefinestyle{MATLAB}{
+  %backgroundcolor=\color{backcolour},  
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{blue},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\small\color{black},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  language=Matlab,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  frame = single,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=3
+}
+
+
+
+
+\newcommand {\anscode}[2]{
+  \lstinputlisting[style=MATLAB,nolol]{#2}
+
+  \begingroup
+  \captionof{lstlisting}{#1}
+  \endgroup
+
+}
+
+%%% Formating And Command for Embedded Lab  VHDL
