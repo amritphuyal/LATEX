@@ -1,0 +1,9 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'Amrit Resume.blg'
+[154] biber-MSWIN64:340> INFO - === 
+[213] Biber.pm:415> INFO - Reading 'Amrit Resume.bcf'
+[359] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
+[366] Utils.pm:395> WARN - The file 'Amrit Resume.bcf' does not contain any citations!
+[380] bbl.pm:654> INFO - Writing 'Amrit Resume.bbl' with encoding 'UTF-8'
+[380] bbl.pm:757> INFO - Output to Amrit Resume.bbl
+[380] Biber.pm:128> INFO - WARNINGS: 1
