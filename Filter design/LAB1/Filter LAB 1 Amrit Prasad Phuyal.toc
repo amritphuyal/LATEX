@@ -1,0 +1,23 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Title}{1}{section.1}%
+\contentsline {section}{\numberline {2}Objective}{1}{section.2}%
+\contentsline {section}{\numberline {3}Requirement}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}MATLAB}{1}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Proteus Design Suite}{1}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Procedure}{1}{section.4}%
+\contentsline {section}{\numberline {5}Exercises:}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Question -1}{2}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}TF Derivation of Figure a}{2}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}TF Derivation of Figure b}{2}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}TF Derivation of Figure c}{3}{subsubsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.4}TF Derivation of Figure d}{3}{subsubsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.5}TF Derivation of Figure e}{4}{subsubsection.5.1.5}%
+\contentsline {subsubsection}{\numberline {5.1.6}TF Derivation of Figure f}{4}{subsubsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.2}Question -2}{6}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}MATLAB Codes}{6}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}MATLAB Observations}{8}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Question -3}{13}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Proteus Observations}{13}{subsubsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.4}Question -4}{19}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Observation with varying component values}{20}{subsubsection.5.4.1}%
+\contentsline {section}{\numberline {6}Conclusion}{25}{section.6}%
