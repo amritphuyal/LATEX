@@ -1,0 +1,455 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{color}
+
+\input{./AnsENV.tex} %% Answer environment 
+\input{./QueENV.tex} %% Question Environment 
+\input{./CoverPage.tex} %%% cover page
+%%\include{./Matlab.tex} %%% Matlab code
+
+
+
+\include{./Figure.tex} % include figures fo filter design LAB 3
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% for Proteus circuit  observation   supply Figure scale(1) for observation, number(2) like "a,b,c,d..", gain (3), half power freq (4),
+\newcommand{\Porcirobs}[4]{
+    %\subsubsection{Proteus Observation Figure #2}
+    \begin{figure}[H] %%%%%%%%%%%proteus circuit
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/P_cir_fig#2.PDF}
+        \caption{Proteus Circuit Figure #2}
+    \end{figure}
+
+
+
+    \begin{figure}[H]  %%%%%%%%%proteus plot and observation
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/plot_Fig#2.pdf}
+        \begin{tabular}[H]{| m{12em}| m{20em}|}
+            \hline
+            \rowcolor[rgb]{0.569,0.647,0.947} \textbf{Highest Gain } & \textbf{Half power frequency} \\ \hline
+            #3 dB         & (#4) KHz     \\  \hline
+        \end{tabular}
+        \caption{Proteus Observation Figure #2}
+    \end{figure}
+}
+
+ %%%%%%%%%%% observation at different input frequency
+\newcommand{\obsh}[1]{
+ \begin{figure}[H]%%100Hz
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/100#1.pdf}
+    \caption{Output signal for input square wave of 100Hz}
+\end{figure}
+}
+
+\newcommand{\obss}[1]{
+\begin{figure}[H]%%1.6kHz
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/16#1.pdf}
+    \caption{Output signal for input square wave of 1.6kHz}
+\end{figure}
+}
+
+\newcommand{\obst}[1]{
+\begin{figure}[H]%%3.2kHz
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/32#1.pdf}
+    \caption{Output signal for input square wave of 3.2kHz}
+\end{figure}
+}
+
+\newcommand{\obsf}[1]{
+\begin{figure}[H]%%5kHz
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/5#1.pdf}
+    \caption{Output signal for input square wave of 5kHz}
+\end{figure}
+}
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Filter Design}{Lab \#3}{COMPARISON OF MAGNITUDE \vfill \& PHASE RESPONSE OF DIFFERENT  \vfill FILTERS}
+{SHARAD KUMAR GHIMIRE}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+%\pagebreak
+%\listoffigures
+% \pagebreak
+% \listoftables
+\vspace{5em}
+%\lstlistoflistings
+\pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large COMPARISON OF MAGNITUDE \& PHASE RESPONSE OF
+  DIFFERENT FILTERS}
+
+
+% Objectives
+\section{Objective}
+\begin{itemize}
+    \item To design Butterworth, Chebyshev and Bessel filters
+    \item To observe and compare the magnitude and phase response of different filters
+\end{itemize}
+
+%Requirement
+\section{Requirement}
+
+\subsection{Proteus Design Suite}
+
+Proteus is a simulation and design software tool developed by Labcenter Electronics for Electrical
+and Electronic circuit design.It is used to create schematic  of a circuit and
+Visualization of its operation.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%Theory
+
+\section{Theory}
+
+%%%Butterworth Filter
+\subsection{Butterworth Filter}
+Butterworth Filter is signal processing filter designed in such a way that the passband has flat frequency response and roll-offs towards zero in  stopband.Frequency response of Butterworth filter  having halfpower frequency $(\omega)$ is given by
+
+\begin{equation*}
+    |H(w)| = \frac{1}{\sqrt{1+(\frac{w}{w_0})^{2n}}}
+\end{equation*}
+
+Here, n is order of Butterworth Filter.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{./FIG/butterworth .pdf}
+    \caption{Frequency response off Butterworth filter for various order}
+\end{figure}
+
+
+%%%Chebyshev Filter
+\subsection{Chebyshev Filter}
+Chebyshev Filter is signal processing filter designed in such a way that transition band has steeper frequency response than Butterworth filter.There are two types of Chebyshev filters. Type I (Chebyshev) has ripple only in Passband and Type II (Inverse Chebyshev) has ripple only in Stopband. For Chebyshev Filter  of order n, the frequency response is given by:
+
+%%transfer function of chebyshev filter
+\begin{equation*}
+    {|T(jw)|}^2 = \frac{1}{1+{\epsilon}^{2}{C}_n^2(w)}
+\end{equation*}
+{where} $C_n(w)$ is the Chebyshev polynomial of order n.
+
+\begin{equation*}
+    C_n(\omega)= \begin{cases}
+        \cos(n\cos^{-1}\omega),\quad\quad 0\leq\omega\leq 1 \\
+        \cosh(n\cosh^{-1}\omega),\quad\quad \omega\geq 1
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/chebyshev I.png}
+    \caption{Frequency response of Chebyshev I filter}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/chebyshev II.png}
+    \caption{Frequency response of Chebyshev II (Inverse) filter}
+\end{figure}
+
+
+%%%Bessel Filter
+\subsection{Bessel Filter}
+Bessel Filter is signal processing filter designed to provide a constant group delay in passband thus preserving the wave shape and generally used in audio crossover system. It's frequency response is given by:
+
+%frequency response of bessel filter
+\begin{equation*}
+    T_n(s)=\frac{\theta_n(0)}{\theta_n(s/w_0)}
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{./FIG/bessel.jpg}
+    \caption{Frequency response of Bessel filter}
+\end{figure}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+%%Exercises
+
+\section{Exercises:}
+
+%Question 1
+
+\begin{Q}
+    {
+        The circuit given in figure 1 below is a Butterworth low-pass filter having half power frequency of
+        1 rad/sec. From this circuit design a lowpass filter having half power frequency of 10000 rad/sec
+        and practically realizable elements. Realize the circuit, observe and plot the magnitude as well as
+        phase response. Also show the highest gain in dB and half power frequency in your plot.\newline
+        Observe the output in the oscilloscope when a square wave of 100 Hz is applied at input. Observe the output by increasing frequency upto 5 KHz. Comment on the result.\newline
+        Typically note down the output when the square wave around 1.6 KHz is applied at input.
+    }
+\end{Q}
+
+
+\TheCkt{Third order Butterworth Filter at half power frequency ($\omega_0$ = 1 rad/sec) }{bfilter}{\Res{1}}{\Ind{1}}{\Cap{2}}{\Ind{1}}{\Res{1}}
+
+Given,
+
+Half power frequency of normalized filter ($\omega_0$) = 1 rad/sec
+
+Required half power frequency ($\omega$)= 10000 rad/sec
+
+
+\begin{equation*}
+    k_f= \frac{(\omega)}{(\omega_0)} = \frac{10000}{1} = 10000
+\end{equation*}
+
+To make filter practically realizable we consider Impedance scaling $K_m$ be 500
+
+\begin{align*}
+    R_{new}         & =K_m.R_{old}=500 *1=  500 \Omega                                \\
+    \rightarrow R_1 & =R_2=500 \Omega                                                 \\\\
+    L_{new}         & =\frac{K_m}{K_f}L_{old}=\frac{500}{10000}*1=\SI {0.05} {\henry} \\
+    \rightarrow L_1 & =L_2=\SI {0.05} {\henry}=\SI {50} {\milli\henry}                \\\\
+    C_{new}         & =\frac{1}{K_m.K_f}C_{old}=\frac{1}{500*10000}*2=4*10^{-7} F     \\
+    \rightarrow C   & =4*10^{-7}F=\SI{0.4}{\micro \farad}                             \\
+\end{align*}
+
+\TheCkt{Butterworth Filter at half power frequency ($\omega_0$ = 10000 rad/sec) }{bfilter1}{\Res{500}}{\Indm{50}}{\Capu{0.4}}{\Indm{50}}{\Res{500}}
+
+
+\Porcirobs{0.85}{a}{-6.02}{1.589}% Proteus Circuit observation Figure + table  aaaaa
+
+No ripple is seen in Passband and transtion is gradual till stopband.
+
+
+
+\obsh{a}
+\obss{a}
+\obst{a}
+\obsf{a}
+
+In above observation , in 100 Hz spikes is seen near the edges . As the frequency increases and reached 1.6kHz sine wave is seen in the middle.From 3.2 khz to 5.0 khz , the output is  getting smother.
+
+%Question 2
+
+\begin{Q}
+    {
+        The circuit given in figure 2 below is a low-pass Chebyshev filter having passband frequency of 1
+        rad/sec and attenuation of 1dB. From this circuit design a lowpass filter having passband
+        frequency of 10000 rad/sec and practically realizable elements. Realize the circuit, observe and
+        plot the magnitude as well as phase response. Also show the highest gain in dB and half power
+        frequency in your plot. Note down the ripple within the entire passband.\newline
+        Observe the output in oscilloscope when square wave of 100 Hz is applied at input. Observe the
+        output by increasing frequency upto 5 KHz. Comment on the result.\newline
+        Typically note down the output when square wave around 1.6 KHz is applied at input.
+    }
+\end{Q}
+
+
+\TheCkt{Chebyshev having passband frequency of 1 rad/sec and 1 dB ripple}{Cfilter}{\Res{1}}{\Ind{2.0236}}{\Cap{0.9941}}{\Ind{2.0236}}{\Res{1}}
+
+Given,
+
+Half power frequency of normalized filter ($\omega_0$) = 1 rad/sec
+
+Required half power frequency ($\omega$)= 10000 rad/sec
+
+
+\begin{equation*}
+    k_f= \frac{(\omega)}{(\omega_0)} = \frac{10000}{1} = 10000
+\end{equation*}
+
+To make filter practically realizable we consider Impedance scaling $K_m$ be 500
+
+\begin{align*}
+    R_{new}         & =K_m.R_{old}=500 *1=  500 \Omega                                        \\
+    \rightarrow R_1 & =R_2=500 \Omega                                                         \\\\
+    L_{new}         & =\frac{K_m}{K_f}L_{old}=\frac{500}{10000}*2.0236=\SI {0.10118} {\henry} \\
+    \rightarrow L_1 & =L_2=\SI {0.10118} {\henry}=\SI {101.18} {\milli\henry}                 \\\\
+    C_{new}         & =\frac{1}{K_m.K_f}C_{old}=\frac{1}{500*10000}*0.9941=1.9882*10^{-7} F   \\
+    \rightarrow C   & =1.9882*10^{-7} F=\SI{0.19882}{\micro \farad}                           \\
+\end{align*}
+
+\TheCkt{Chebyshev having passband frequency of 1000 rad/sec and 1 dB ripple }{cfilter1}{\Res{500}}{\Indm{101.18}}{\Capu{0.19882}}{\Indm{101.18}}{\Res{500}}
+
+\Porcirobs{0.85}{b}{-6.02}{1.718}% Proteus Circuit observation Figure + table  bbbbbbb
+
+
+Lowest ripple = -7.02 dB thus ripple in the passband = 1 dB
+
+\obsh{b}
+\obss{b}
+\obst{b}
+\obsf{b}
+
+In above observation , in 100 Hz spikes is seen near the edges . As the frequency increases and reached 1.6kHz sine wave is seen in the middle.From 3.2 khz to 5.0 khz , the output is  getting smother.
+
+%Queston 3
+\begin{Q}
+    {
+        Let us modify the elements as shown in figure 3 below to have the Chebyshev lowpass filter with
+        3 dB ripple. From this circuit design a lowpass filter having passband frequency of 10000 rad/sec
+        and practically realizable elements. Realize the circuit, observe and plot the magnitude as well as
+        phase response. Also show the highest gain in dB and half power frequency in your plot. Note down the ripple within the entire passband. Compare the response with that of problem B.
+    }
+\end{Q}
+
+
+\TheCkt{Chebyshev having passband frequency of 1 rad/sec and 3dB ripple}{Cfilter2}{\Res{1}}{\Ind{3.3487}}{\Cap{0.7117}}{\Ind{3.3487}}{\Res{1}}
+
+Given,
+
+Half power frequency of normalized filter ($\omega_0$) = 1 rad/sec
+
+Required half power frequency ($\omega$)= 10000 rad/sec
+
+
+\begin{equation*}
+    k_f= \frac{(\omega)}{(\omega_0)} = \frac{10000}{1} = 10000
+\end{equation*}
+
+To make filter practically realizable we consider Impedance scaling $K_m$ be 500
+
+\begin{align*}
+    R_{new}         & =K_m.R_{old}=500 *1= 500 \Omega                                          \\
+    \rightarrow R_1 & =R_2=500 \Omega                                                          \\\\
+    L_{new}         & =\frac{K_m}{K_f}L_{old}=\frac{500}{10000}*3.3487=\SI {0.167435} {\henry} \\
+    \rightarrow L_1 & =L_2=\SI {0.167435} {\henry}=\SI {167.435} {\milli\henry}                \\\\
+    C_{new}         & =\frac{1}{K_m.K_f}C_{old}=\frac{1}{500*10000}*0.7117=1.4234*10^{-7} F    \\
+    \rightarrow C   & =1.4234*10^{-7} F=\SI{0.14234}{\micro \farad}                            \\
+\end{align*}
+
+
+\TheCkt{Chebyshev having passband frequency of 1000 rad/sec and 3 dB ripple }{cfilter1}{\Res{500}}{\Indm{167.435}}{\Capu{0.14234}}{\Indm{167.435}}{\Res{500}}
+
+\Porcirobs{0.85}{c}{-6.02}{1.592}% Proteus Circuit observation Figure + table  ccccccc
+
+Lowest ripple= -9.02 dB thus ripple in pass band is 3 dB.
+
+Compared to Problem 2 sharper transition is seen in Problem 3.
+
+
+%Question 4
+\begin{Q}
+    {
+        The circuit given in figure 4 below is a low-pass Bessel filter with normalized frequency. From
+        this circuit design a lowpass filter for the frequency of 10000 rad/sec. All the elements of your
+        final design should be practically realizable. Realize the circuit, observe and plot the magnitude as
+        well as phase response. Also show the highest gain in dB and half power frequency in your plot.\newline
+        Observe the output in oscilloscope when square wave of 100 Hz is applied at input. Observe the
+        output by increasing frequency upto 5 KHz. Comment on the result.\newline
+        Typically note down the output when the square wave around 1.6 KHz is applied at input.
+    }
+\end{Q}
+
+
+\TheCkt{Bessel filter at normalized frequency of 1 rad/sec}{Bfilter}{\Res{1}}{\Ind{0.337421}}{\Cap{0.970512}}{\Ind{2.203411}}{\Res{1}}
+
+Given,
+
+Half power frequency of normalized filter ($\omega_0$) = 1 rad/sec
+
+Required half power frequency ($\omega$)= 10000 rad/sec
+
+
+\begin{equation*}
+    k_f= \frac{(\omega)}{(\omega_0)} = \frac{10000}{1} = 10000
+\end{equation*}
+
+To make filter practically realizable we consider Impedance scaling $K_m$ be 500
+
+\begin{align*}
+    R_{new}         & =K_m.R_{old}=500 *1= 500 \Omega                                                      \\
+    \rightarrow R_1 & =R_2=500 \Omega                                                                      \\\\
+    L_{new}         & =\frac{K_m}{K_f}L_{old}                                                              \\
+    \rightarrow L_1 & =\frac{500}{10000}*0.337421=\SI {0.01687105} {\henry}=\SI {16.87105} {\milli\henry}  \\
+    \rightarrow L_2 & =\frac{500}{10000}*2.203411=\SI {0.11017055} {\henry}=\SI {110.17055} {\milli\henry} \\\\
+    C_{new}         & =\frac{1}{K_m.K_f}C_{old}=\frac{1}{500*10000}*0.970512=1.941024*10^{-7} F            \\
+    \rightarrow C   & =1.941024*10^{-7} F=\SI{0.1941024}{\micro \farad}                                    \\
+\end{align*}
+
+
+\TheCkt{Bessel filter at normalized frequency of 1000 rad/sec }{bfilter1}{\Res{500}}{\Indm{16.87105}}{\Capu{0.1941024}}{\Indm{110.17055}}{\Res{500}}
+
+\Porcirobs{0.85}{d}{-6.02}{1.589}% Proteus Circuit observation Figure + table  dddddd
+
+\obsh{d}
+\obss{d}
+\obst{d}
+\obsf{d}
+
+In above observation , in 100 Hz spikes is seen near the edges . As the frequency increases and reached 1.6kHz sine wave is seen in the middle.From 3.2 khz to 5.0 khz , the output is  getting smother.
+
+%Conclusion
+
+\section{Discussion \& Conclusion}
+In this Lab  we did comparison of magnitude \& phase response different Filter Networks. We used  Proteus  design suite to design and plot frequency response for the circuit. We studied and design practically realizable Butterworth, Chebyshev and bessel filters.
+
+\end {document}

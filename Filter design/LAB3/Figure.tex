@@ -1,0 +1,59 @@
+%%%%%%%Circuit for Lab 3
+\usepackage{tikz}
+\usepackage{circuitikz}
+\def\Res #1{
+    \SI{#1}{\ohm}
+}
+
+\def\Resk #1{
+    \SI{#1}{\kilo\ohm}
+}
+
+\def\Cap #1{
+    \SI{#1}{\farad}
+}
+
+\def\Capu #1{
+    \SI{#1}{\micro\farad}
+}
+\def\Capn #1{
+    \SI{#1}{\nano\farad}
+}
+\def\Capp #1{
+    \SI{#1}{\pico\farad}
+}
+\def\Ind #1{
+    \SI{#1}{\henry}
+}
+\def\Indm #1{
+    \SI{#1}{\milli\henry}
+}
+
+\def\Freq #1{
+    \SI{#1}{\hertz}
+}
+\def\Freqk #1{
+    \SI{#1}{\kilo\hertz}
+}
+
+\def\TheCkt #1#2#3#4#5#6#7{
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}[american]
+            \draw
+            (0,4) to [resistor, l^=${R_1=}${#3}] (4,4)
+            to [inductor,l^=${L_1=}${#4}] (8,4)
+            to [capacitor, l_=${C=}${#5},*-*] (8,0)
+            to [short] (0,0)
+
+            (8,4) to [inductor,l^=${L_2=}${#6}] (12,4)
+            to [resistor,l_=${R_2=}${#7}] (12,0)
+            to [short] (3,0)
+
+            (0,4) to [esource, v_=$V_1$] (0,0)
+            (13.5,4) to [open, v>=$V_2$] (13.5,0);
+        \end{circuitikz}
+        \caption{#1}
+        \label{fig:#2}
+    \end{figure}
+}

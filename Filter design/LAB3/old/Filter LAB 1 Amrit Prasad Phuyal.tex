@@ -1,0 +1,462 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+\input{./AnsENV.tex} %% Answer environment 
+\input{./QueENV.tex} %% Question Environment 
+\input{./CoverPage.tex} %%% cover page
+\include{./Matlab.tex} %%% Matlab code
+
+
+
+\include{./Figure.tex} % include figures fo filter design LAB 1
+
+%%%%%%%%%%%%%%%%%%%%%% for matlab observation   supply Figure scale(1), number(2) like "a,b,c,d..", gain (3), half power freq (4), bandwidth(5)
+\newcommand{\mobs}[5]{
+   % \subsubsection{MATLAB Observation Figure #2}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/Matlab/bode_Fig#2.pdf}
+        \begin{tabular}[H]{| m{12em}| m{20em}|m{8em}|}
+            \hline
+            \rowcolor[rgb]{0.569,0.647,0.947} \textbf{Gain in passband} & \textbf{Half power frequency / frequencies} & \textbf{Bandwidth} \\ \hline
+            #3 dB                                                       & (#4) KHz                                    & #5 KHz             \\  \hline
+        \end{tabular}
+        \caption{MATLAB Observation Figure #2}
+    \end{figure}
+   
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% for Proteus circuit  observation   supply Figure scale(1) for observation, number(2) like "a,b,c,d..", gain (3), half power freq (4), bandwidth(5)
+\newcommand{\Porcirobs}[5]{
+    %\subsubsection{Proteus Observation Figure #2}
+    \begin{figure}[H] %%%%%%%%%%%proteus circuit
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/Proteus/P_cir_fig#2.PDF}
+        \caption{Proteus Circuit Figure #2}
+    \end{figure}
+
+
+    \begin{figure}[H]  %%%%%%%%%proteus plot and observation
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/Proteus/plot_Fig#2.png}
+        \begin{tabular}[H]{| m{12em}| m{20em}|m{8em}|}
+            \hline
+            \rowcolor[rgb]{0.569,0.647,0.947} \textbf{Gain in passband} & \textbf{Half power frequency / frequencies} & \textbf{Bandwidth} \\ \hline
+            #3 dB                                                       & (#4) KHz                                    & #5 KHz             \\  \hline
+        \end{tabular}
+        \caption{Proteus Observation Figure #2}
+    \end{figure}
+   
+}
+
+
+%%%%%%%%%%  varyingg Figure
+
+\newcommand{\varfig}[2]
+{
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{./FIG/Matlab/fig_#1_#2.pdf}
+    \caption{Observation for varying #2 in Figure #1}
+\end{figure}
+}
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Filter Design}{Lab \#1}{ANALYSIS OF FILTER NETWORKS}
+{SHARAD KUMAR GHIMIRE}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+%\pagebreak
+%\listoffigures
+% \pagebreak
+% \listoftables
+\vspace{5em}
+\lstlistoflistings
+\pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large ANALYSIS OF FILTER NETWORKS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+\begin{itemize}
+    \item To analyze the given Filter Networks.
+
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+\section{Requirement}
+
+\subsection{MATLAB}
+
+MATLAB stands for MATrix LABoratory. It is used to analyze and design systems and products.  Its built-in visuals make data visualization and analysis a breeze. Toolboxes are a type of application-specific solution available in MATLAB. Toolboxes are essential for most MATLAB users since they allow you to understand and use specific technologies.
+
+\subsection{Proteus Design Suite}
+
+Proteus is a simulation and design software tool developed by Labcenter Electronics for Electrical
+and Electronic circuit design.It is used to create schematic  of a circuit and Visualization of its operation.
+
+%%%%%%%%%%%%%%%%%%%
+
+\section{Procedure}
+
+With the help of MATLAB we plotted derived transfer function and using Proteus Design suite we simulate and plot the frequency response of the given circuit. Then we compared the two observation and also observed the effects of varying network components.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+
+\section{Exercises:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%1111111111111111111111111111111111111111
+
+\begin{Q}
+    {
+        Derive the transfer function of each of the network and determine the nature of filter network; (i.e. whether it is lowpass, highpass, bandpass or bandstop) .
+    }
+\end{Q}
+
+%%%%%%%%%%%%% 1A 1A 1A 1A 1A 1A 1A 1A 1A
+\subsubsection{TF Derivation of Figure a}
+\begin{figure}[H]
+    \centering
+    \figa \figas
+    \caption{TF Derivation of Figure a}
+\end{figure}
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        V_2(s)                & =\frac{V_1(s).\frac{1}{sC}}{R+\frac{1}{sC}} \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{\frac{1}{sC}}{R+\frac{1}{sC}}        \\
+        H(s)                  & =\frac{1}{sRC+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{Low pass filter} as for lower frequency capacitor restricts currents flow through it because of high reactance, so voltage at $V_1$ is replicated $V_2$, but for higher frequency currents flows through capacitor due to low reactance, hence restricting the high frequency signal from $V_1$ to reach $V_2$.
+
+
+%%%%%%%%%%%%% 1B 1B 1B 1B 1B 1B 1B 1B 1B 1B 1B
+\subsubsection{TF Derivation of Figure b}
+\begin{figure}[H]
+    \centering
+    \figb \figbs
+    \caption{TF Derivation of Figure b}
+\end{figure}
+
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        V_2(s)                & =\frac{V_1(s).R}{R+\frac{1}{sC}} \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{sRC}{sRC+1}               \\
+        H(s)                  & =\frac{sRC}{sRC+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{High pass filter} as Capacitor allows higher frequency signal to pass through it, as it reduces the reactance, but blocks the low frequency signal because of high reactance.
+
+
+%%%%%%%%%%%%% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C% 1C
+\subsubsection{TF Derivation of Figure c}
+\begin{figure}[H]
+    \centering
+    \figc \figcs
+    \caption{TF Derivation of Figure c}
+\end{figure}
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        V_2(s)                & =\frac{V_1(s).R}{R+\frac{1}{sC}+sL} \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{sRC}{s^2LC+sRC+1}            \\
+        H(s)                  & =\frac{sRC}{s^2LC+sRC+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{Band pass filter} as only limited range of frequency (Resonant frequency) is allowed. For other frequencies , due to high reactance of Inductor  at high frequency and Capacitor at low frequency,  is blocked.
+
+
+
+%%%%%%%%%%%%% 1D  1D 1D 1D 1D 1D 1D 1D 1D 1D 1D 1D 1D
+\subsubsection{TF Derivation of Figure d}
+\begin{figure}[H]
+    \centering
+    \figd \figds
+    \caption{TF Derivation of Figure d}
+\end{figure}
+
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        V_2(s)                & =\frac{V_1(s)\left(sL+\frac{1}{sC}\right)}{R+\frac{1}{sC}+sL} \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{s^2LC+1}{sC\left(R+\frac{1}{sC}+sL\right)}             \\
+        H(s)                  & =\frac{s^2LC+1}{s^2LC+sRC+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{Band stop filter} as it passes all other frequencies except the frequency in the resonant frequency range.
+
+
+%%%%%%%%%%%%%  1E 1E 1E 1E 1E 1E 1E 1E 1E 1E 1E
+\subsubsection{TF Derivation of Figure e}
+\begin{figure}[H]
+    \centering
+    \fige \figes
+    \caption{TF Derivation of Figure e}
+\end{figure}
+
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        V_2(s)                & =\frac{V_1(s)\left(\frac{1}{sC}\right)}{R+\frac{1}{sC}+sL} \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{1}{sC\left(R+\frac{1}{sC}+sL\right)}                \\
+        H(s)                  & =\frac{1}{s^2LC+sRC+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{Low pass filter} as for lower frequency inductor allows flow of current and  capacitor restricts currents flow through it because of high reactance  so voltage at $V_1$ is replicated at $V_2$, but for higher frequency currents flows through capacitor due to low reactance, restricting the high frequency signal from $V_1$ to reach $V_2$.
+
+%%%%%%%%%%%%% 1F  1F 1F 1F 1F 1F 1F 1F 1F 1F 1F
+\subsubsection{TF Derivation of Figure f}
+\begin{figure}[H]
+    \centering
+    \figf \figfs
+    \caption{TF Derivation of Figure f}
+\end{figure}
+
+
+Using voltage divider rule,
+\begin{equation*}
+    \begin{aligned}
+        i_3                                  & =i_4                             \\
+        \frac{V_a(s)-V_2(s)}{\frac{1}{sC_2}} & =\frac{V_2(s)}{R_2}              \\
+        sR_2C_2V_a(s)                        & =V_2(s)(sR_2C_2+1)               \\
+        V_a(s)                               & =V_2(s)\frac{sR_2C_2+1}{sR_2C_2}
+    \end{aligned}
+\end{equation*}
+
+
+\begin{equation*}
+    \begin{aligned}
+        i_1=i_2+i_3 \Rightarrow \frac{V_1(s)-V_a(s)}{R_1} & =\frac{V_a(s)}{\frac{1}{sC_1}}+\frac{V_a(s)-V_2(s)}{\frac{1}{sC_2}} \\
+        V_1(s)-V_a(s)                                     & =sR_1C_1V_a(s)+sR_1C_2V_a(s)-sR_1C_2V_2(s)                          \\
+        V_1(s)                                            & =V_a(s)(sR_1C_1+sR_1C_2+1)-sR_1C_2V_2(s)
+    \end{aligned}
+\end{equation*}
+
+Substituting value of $V_a(s)$,we get,
+
+\begin{equation*}
+    \begin{aligned}
+        V_1(s)                & =V_2(s)\frac{sR_2C_2+1}{sR_2C_2}(sR_1C_1+sR_1C_2+1)-sR_1C_2V_2(s)   \\
+        sR_2C_2V_1(s)         & =V_2(s)(s^2R_1R_2C_1C_2+s^2R_1R_2{C_2}^2+sR_2C_2+sR_1C_1+sR_1C_2+1) \\
+                              & \quad \quad -s^2R_1R_2{C_2}^2V_2(s)                                 \\
+        \frac{V_2(s)}{V_1(s)} & =\frac{sR_2C_2}{s^2R_1R_2C_1C_2+sR_1C_1+sR_1C_2+sR_2C_2+1}          \\
+        H(s)                  & =\frac{sR_2C_2}{s^2R_1R_2C_1C_2+s(R_1C_1+R_1C_2+R_2C_2)+1}
+    \end{aligned}
+\end{equation*}
+
+The given circuit is \textbf{Band pass filter} as the  circuit of Low pass and High Pass is combined as one. The low frequency signals from $V_1$ is allowed by Low pass circuit but is blocked by High pass. For high frequency signal Low pass circuit will block it.Thus only limited frequency colud pass through it.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%22222222222222222222222
+\begin{Q}
+    {
+        Plot the magnitude and phase response of each network from the derived transfer function (using MATLAB or any tool) and note down the followings:
+        \begin{itemize}
+            \item Gain in passband
+            \item Half power frequency/frequencies
+            \item Bandwidth\\\\
+                  Choose the element values as followings:
+                  R = 1\si{\kilo\ohm}  , L = 1 \si{\milli\henry} ,
+                  C = 0.1\si{\micro\farad} ,
+                  R1 = 1 \si{\kilo\ohm} ,
+                  C1 = 0.01\si{\micro\farad} ,
+                  R2 = 10\si{\kilo\ohm} ,
+                  C2 = 0.1\si{\micro\farad}.
+        \end{itemize}}
+\end{Q}
+
+\subsubsection{MATLAB Codes}
+\MAT{./CODES/bode_func.txt}{MATLAB Function for Bode Plot}
+\MAT{./CODES/figa.txt}{MATLAB code to Bode Plot for Figure a}
+\MAT{./CODES/figb.txt}{MATLAB code to Bode Plot for Figure b}
+\MAT{./CODES/figc.txt}{MATLAB code to Bode Plot for Figure c}
+\MAT{./CODES/figd.txt}{MATLAB code to Bode Plot for Figure d}
+\MAT{./CODES/fige.txt}{MATLAB code to Bode Plot for Figure e}
+\MAT{./CODES/figf.txt}{MATLAB code to Bode Plot for Figure f}
+
+
+\subsubsection{MATLAB Observations}
+
+\mobs{0.85}{a}{0}{1.59}{1.59}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  aaaaaaaaa
+\mobs{0.85}{b}{0}{1.59}{1.59}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  bbbbbbbbbb
+\mobs{0.85}{c}{0}{1.58 \& 160}{158.42}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  cccccccccc
+\mobs{0.85}{d}{0}{1.57 \& 161}{159.43}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  ddddddddd
+\mobs{0.85}{e}{0}{1.6}{1.6}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  eeeeeee
+\mobs{0.85}{f}{-0.907}{0.18 \& 14.1}{13.92}%%%%%%%%%%%%%%%%% Matlab observation Figure + table  fffffffffff
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%333333333333333333333333333
+\begin{Q}
+    {
+        Observe the magnitude response of given filter networks by realizing the circuit using circuit simulation tools and note down the followings:
+        \begin{itemize}
+            \item Gain in passband
+            \item Half power frequency/frequencies
+            \item Bandwidth
+        \end{itemize}
+        Compare the result obtained in \textbf{activity 2}.\\\\
+        Choose the element values as followings:
+        R = 1\si{\kilo\ohm}  , L = 1 \si{\milli\henry} ,
+        C = 0.1\si{\micro\farad} ,
+        R1 = 1 \si{\kilo\ohm} ,
+        C1 = 0.01\si{\micro\farad} ,
+        R2 = 10\si{\kilo\ohm} ,
+        C2 = 0.1\si{\micro\farad}.
+    }
+\end{Q}
+
+\subsubsection{Proteus Observations}
+
+The result obtained in both MATLAB and Proteus observations are almost similar.
+
+\Porcirobs{0.85}{a}{0}{1.59}{1.59}%%%%%%%%%%%%%%%%% Proteus Circuit observation Figure + table  aaaaaaaaa
+\Porcirobs{0.85}{b}{0}{1.60}{1.60}%%%%%%%%%%%%%%%%% Proteus Circuit observation Figure + table  bbbbbbbbbb
+\Porcirobs{0.85}{c}{0}{1.58 \& 160}{158.42}%%%%%%%%%%%%%%%%% Proteus Circuit observation Figure + table  cccccccccc
+\Porcirobs{0.85}{d}{0}{1.57 \& 161}{159.43}%%%%%%%%%%%%%%%%% Proteus Circuit observation Figure + table  ddddddddd
+\Porcirobs{0.85}{e}{0}{1.6}{1.6}%%%%%%%%%%%%%%%%% Proteus Circuit observation Figure + table  eeeeeee
+\Porcirobs{0.85}{f}{-0.907}{0.18 \& 14.1}{13.92}%%%%%%%%%%%%% Proteus Circuit observation Figure + table  ffffffff
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%44444444444444444444444444
+\begin{Q}
+    {
+        Observe the effect in magnitude response of above networks by changing the element values as:
+        \begin{itemize}
+            \item When resistance is increased or decreased
+            \item When inductance is increased or decreased
+            \item When capacitance is increased or decreased
+        \end{itemize}
+        Comment on your results for each of the given filter network.
+    }
+\end{Q}
+
+
+\subsubsection{Observation with varying component values}
+Value of each component is varied to 25 and 75 percentage of original value  in both increasing and decreasing direction.
+
+\varfig{a}{R}
+\varfig{a}{C}
+
+It is clear from the above plots that for decrease (25\%  \& 75\%) in value of resistance and capacitor in \textbf{figure a} has increased the half power frequency as well as bandwidth whereas for increase (25\% \& 75\%)  in value of resistance and capacitor both terms has decreased.Gain fot this \textbf{Low pass filter} remain constant i.e. zero  throughout the variation.
+
+\varfig{b}{R}
+\varfig{b}{C}
+
+It is clear from the above plots that for decrease (25\%  \& 75\%) in value of resistance and capacitor in \textbf{figure b} has increased the half power frequency as well as bandwidth whereas for increase (25\% \& 75\%)  in value of resistance and capacitor both terms has decreased.Gain fot this \textbf{High pass filter} remain constant i.e. zero  throughout the variation.
+
+\varfig{c}{R}
+
+For decreasing values of Resistance, the first half power frequency has increased  but decreased the second half power frequency resulting in decreasing Bandwidth similarly, for increasing values of R the Bandwidth is also increasing.The gain remains constant i.e. zero  throughout the variation.
+
+\varfig{c}{L}
+
+For decreasing values of Inductance , the bandwidth is increasing as  second half power frequency keep on increasing but for increasing values ,the bandwidth is decreasing.The gain remains constant i.e. zero  throughout the variation.
+
+
+\varfig{c}{C}
+For decreasing values of Capacitance , the bandwidth is decreasing as first half power frequency keep on increasing , similarly for increasing values ,the bandwidth is increasing.The gain remains constant i.e. zero  throughout the variation.
+
+\varfig{d}{R}
+\varfig{d}{L}
+\varfig{d}{C}
+
+This \textbf{Band stop filter}  shows identical relationship  as in above \textbf{Band pass filter}.\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+For \textbf{figure e} i.e. \textbf{Low pass filter} variation in Resistance and Capacitance shows similar relation as shown by \textbf{Low pass filter} or \textbf{figure a} . For variation  in Inductance  almost no change is observed .\\
+
+For \textbf{figure f} i.e. \textbf{Band pass filter} decrease in Resistance $R_1$ increase bandwidth but increasing it decreases the bandwidth, Similar result is obtained for capacitor $C_1$ and opposite result with $R_1$. For $C_2$ remain almost unchanged.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+In this Lab  we did Analysis of Filter Networks. We used MATLAB and Proteus  design suite to plot Transfer function  and design and plot frequency response for the circuit and also compared their observation. We also observe the effect of varying network component like resistor, capacitor and inductor in Gain, Half power frequency and Bandwidth.
+
+\end {document}

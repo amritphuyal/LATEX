@@ -1,0 +1,33 @@
+\babel@toc {english}{}
+\contentsline {figure}{\numberline {1}{\ignorespaces Frequency response off Butterworth filter for various order}}{1}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Frequency response of Chebyshev I filter}}{2}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Frequency response of Chebyshev II (Inverse) filter}}{3}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Frequency response of Bessel filter}}{3}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Third order Butterworth Filter at half power frequency ($\omega _0$ = 1 rad/sec) }}{4}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Butterworth Filter at half power frequency ($\omega _0$ = 10000 rad/sec) }}{5}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Proteus Circuit Figure a}}{5}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Proteus Observation Figure a}}{6}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Output signal for input square wave of 100Hz}}{6}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Output signal for input square wave of 1.6kHz}}{7}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Output signal for input square wave of 3.2kHz}}{7}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Output signal for input square wave of 5kHz}}{8}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Chebyshev having passband frequency of 1 rad/sec and 1 dB ripple}}{8}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Chebyshev having passband frequency of 1000 rad/sec and 1 dB ripple }}{9}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Proteus Circuit Figure b}}{9}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Proteus Observation Figure b}}{10}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Output signal for input square wave of 100Hz}}{10}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Output signal for input square wave of 1.6kHz}}{11}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Output signal for input square wave of 3.2kHz}}{11}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Output signal for input square wave of 5kHz}}{12}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Chebyshev having passband frequency of 1 rad/sec and 3dB ripple}}{12}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Chebyshev having passband frequency of 1000 rad/sec and 3 dB ripple }}{13}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Proteus Circuit Figure c}}{13}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Proteus Observation Figure c}}{14}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Bessel filter at normalized frequency of 1 rad/sec}}{15}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Bessel filter at normalized frequency of 1000 rad/sec }}{15}{figure.26}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Proteus Circuit Figure d}}{16}{figure.27}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Proteus Observation Figure d}}{16}{figure.28}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Output signal for input square wave of 100Hz}}{17}{figure.29}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Output signal for input square wave of 1.6kHz}}{17}{figure.30}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Output signal for input square wave of 3.2kHz}}{18}{figure.31}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Output signal for input square wave of 5kHz}}{18}{figure.32}%
