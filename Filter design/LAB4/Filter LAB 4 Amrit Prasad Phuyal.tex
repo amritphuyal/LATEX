@@ -1,0 +1,605 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+ \usepackage{wrapfig}
+ \usepackage[utf8x]{inputenc}
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{color}
+
+\input{./AnsENV.tex} %% Answer environment 
+\input{./QueENV.tex} %% Question Environment 
+\input{./CoverPage.tex} %%% cover page
+%%\include{./Matlab.tex} %%% Matlab code
+\usepackage{tikz}
+\usepackage{circuitikz}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% for Proteus circuit  observation   supply Figure scale(1) for observation, number(2) like "a,b,c,d..", gain (3), half power freq (4),
+\newcommand{\Porcirobs}[4]{
+    %\subsubsection{Proteus Observation Figure #2}
+    \begin{figure}[H] %%%%%%%%%%%proteus circuit
+        \centering
+        \includegraphics[width=\linewidth]{./FIG/P_cir_fig#2.PDF}
+        \caption{Proteus Circuit Figure #2}
+    \end{figure}
+
+
+
+    \begin{figure}[H]  %%%%%%%%%proteus plot and observation
+        \centering
+        \includegraphics[width=#1\linewidth]{./FIG/plot_Fig#2.pdf}
+        \begin{tabular}[H]{| m{12em}| m{20em}|}
+            \hline
+            \rowcolor[rgb]{0.569,0.647,0.947} \textbf{Gain } & \textbf{Half power frequency} \\ \hline
+            #3 dB         & (#4) KHz     \\  \hline
+        \end{tabular}
+        \caption{Proteus Observation for #2}
+    \end{figure}
+}
+
+
+
+\newcommand{\figquestion}{
+    \begin{circuitikz}[american]
+        \draw
+    (0,0) node [op amp] (opamp1) {}
+    (4,-0.5) node [op amp] (opamp2) {}
+    (8,-1) node [op amp] (opamp3) {}
+  
+    (-4,0.5) node [left] {$V_1$} to [R, l=$R_3$, o-*] (opamp1.-) |- (-0.75,2.25) to[short,*-*] (-1.2,2.25)
+    (-0.75,3) to [R,l=$R_1$] (0.75,3) to (0.75, 1.5) to [C,l_=$C_1$] (-0.75, 1.5) to [short] (-0.75,3)
+    (0.75,2.25) to[short,*-] (1.2,2.25) -| (opamp1.out) to [R, *-*,l=$R_4$] (opamp2.-) |- (2.8, 1.5) to[C,l=$C_2$] (5.2, 1.5) -| (opamp2.out) to [R, *-*,l=$R_5$] (opamp3.-)|- (6.8, 1.5) to[R,l=$R_5$,-*] (9.2, 1.5) -| (opamp3.out) |- (9.2,4.5) to [R, l_=$R_2$] (-1.2,4.5) -| (opamp1.-)
+    
+    (opamp1.+) node[ground] {}
+    (opamp1.out) node[right,below] {$V_{01}$}
+    (opamp2.+) node[ground] {}
+    (opamp2.out) node[right,below] {$V_{02}$}
+    (opamp3.+) node[ground] {}
+
+    (9.8,-1) node [right] {$V_2$} to [short,o-*] (opamp3.out)
+           ;
+        \end{circuitikz}
+}
+
+
+\newcommand{\figbsap}{
+    \begin{circuitikz}[american]
+        \draw
+    (0,0) node [op amp] (opamp1) {}
+    (4,-0.5) node [op amp] (opamp2) {}
+    (8,-1) node [op amp] (opamp3) {}
+    (4,-6) node [op amp] (opamp4) {}
+    
+    (-4,0.5) node [left] {$V_1$} to [R, l=$R_3$, o-*] (opamp1.-) |- (-0.75,2.25) to[short,*-*] (-1.2,2.25)
+    (-0.75,3) to [R,l=$R_1$] (0.75,3) to (0.75, 1.5) to [C,l_=$C_1$] (-0.75, 1.5) to [short] (-0.75,3)
+    (0.75,2.25) to[short,*-] (1.2,2.25) -| (opamp1.out) to [R, *-*,l=$R_4$] (opamp2.-) |- (2.8, 1.5) to[C,l=$C_2$] (5.2, 1.5) -| (opamp2.out) to [R, *-*,l=$R_5$] (opamp3.-)|- (6.8, 1.5) to[R,l=$R_5$,-*] (9.2, 1.5) -| (opamp3.out) |- (9.2,4.5) to [R, l_=$R_2$] (-1.2,4.5) -| (opamp1.-)
+    (opamp1.+) node[ground] {}
+    (opamp1.out) node[inner sep=3pt,anchor=north west] {$V_{01}$}
+    (opamp2.+) node[ground] {}
+    (opamp2.out) node[below] {$V_{02}$}
+    (opamp3.+) node[ground] {}
+    (opamp4.+) node[ground] {}
+    (9.8,-1) node [right] {$V_2$} to [short,o-*] (opamp3.out)
+    (opamp1.out)|- (0,-1) to [short]
+    (0,-5) to [R, l=$R_6$] (2,-5) to [short] (2,-6)
+    to [R, l_=$R_6$] (0,-6)  to [short] (-3.5,-6) to [short,-*] (-3.5,0.5)
+    (2,-5.5) to [short,*-*] (opamp4.-) |- (3,-4.5) to [R,l=$R_6$] (5,-4.5)-| (opamp4.out) to [short,*-o] (6,-6) node [right] {$V_{2}'$}
+           ;
+        \end{circuitikz}
+}
+
+\newcommand{\fighp}{
+    \begin{circuitikz}[american]
+        \draw
+    (0,0) node [op amp] (opamp1) {}
+    (4,-0.5) node [op amp] (opamp2) {}
+    (8,-1) node [op amp] (opamp3) {}
+    (4,-6) node [op amp] (opamp4) {}
+    
+    (-4,0.5) node [left] {$V_1$} to [R, l=$R_3$, o-*] (opamp1.-) |- (-0.75,2.25) to[short,*-*] (-1.2,2.25)
+    (-0.75,3) to [R,l=$R_1$] (0.75,3) to (0.75, 1.5) to [C,l_=$C_1$] (-0.75, 1.5) to [short] (-0.75,3)
+    (0.75,2.25) to[short,*-] (1.2,2.25) -| (opamp1.out) to [R, *-*,l=$R_4$] (opamp2.-) |- (2.8, 1.5) to[C,l=$C_2$] (5.2, 1.5) -| (opamp2.out) to [R, *-*,l=$R_5$] (opamp3.-)|- (6.8, 1.5) to[R,l=$R_5$,-*] (9.2, 1.5) -| (opamp3.out) |- (9.2,4.5) to [R, l_=$R_2$] (-1.2,4.5) -| (opamp1.-)
+    (opamp1.+) node[ground] {}
+    (opamp1.out) node[inner sep=3pt,anchor=north west] {$V_{01}$}
+    (opamp2.+) node[ground] {}
+    (opamp2.out) node[below] {$V_{02}$}
+    (opamp3.+) node[ground] {}
+    (opamp4.+) node[ground] {}
+    (9.8,-1) node [right] {$V_2$} to [short,o-*] (opamp3.out)
+    (opamp1.out)|- (0,-1) to [short]
+    (0,-5) to [R, l=$R_6$] (2,-5) to [short] (2,-6)
+    to [R, l_=$R_6$] (0,-6)  to [short] (-3.5,-6) to [short,-*] (-3.5,0.5)
+    (2,-5.5) to [short,*-*] (opamp4.-) |- (3,-4.5) to [R,l=$R_6$] (5,-4.5)-| (opamp4.out) to [short,*-o] (6,-6) node [right] {$V_{2}'$}
+    (opamp3.out)|-(9.2,-3.5) to [short] (5,-3.5) to [R,l_=$R_6$] (3,-3.5) to [short] (2.8,-3.5) to [short,-*] (2.8,-4.5)
+           ;
+        \end{circuitikz}
+}
+
+\newcommand{\figsecI}{
+    \begin{circuitikz}[american]
+\coordinate (A) at (1,3.75);
+\coordinate (B) at (-1,3.75);
+\coordinate (C) at (-1,1.25);
+\coordinate (D) at (1,1.25);
+\draw [dashed]  (A) to (B) to (C) to (D) to (A)
+(0,3.75) node [above] {$Z=R_1//C_1$}
+;
+    \draw
+    (0,0) node [op amp] (opamp) {}
+    (-4,1) node [left] {$V_2$} to [R, l=$R_2$, o-] (-2,1) to [short] (-2,0)
+    to [R, l_=$R_3$, -o] (-4,0) node [left] {$V_1$}
+    (-2,0.5) to [short,*-*] (opamp.-) |- (-0.75,2.25) to[short,*-] (-1.2,2.25)
+    (-0.75,3) to [R,l=$R_1$] (0.75,3) to (0.75, 1.75) to [C,l_=$C_1$] (-0.75, 1.75) to [short] (-0.75,3)
+    (0.75,2.25) to[short,*-] (1.2,2.25) -| (opamp.out) to [short,*-o] (2,0) node [right] {$V_{01}$}
+    (opamp.+) node[ground] {}
+    ;
+        \end{circuitikz}
+}
+
+\newcommand{\figsecII}{
+    \begin{circuitikz}[american]   
+    \draw
+    (0,0) node [op amp] (opamp) {}
+    (-4,0.5) node [left] {$V_{01}$} to [R, l=$R_4$, o-*]  (opamp.-) |- (-1,1.5) to [C,l=$C_2$] (1,1.5)-| (opamp.out) to [short,*-o] (2,0) node [right] {$V_{02}$}
+    (opamp.+) node[ground] {}
+    ;
+        \end{circuitikz}
+}
+
+\newcommand{\figsecIII}{
+    \begin{circuitikz}[american]   
+    \draw
+    (0,0) node [op amp] (opamp) {}
+    (-4,0.5) node [left] {$V_{02}$} to [R, l=$R_5$, o-*]  (opamp.-) |- (-1,1.5) to [R,l=$R_5$] (1,1.5)-| (opamp.out) to [short,*-o] (2,0) node [right] {$V_{2}$}
+    (opamp.+) node[ground] {}
+    ;
+        \end{circuitikz}
+}
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Filter Design}{Lab \#4}{DESIGN OF ACTIVE FILTER USING \vfill TOW THOMAS BIQUAD CIRCUIT }
+{SHARAD KUMAR GHIMIRE}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+\listoffigures
+% \pagebreak
+% \listoftables
+\vspace{5em}
+%\lstlistoflistings
+
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large DESIGN OF ACTIVE FILTER USING TOW THOMAS BIQUAD CIRCUIT}
+
+
+% Objectives
+\section{Objective}
+\begin{itemize}
+    \item To design a low pass filter using Tow Thomas biquad circuit from given specifications.
+    \item To obtain bandpass, highpass, bandstop and allpass filter using Tow Thomas Biquad circuit.
+\end{itemize}
+
+%Requirement
+\section{Requirement}
+
+\subsection{Proteus Design Suite}
+
+Proteus is a simulation and design software tool developed by Labcenter Electronics for Electrical
+and Electronic circuit design.It is used to create schematic  of a circuit and
+Visualization of its operation.
+
+\pagebreak
+
+%%Exercises
+
+\section{Exercises:}
+
+\begin{figure}[H]
+    \centering
+    \figquestion
+    \caption{Tow Thomas biquad circuit}
+\end{figure}
+
+%Question 1
+\begin{Q}
+    {From the circuit given in above figure:
+        \begin{enumerate}
+            \item\textbf{Derive the transfer function $V_2/V_1$ and determine the nature of the filter while taking output at $V_2$.}
+            \item\textbf{ Also obtain the transfer function while observing output at $V_{01}$ and input at $V_1$.}
+            \item\textbf{ How can you obtain a band-stop, high-pass and all-pass filter using the Tow Thomas biquad circuit? Derive the transfer functions with necessary circuit diagrams.}
+        \end{enumerate}
+    }
+\end{Q}
+
+The whole circuit is divided into Lossy integrator (Summer), inverting integrator and unit gain inverter.
+
+%%Lossy Integrator
+\begin{wrapfigure}{r}{0.36\textwidth}
+    \centering
+    \figsecI
+    \caption{Lossy integrator (summer)}
+\end{wrapfigure}
+\subsubsection*{Lossy Integrator}
+
+
+If we assume $Z$ is the total impedance obtained due to the parallel combination of $R_1$ and $C_1$, then,
+
+\begin{equation*}
+    \begin{aligned}
+        \frac{1}{Z}   & =\frac{1}{R_1}+sC_1=\frac{1+sR_1C_1}{R_1} \\
+        \Rightarrow Z & =\frac{R_1}{1+sR_1C_1}
+    \end{aligned}
+\end{equation*}
+
+From Figure 2, we can write,
+
+\begin{equation*}
+    \begin{aligned}[b]
+        V_{01}             & =-\left(\frac{Z}{R_3}\right)V_1-\left(\frac{Z}{R_2}\right)V_2=-Z\left(\frac{V_1}{R_3}+\frac{V_2}{R_2}\right) \\
+        \Rightarrow V_{01} & =-\left(\frac{R_1}{1+sR_1C_1}\right)\left(\frac{V_1}{R_3}+\frac{V_2}{R_2}\right)
+    \end{aligned}
+\end{equation*}
+
+%%Interting integrator
+
+
+\subsubsection*{Inverting integrator}
+
+\begin{wrapfigure} {r}{0.35\textwidth}
+    \centering
+    \figsecII
+    \caption{Inverting integrator}
+\end{wrapfigure}
+
+
+\begin{equation*}
+    \begin{aligned}[b]
+        V_{02}             & =-\frac{V_{01}}{sR_4C_2}                                                                                      \\
+                           & \text{Subsstuting value of $V_{01}$ we get,}                                                                  \\
+        \Rightarrow V_{02} & =\left(\frac{R_1}{1+sR_1C_1}\right)\left(\frac{1}{sR_4C_2}\right)\left(\frac{V_1}{R_3}+\frac{V_2}{R_2}\right)
+    \end{aligned}
+\end{equation*}
+
+%%Unity gain inverter
+
+\subsubsection*{Unity gain inverter}
+From Figure 4, we can write,
+\begin{equation*}
+    \begin{aligned}[b]
+        V_{2} & =-\left(\frac{R_5}{R_5}\right)V_{02}=-V_{02}
+    \end{aligned}
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.34\textwidth}
+    \centering
+    \figsecIII
+    \caption{Unit gain inverter}
+\end{wrapfigure}
+
+Substituting value of $V_{02}$, we get,
+\begin{equation*}
+    \begin{aligned}
+         & V_2=-\left(\frac{R_1}{1+sR_1C_1}\right)\left(\frac{1}{sR_4C_2}\right)\left(\frac{V_1}{R_3}+\frac{V_2}{R_2}\right)                                                                                                                            \\
+         & V_2=\frac{-V_1R_1}{sR_3R_4C_2(1+sR_1C_1)}-\frac{V_2R_1}{sR_2R_4C_2(1+sR_1C_1)}                                                                                                                                                               \\
+         & V_2\left(1+\frac{R_1}{sR_2R_4C_2(1+sR_1C_1)}\right)=\frac{-V_1R_1}{sR_3R_4C_2(1+sR_1C_1)}                                                                                                                                                    \\
+         & \frac{V_2}{V_1}=\frac{-R_1R_2}{(sR_2R_4C_2(1+sR_1C_1)+R_1)R_3}                                                                                                                                                                               \\
+         & \frac{V_2}{V_1}=\frac{-R_1R_2}{sR_2R_3R_4C_2(1+sR_1C_1)+R_1R_3}                                                                                                                                                                              \\
+         & \frac{V_2}{V_1}=\frac{-R_1R_2}{s^2R_1R_2R_3R_4C_1C_2+sR_2R_3R_4C_2+R_1R_3}                                                                                                                                                                   \\\\
+         & \frac{V_2}{V_1}=\ddfrac{-\left(\frac{R_1R_2}{R_1R_2R_3R_4C_1C_2}\right)}{s^2\left(\frac{R_1R_2R_3R_4C_1C_2}{R_1R_2R_3R_4C_1C_2}\right)+s\left(\frac{R_2R_3R_4C_2}{R_1R_2R_3R_4C_1C_2}\right)+\left(\frac{R_1R_3}{R_1R_2R_3R_4C_1C_2}\right)} \\\\
+         & \Rightarrow \frac{V_2}{V_1}=\ddfrac{-\left(\frac{1}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}                                                                                            \\\\
+    \end{aligned}
+\end{equation*}
+
+Comparing to standard equation for the transfer function of a lowpass filter we can conclude that above equation is low pass filter ,
+
+\begin{equation*}
+    T_{LP}(s)=\ddfrac{-H\omega_o^2}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}
+\end{equation*}
+
+
+\subsubsection*{Transfer function while observing output $V_{01}$ and input $V_{1}$}
+
+\begin{equation*}
+    \begin{aligned}
+         & \frac{V_{01}}{V_1}=\left(\frac{V_{01}}{V_{02}}\right)\left(\frac{V_{02}}{V_2}\right)\left(\frac{V_2}{V_1}\right)                                                      \\
+         & \text{Substituting value we get,}                                                                                                                                     \\
+         & \frac{V_{01}}{V_{1}}=(-sR_4C_2)(-1)\left(\ddfrac{-\left(\frac{1}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right) \\\\
+         & \frac{V_{01}}{V_{1}}=\ddfrac{-s\left(\frac{R_4C_2}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}                      \\\\
+         & \Rightarrow\frac{V_{01}}{V_1}=\ddfrac{-\left(\frac{1}{R_3C_1}\right)s}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}                        \\\\
+    \end{aligned}
+\end{equation*}
+
+Compare with  standard equation for the transfer function of a bandpass filter we can conclude that above equation $\ddfrac{V_{01}}{V_1} $is band pass filter ,
+
+\begin{equation*}
+    \Rightarrow T_{BP}(s)=\ddfrac{H\left(\frac{\omega_o}{Q}\right)s}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}
+\end{equation*}
+
+
+%%%Bandstop using Tow Thomas biquad circuit
+\subsection*{Bandstop using Tow Thomas biquad circuit}
+In addition to Figure 1, we need an inverting op-amp where $V_1$ and $V_{01}$ are applied as input and $V_2'$ as output voltage.
+
+\begin{equation*}
+    \begin{aligned}
+         & V_2'                          =-(V_1+V_{01})                                                                                                                                                                          \\
+         & \Rightarrow \frac{V_2'}{V_1}  =-\left(1+\frac{V_{01}}{V_1}\right)                                                                                                                                                     \\
+         & \text{Substituting value of $\ddfrac{V_{01}}{V_1}$ , we get,}                                                                                                                                                         \\
+         & \text{or, }\frac{V_2'}{V_{1}}=-\left(1+\ddfrac{-\left(\frac{1}{R_3C_1}\right)s}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)                                                        \\\\
+         & \text{or, }\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2+s\left(\frac{1}{R_1C_1}\right)+\frac{1}{R_2R_4C_1C_2}-\left(\frac{1}{R_3C_1}\right)s}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right) \\\\
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+         & \Rightarrow\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2+s\left(\frac{1}{R_1C_1}-\frac{1}{R_3C_1}\right)+\frac{1}{R_2R_4C_1C_2}}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)
+    \end{aligned}
+\end{equation*}
+
+Comparing with standard equation for the transfer function of a bandstop filter  and  substituting values we get,
+\begin{equation*}
+    T_{BS}(s)=\ddfrac{-H(s^2+\omega_o^2)}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}\\\\
+    \Rightarrow T_{BS}(s)=\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2+\frac{1}{R_2R_4C_1C_2}}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \figbsap
+    \caption{Biquad circuit for both Bandstop and Allpass Filters}
+\end{figure}
+
+%%Allpass using Tow Thomas biquad circuit
+\subsection*{Allpass using Tow Thomas biquad circuit}
+Comparing standard equation for the transfer function of an allpass filter with $\ddfrac{V_2'}{V_1}$ we get two values for $\ddfrac{\omega_o}{Q}$.
+
+\begin{equation*}
+    T_{AP}(s)=\ddfrac{H\left(s^2-\left(\frac{\omega_o}{Q}\right)s+\omega_o^2\right)}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}
+\end{equation*}
+
+\begin{equation*}
+    -\left(\frac{1}{R_1C_1}-\frac{1}{R_3C_1}\right)=\frac{1}{R_1C_1}
+    \Rightarrow\frac{2}{R_1C_1}=\frac{1}{R_3C_1}\Rightarrow R_3=\frac{R_1}{2}
+\end{equation*}
+Thus $\ddfrac{V_2'}{V_1}$ can be in form of standard transfer function of Allpass filter, if $R_3=\ddfrac{R_1}{2}$  satisfied and  final transfer function is,
+\begin{equation}
+    \Rightarrow T_{AP}(s)=\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2-\left(\frac{1}{R_1C_1}\right)s+\frac{1}{R_2R_4C_1C_2}}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)
+\end{equation}
+
+
+%%Highpass using Tow Thomas biquad circuit
+
+\subsection*{Highpass using Tow Thomas biquad circuit}
+
+\begin{figure}[H]
+    \centering
+    \fighp
+    \caption{Four op-amp biquad circuit for highpass filter}
+\end{figure}
+
+In addition to Figure 1, we need an inverting op-amp where $V_1$, $V_2$ and $V_{01}$ are applied as input and $V_2'$ as output voltage.
+
+\begin{equation*}
+    \begin{aligned}
+         & V_2'=-(V_1+V_2+V_{01})                                                                \\
+         & \Rightarrow \frac{V_2'}{V_1}=-\left(1+\frac{V_2}{V_1}+\frac{V_{01}}{V_1}\right)       \\
+         & \text{ Substituting values of $\ddfrac{V_2}{V_1}$ and $\ddfrac{V_{01}}{V_1}$ we get,}
+    \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+    \begin{aligned}
+         & \text{or, }\frac{V_2'}{V_{1}}=-\left(1-\ddfrac{\left(\frac{1}{R_3R_4C_1C_2}\right)+\left(\frac{1}{R_3C_1}\right)s}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)                                                                      \\\\
+         & \text{or, }\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)-\left(\frac{1}{R_3R_4C_1C_2}\right)-\left(\frac{1}{R_3C_1}\right)s}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right) \\\\
+         & \Rightarrow \frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2+\left(\frac{1}{R_1C_1}-\frac{1}{R_3C_1}\right)s+\left(\frac{1}{R_2R_4C_1C_2}-\frac{1}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)                           \\\\
+    \end{aligned}
+\end{equation*}
+
+Thus $\ddfrac{V_2'}{V_1}$ can be in form of standard transfer function of High passs filter, if $R_1=R_2=R_3$  satisfied and  final transfer function is,
+
+\begin{equation*}
+    \begin{aligned}
+        T_{HP}(s)             & =\ddfrac{-Hs^2}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}                                                       \\\\
+        \Rightarrow T_{HP}(s) & =\frac{V_2'}{V_{1}}=-\left(\ddfrac{s^2}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)}\right)
+    \end{aligned}
+\end{equation*}
+
+
+
+%Question 2
+\begin{Q}
+    {
+        Design a low-pass filter having poles at – 5000 ± j8660.25404 and a DC gain of 2 using Tow-Thomas biquad circuit. Your final circuit should consist of practically realizable elements. Realize the circuit and observe the magnitude response. And determine the characteristic features such as 3 dB frequency and DC gain.
+        \begin{enumerate}
+            \item\textbf{ Determine the nature of the response by observing output at $V_{01}$ with input $V_{1}$. }
+            \item\textbf{ Observe the magnitude response by obtaining each of the following filter from your design and note down passband gain and half power frequencies: }
+            \begin{enumerate}
+                \item\textbf{	High-pass filter}
+                \item\textbf{	Band-stop filter and}
+                \item\textbf{   All-pass filter}
+            \end{enumerate}
+        \end{enumerate} }
+\end{Q}
+
+Given:\\\\
+$s=-\alpha \pm j(\beta) = -5000 \pm j8660.25404$\\
+
+\begin{equation*}
+    \begin{aligned}
+         & \alpha = 5000 = (\frac{w_o}{2Q})                                           \\
+         & \beta = 8660.25404                                                         \\\\
+         & \omega_o = \sqrt[2]{(\alpha)^2+(\beta)^2} = \sqrt[2]{10000} = 10000rad/sec \\\\
+         & \alpha = \frac{w_o}{2Q}\Rightarrow Q = \frac{\omega_o}{2\alpha}            \\
+         & Q = \frac{10000}{2*5000} = 1                                               \\\\
+         & Gain(H) = 2                                                                \\
+    \end{aligned}
+\end{equation*}
+
+Comparing below the two equation of low pass filter
+
+
+\begin{equation*}
+    \begin{aligned}
+         & \frac{V_2}{V_1}=\ddfrac{-\left(\frac{1}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)} \\\\
+         & \text{and } T_{LP}(s)=\ddfrac{-H\omega_o^2}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}                                          \\
+    \end{aligned}
+\end{equation*}
+
+we get,   $ H = \ddfrac{R_2}{R_3}$
+
+\begin{equation*}
+    \begin{aligned}
+         & \text{We assume,}\Omega_o = 1rad/sec, R_4 = 1\Omega and C_1= C_2= 1F, \\
+         & \text{or, }\Omega_o^2= \frac{1}{R_2R_4C_1C_2}                         \\
+         & \Rightarrow R_2= \frac{1}{\Omega_o^2R_4C_1C_2} = 1\Omega              \\\\
+         & Q= \sqrt{\frac{R_1^2C_1}{R_2R_4C_2}}= \sqrt{R_1^2}= R_1               \\
+         & \Rightarrow R_1 = Q = 1\Omega                                         \\\\
+         & H= \frac{R_2}{R_3}                                                    \\
+         & \text{or, } 2= \frac{1}{R_3}                                          \\
+         & \Rightarrow R_3= 0.5\Omega                                            \\\\
+    \end{aligned}
+\end{equation*}
+
+Since we have to design the filter at $\omega_o= 10000rad/sec$ and  $K_f= \frac{10000}{1}= 10000$\\
+
+We assume, $K_m= 10000$(in order to obtain practically realizable values)\\
+\begin{equation*}
+    \begin{aligned}
+         & R_1= 10K\Omega                     \\
+         & R_2= R_5= 10K\Omega                \\
+         & R_3= 5K\Omega                      \\
+         & R_4= 10K\Omega                     \\
+         & R_5= 10K\Omega                     \\
+         & C_1= C_2= \frac{1}{K_m*K_f}= 0.1nF \\
+    \end{aligned}
+\end{equation*}
+
+\Porcirobs{0.85}{output at V2}{6.02}{2.02}
+
+\subsubsection*{Response when output is at $V_{01}$ and input is $V_{1}$}
+
+\Porcirobs{0.85}{output at V01}{6.02}{0.98 and 2.55}
+Thus the bandwidth is : 1.57 KHz.
+
+\subsubsection*{High-pass Filter}
+
+Here, $R_1=R_2=R_3=10K\Omega$ and fourth op-amp is needed as explained earlier. Additionally $R_6$ is also needed having value $10K\Omega$.
+\Porcirobs{0.85}{High pass}{0}{1.26}
+
+\subsubsection*{Band-Stop Filter}
+
+Here, $R_1=R_3=10K\Omega$ and fourth op-amp is needed as explained earlier. Additionally $R_6$ is also needed having value $10K\Omega$.
+\Porcirobs{0.85}{Band stop}{0}{0.979 and 2.521}
+Thus the bandwidth is : 1.542 KHz.
+
+
+\subsubsection*{All-pass Filter}
+
+
+Here, $R_3=R_1/2=5K\Omega$ and fourth op-amp is needed as explained earlier. Additionally $R_6$ is also needed having value $10K\Omega$.
+\Porcirobs{0.85}{All pass}{26.1 micro}{0}
+
+
+
+
+
+%Question 3
+\begin{Q}
+    {
+        Realize the second order Butterworth lowpass filter having half power frequency of 3.5 kHz using the Tow Thomas biquad circuit and observe the response. By plotting the response show the half power frequency and DC gain.
+    }
+\end{Q}
+
+Comparing below the two equation of low pass filter with the second order Butterworth equation for low pass filter
+$T_{LP}(s) = -\ddfrac{1}{s^2+1.414*s+1}$\\
+
+
+\begin{equation*}
+    \begin{aligned}
+         & \frac{V_2}{V_1}=\ddfrac{-\left(\frac{1}{R_3R_4C_1C_2}\right)}{s^2+s\left(\frac{1}{R_1C_1}\right)+\left(\frac{1}{R_2R_4C_1C_2}\right)} \\\\
+         & \text{and } T_{LP}(s)=\ddfrac{-H\omega_o^2}{s^2+s\left(\frac{\omega_o}{Q}\right)+\omega_o^2}                                          \\
+    \end{aligned}
+\end{equation*}
+
+We get $\omega_0 =1 rad/sec$ and $ H = \ddfrac{R_2}{R_3}$ we assume  $R_4 = 1\Omega$ and $C_1= C_2= 1F$,
+
+
+\begin{equation*}
+    \begin{aligned}
+         & w_o^2= \ddfrac{1}{R_2R_4C_1C_2}                       \\
+         & \Rightarrow R_2= \ddfrac{1}{w_o^2R_4C_1C_2} = 1\Omega \\\\
+         & R_1 = 1/1.414 = 0.71\Omega                            \\
+         & R_3= 1\Omega                                          \\
+         & For,\omega_0=3.5Khz K_f= 22000 rad/sec                \\
+         & let,K_m= 10000                                        \\\\
+         & R_1= 710\Omega                                        \\
+         & R_2= R_5= 10K\Omega                                   \\
+         & R_3= 10K\Omega                                        \\
+         & R_4= 10K\Omega                                        \\
+         & C_1= C_2= \ddfrac{1}{K_m*K_f}= 4.54nF                 \\\\
+    \end{aligned}
+\end{equation*}
+
+\Porcirobs{0.85}{Butterworth}{0}{3.49}
+
+\section{Discussion \& Conclusion}
+In this Lab we design active filter using Tow Thomas Biquad Circuit.  We used  Proteus  design suite to design and plot frequency response for the Low pass, High pass , all pass andBand stop filter. We also derive transfer function for these filters hence fulfilling our objectives of lab.
+
+\end{document}
