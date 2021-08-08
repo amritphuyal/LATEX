@@ -1,0 +1,156 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\include{./Matlab.tex} %%% Matlab code
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Communication System II}{Lab \#2}{Sampling, TDM \& Demodulation}
+{Suman Sharma}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+%\listoffigures
+% \pagebreak
+% \listoftables
+% \vspace{5em}
+\lstlistoflistings
+\vspace{10em}
+% \pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Sampling, TDM \& Demodulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+\begin{itemize}
+    \item To observe Signal Reconstruction using Samples
+    \item To observe Time Division Multiplexing of two signals
+    \item To observe Delta Modulation and its bits sequence
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+
+%Theory
+\section{Theory}
+\subsection{Sampling and Signal Reconstruction}
+Sampling is the process of taking a continuous signal and converting it into discrete signal. In other words, sampling is measuring the instantaneous value of continuous time signal.If $s(t)$ is a continuous time signal, then, the sampled discrete time signal having Sampling period $T_s$, denoted by $s[n]$,
+is given by:
+\begin{equation*}
+    s[n] = s( nT_s )
+\end{equation*}
+
+Interplotation technique is used to interpolate the sampled signal in order to recover the continuous time signal.
+
+\subsection{Time Division Multiplexing (TDM)}
+Time Division Multiplexing is a technique of multiplexing two signals in a single signal. Here each signal is allocated a definite amount of time such that the transmission appear to be parallel.
+
+\subsection{Delta Modulation}
+Delta Modulation is a technique of encoding a signal using a single bit. The signal is encoded using a single bit, which is either a 1 or a 0. The encoding is done by adding a delta to the original signal. The delta $\Delta$ is a small amount of the original signal. The delta is added to the original signal and the resulting signal is the encoded signal. It create stair-case approximation of output waveform. Delta modulation is deployed when transmission of voice is needed and quality is not the primary concern.
+
+\pagebreak
+%Problems 
+\section{Problems}
+
+\subsection{Signal Reconstruction using Sampling}
+
+\MAT{./CODES/Sampling.m}{MATLAB code Signal Reconstruction using Sampling}
+\mobs{Sampling1}{Orginal signal and its sampling}
+\mobs{Sampling2}{Sampled Signal and its Reconstruction Step at n=10}
+\mobs{Sampling3}{Sampled Signal and final  Reconstructed Signal}
+
+
+
+\subsection{Time Division Multiplexing (TDM)}
+
+\MAT{./CODES/TDM.m}{Time Division Multiplexing (TDM)}
+\mobs{TDM1}{Orginal signals and their sampled form}
+\mobs{TDM2}{Multiplexed Signal}
+\mobs{TDM3}{Demultiplexed Signals}
+
+
+\subsection{Delta Modulation}
+
+\MAT{./CODES/Delta.m}{Delta Modulation and its bits sequence}
+\mobs{Delta}{ Delta Modulation and its bits sequence}
+
+
+%%Discussion and Conclusion
+\section{Discussion and Conclusion}
+In this Lab we performed the Sampling of original signal and recover the measure signal from its sampled version. We also performed Time Division Multiplexing of two signals and Demultiplex the signals to recover the originals. We also performed Delta Modulation of a signal and its bits sequence. We used MATLAB, its modules and functions to perform the above tasks.
+
+
+\end{document}

@@ -1,0 +1,180 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\include{./Matlab.tex} %%% Matlab code
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Communication System II}{Lab \#1}{Amplitude Modulation \& Demodulation}
+{Suman Sharma}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+% \pagebreak
+%\listoffigures
+\pagebreak
+% \listoftables
+% \vspace{5em}
+\lstlistoflistings
+%\pagebreak
+\vspace{10em}
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Amplitude Modulation \& Demodulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+\begin{itemize}
+    \item To view amplitude modulation for DSB­-TC, DSB­-SC, SSB  and Amplitude demodulation.
+
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+
+\section{Theory}
+\subsection{Amplitude modulaton}
+If amplitude of carrier wave varies in accordance with the amplitude of the signal, then the signal is called amplitude modulation.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{./FIG/amplmod.png}
+    \caption{Amplitude modulation}
+\end{figure}
+
+\subsubsection{DSB-­TC}
+Double Sideband Transmitted carrier (DSB-TC) is a type of amplitude modulation where modulated signal has full carrier representation.For DSB-FC modulated signal $y(t)$ of a message signal $m(t)$ having carrier signal of frequency $f_c$ :
+
+\begin{equation}
+    y(t) = (1 + \mu m(t))cos(2\pi f_c t)
+\end{equation}
+where, $\mu$ is the \textbf{modulation index}.
+\begin{itemize}
+    \centering
+    \item $\mu < 1$: Under modulation
+    \item $\mu = 1$: Perfect modulation
+    \item $\mu > 1$: Over modulation
+\end{itemize}
+
+
+\subsubsection{DSB­-SC}
+Double Sideband-Suppressed Carrier (DSB-SC) is a type of amplitude modulation where modulated signal has reduced carrier representation in order to save power. For DSB-SC modulated signal $y(t)$ of a message signal $m(t)$ having carrier signal of frequency $f_c$ :
+
+
+\begin{equation}
+    y(t) = A_c m(t)cos(2\pi f_c t)
+\end{equation}
+
+\subsubsection{SSB}
+Single Sideband is a type of amplitude modulation where modulated signal has reduced carrier representation in order to save power and additionally Suppressing one of the side band.. For SSB modulated signal $y(t)$ of a message signal $m(t)$ having carrier signal of frequency $f_c$ :
+
+
+\begin{equation}
+    y(t) = m(t)cos(2\pi f_c t) - \hat{m}(t)sin(2\pi f_c t)
+\end{equation}
+where $\hat{m}(t)$ is the \textbf{Hilbert transform} of the message signal.
+
+\subsection{Amplitude Demodulation}
+Amplitude Demodulation is the process of demodulating the received signal to recover the original message.
+
+\section{Problems}
+%%%%%%%%111111111111111111111111
+\subsection{DSB-TC(Under,Normal,Over)}
+
+\MAT{./CODES/amdsbtc.m}{MATLAB code DSB-TC}
+\mobs{dsbtc}{DSB-TC(Under,Normal,Over)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%22222222222222222222222222
+\subsection{DSB-SC (Time \& Frequency Domain)}
+\MAT{./CODES/amdsbsc.m}{MATLAB code DSB-SC}
+\mobs{dsbsc}{DSB-SC (Time \& Frequency Domain)}
+
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%33333333333333333333333333
+\subsection{SSB (Time \& Frequency Domain)}
+
+\MAT{./CODES/amssb.m}{MATLAB code SSB}
+\mobs{ssb}{SSB (Time \& Frequency Domain)}
+%%%%%%%%%%%%%%%%%%%44444444444444444444444
+
+\pagebreak
+\subsection{Demodulation}
+\MAT{./CODES/demodulation.m}{MATLAB code Demodulation}
+\mobs{demod}{Demodulation Observation of DSB-SC}
+
+\section{Discussion and Conclusion}
+In this lab we observed amplitude modulation of DSB-TC, DSB-SC, SSB and Demodulation of DSB-SC signal.We used MATLAB an its modules to implement the above mentioned process and generating plots.
+
+\end{document}

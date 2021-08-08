@@ -1,0 +1,202 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\include{./Matlab.tex} %%% Matlab code
+
+
+
+%%%%%%%%%%%%%%%%%%%%%for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.08\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Communication System II}{Lab \#3}{Digital Modulation}
+{Suman Sharma}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+%\listoffigures
+% \pagebreak
+% \listoftables
+% \vspace{5em}
+\lstlistoflistings
+\vspace{10em}
+% \pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Digital Modulation }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+To observe Different digital Modulation.
+\begin{itemize}
+    \item Amplitude Shift Keying(ASK)
+    \item Frequency Shift Keying (FSK)
+    \item Binary Phase-shift keying (BPSK)
+    \item Quadrature Amplitude Modulation (QAM)
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%Theory
+\section{Theory}
+\subsection{Digital Modulation}
+Digital modulation means the encoding of a digital information signal into the transmitted signal's amplitude, phase, or frequency. Digital modulation offers more capacity for information, better data security, rapid system accessibility and good communications.
+
+Some major Digital modulation schemes are:
+
+\subsubsection{Amplitude Shift Keying(ASK)}
+Amplitude Shift Keying is a type of amplitude modulation where Binary data is encoded into the amplitude of the transmitted signal. If $A$ is the amplitude of the modulated signal and $f_c$ is the carrier frequency.then modulated signal is :
+\begin{align*}
+    s(t) =
+    \begin{cases}
+        A\cos{(2\pi f_c t)}, & \text{for binary input 1} \\
+        0,                   & \text{for binary input 0}
+    \end{cases}
+\end{align*}
+
+
+
+\subsubsection{Frequency Shift Keying (FSK)}
+Frequency Shift Keying is a type of frequency modulation where Binary data is encoded into the frequency of the transmitted signal. If $f_1$ and $f_2$ are two distinct transmit frequencies then modulated signal is.
+\begin{align*}
+    s(t) =
+    \begin{cases}
+        \sqrt{\frac{2E_b}{T_b}}\cos{(2\pi f_1 t)}, \text{for bit 1} \\
+        \sqrt{\frac{2E_b}{T_b}}\cos{(2\pi f_2 t)}, \text{for bit 0}
+    \end{cases}
+\end{align*}
+
+
+
+\subsubsection{Binary Phase-shift keying (BPSK)}
+Binary Phase-shift keying is a type of phase modulation where Binary data is encoded into the phase of the transmitted signal. It is also called 2-phase PSK or Phase Reversal Keying. If $P = E_b/T_b$ is power of the transmitted signal and $f_c$ is the carrier frequency. then modulated signal is:
+
+\begin{align*}
+    s(t) =
+    \begin{cases}
+        \sqrt{2P}\cos{(2\pi f_c t)}, \text{for bit 1} \\
+        -\sqrt{2P}\cos{(2\pi f_c t)}, \text{for bit 0}
+    \end{cases}
+\end{align*}
+
+
+
+\subsubsection{Quadrature Amplitude Modulation (QAM)}
+Quadrature Amplitude Modulation is a type of amplitude modulation where Binary data is encoded into the both amplitude and phase of the transmitted signal. QAM p provide high levels of spectrum usage efficiency.QAM is a signal in which two 90-degree phase-shifted carriers (sine and cosine) are modulated and concatenated to form a single complex signal.
+
+Quadrature amplitude modulation (QAM) is a technique used to transmit two digital bit streams or two analog signals by modulating or changing the amplitudes of two carrier waves so that they differ in phase by 90 degrees, a quarter of a cycle, hence the name quadrature.If $a_i$ and $b_j$ are signal amplitudes that are dependent on the message signal, then the quadrature amplitude modulation (QAM) signal is given by:
+
+%%%%%%%%%%%%%%%%%%%%
+\def\samp { \sqrt{\frac{2E_b}{T_b}} }
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+    s(t) = \samp a_i \cos{(2\pi f_c t)} + \samp b_j \sin{(2\pi f_c t)}
+\end{align*}
+
+
+
+
+
+\pagebreak
+\section{Problems}
+
+\subsubsection{Amplitude Shift Keying(ASK)}
+\MAT{./CODES/ASK.m}{MATLAB code Amplitude Shift Keying}
+\mobs{ASK}{Simulation of Amplitude Shift Keying}
+
+
+\subsubsection{Frequency Shift Keying (FSK)}
+\MAT{./CODES/FSK.m}{MATLAB code Frequency Shift Keying }
+\mobs{FSK}{Simulation of Frequency Shift Keying}
+
+
+
+\subsubsection{Binary Phase-shift keying (BPSK)}
+\MAT{./CODES/BPSK.m}{MATLAB code Binary Phase-shift keying}
+\mobs{BPSK}{Simulation of Binary Phase-shift keying}
+
+
+
+\subsubsection{Quadrature Amplitude Modulation (QAM)}
+\MAT{./CODES/QAM.m}{MATLAB code Quadrature Amplitude Modulation}
+\mobs{QAM}{Simulation of Quadrature Amplitude Modulation}
+
+
+
+%%Discussion and Conclusion
+\section{Discussion and Conclusion}
+In this Lab we performed the major types of Digital modulation. Amplitude Shift Keying(ASK) , Frequency Shift Keying(FSK) , Binary Phase-shift keying(BPSK) and Quadrature Amplitude Modulation(QAM) are the most used Digital modulation schemes. \textbf{ASK} is the most used scheme for voice transmission and binary data is encoded into amplitude of the transmitted signal. Similarly in \textbf{FSK} binary data is encoded into frequency of the transmitted signal. In \textbf{BPSK} binary data is encoded into phase where as in \textbf{QAM}  binary data is encoded into both amplitude and phase of the transmitted signal.We used MATLAB, its modules and functions to perform the above tasks and fulfill our Lab objectives.
+
+\end{document}
