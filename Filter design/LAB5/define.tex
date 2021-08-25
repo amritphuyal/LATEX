@@ -1,0 +1,119 @@
+
+\def\raa {R_{A}}
+\def\rbb {R_{B}}
+\def\vaa {V_A}
+\def\vbb {V_B}
+\def\va{V_1}
+\def\vb{V_2}
+\def\ra {R_1}
+\def\rb {R_2}
+\def\rc {R_3}
+\def\rd {R_4}
+\def\re {R_5}
+\def\rf {R_6}
+\def\ca {C_1}
+\def\cb {C_2}
+
+\def\Res #1{
+    \SI{#1}{\ohm}
+}
+
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+\newcommand{\gainred}{
+    \begin{circuitikz}[american]
+        \draw
+        (0,0) node [op amp, noinv input up] (opamp) {}
+        (-7,0.5) node [left] {$V_{1}$} to [R, l=$R_x$, o-*] (-5,0.5) to [R, l=$R_2$] (-3,0.5) to [short](opamp.+)
+        (-5,0.5) to [short] (-5,1.5) to [C,l=$C_1$] (1,1.5)-| (opamp.out) to [short,*-o] (2,0) node [right] {$V_{2}$}
+        (-3,0.5) to [C,l=$C_2$,*-] (-3,-1.5) node[ground]{}
+        (opamp.-) |- (-1,-1.5) to [R,l=$R_b$] (1,-1.5)-| (opamp.out)
+        (-1.2, -1.5) to [R,l=$R_a$, *-] (-1.2,-3.5) node[ground]{}
+        (-5,0.5) to [R, l=$R_y$] (-5,-1.5) node[ground]{}
+        ;
+    \end{circuitikz}
+}
+
+\newcommand{\figfourthorder}{
+    \begin{circuitikz}[american, scale = 0.97, transform shape]
+        \draw
+        (0,0) node [op amp, noinv input up] (opamp) {}
+        (7,-0.5) node [op amp, noinv input up] (op) {}
+        (-6,0.5) node [left] {$V_{1}$} to [R, l=\footnotesize$2.2351\text{ }\Omega$, o-*] (-4,0.5) to [R, l=\footnotesize$1\text{ }\Omega$] (-2,0.5) to [short](opamp.+)
+        (-4,0.5) to [short] (-4,1.5) to [C,l=\footnotesize$1\text{ F}$] (0,1.5)-| (opamp.out) to [R,*-*,l=\footnotesize$1.1522 \text{ }\Omega$] (3,0) to [R, l=\footnotesize$1\text{ }\Omega$] (5,0) to [short](op.+)
+        (3,0) to [short] (3,1) to [C,l=\footnotesize$1 \text{ F}$] (7,1)-| (op.out) to [short,*-o] (8.5,-0.5) node [right] {$V_{2}$}
+        (5,0) to [C,l_=\footnotesize$1 \text{ F}$] (5,-2)node[ground]{}
+        (-2,0.5) to [C,l_=\footnotesize$1 \text{ F}$,*-] (-2,-1.5) node[ground]{}
+        (opamp.-) |- (-1,-1.5) to [R,l_=\footnotesize$1.2347 \text{ }\Omega$] (1,-1.5)-| (opamp.out)
+        (-1.2, -1.5) to [R,l_=\footnotesize$1 \text{ }\Omega$, *-] (-1.2,-3.5) node[ground]{}
+        (op.-) |- (6,-2) to [R,l_=\footnotesize$0.1522 \text{ }\Omega$] (8,-2)-| (op.out)
+        (5.8, -2) to [R,l_=\footnotesize$1 \text{ }\Omega$, *-] (5.8,-4) node[ground]{}
+        (-4,0.5) to [R, l_=\footnotesize$1.8095\text{ }\Omega$] (-4,-1.5) node[ground]{}
+        (3,0) to [R, l_=\footnotesize$7.57 \text{ }\Omega$] (3,-2) node[ground]{}
+        ;
+    \end{circuitikz}
+}
+
+
+\newcommand{\figfourthorderfinal}{
+    \begin{circuitikz}[american, scale = 0.97, transform shape]
+        \draw
+        (0,0) node [op amp, noinv input up] (opamp) {}
+        (7,-0.5) node [op amp, noinv input up] (op) {}
+        (-6,0.5) node [left] {$V_{1}$} to [R, l=\footnotesize $2.2351\text{ K}\Omega$, o-*] (-4,0.5) to [R, l=\footnotesize$1\text{ K}\Omega$] (-2,0.5) to [short](opamp.+)
+        (-4,0.5) to [short] (-4,1.5) to [C,l=\footnotesize$50\text{ nF}$] (0,1.5)-| (opamp.out) to [R,*-*,l=\footnotesize$1.1522 \text{ K}\Omega$] (3,0) to [R, l=\footnotesize$1\text{ K}\Omega$] (5,0) to [short](op.+)
+        (3,0) to [short] (3,1) to [C,l=\footnotesize$50 \text{ nF}$] (7,1)-| (op.out) to [short,*-o] (8.5,-0.5) node [right] {$V_{2}$}
+        (5,0) to [C,l_=\footnotesize$50 \text{ nF}$] (5,-2)node[ground]{}
+        (-2,0.5) to [C,l_=\footnotesize$50 \text{ nF}$,*-] (-2,-1.5) node[ground]{}
+        (opamp.-) |- (-1,-1.5) to [R,l_=\footnotesize$1.2347 \text{ K}\Omega$] (1,-1.5)-| (opamp.out)
+        (-1.2, -1.5) to [R,l_=\footnotesize$1 \text{ K}\Omega$, *-] (-1.2,-3.5) node[ground]{}
+        (op.-) |- (6,-2) to [R,l_=\footnotesize$152.2 \text{ }\Omega$] (8,-2)-| (op.out)
+        (5.8, -2) to [R,l_=\footnotesize$1 \text{ K}\Omega$, *-] (5.8,-4) node[ground]{}
+        (-4,0.5) to [R, l_=\footnotesize$1.8095\text{ K}\Omega$] (-4,-1.5) node[ground]{}
+        (3,0) to [R, l_=\footnotesize$7.57 \text{ K}\Omega$] (3,-2) node[ground]{}
+        ;
+    \end{circuitikz}
+}
+
+\newcommand{\figfourthorderhp}{
+    \begin{circuitikz}[american, scale = 0.97, transform shape]
+        \draw
+        (0,0) node [op amp, noinv input up] (opamp) {}
+        (7,-0.5) node [op amp, noinv input up] (op) {}
+        (-6,0.5) node [left] {$V_{1}$} to [C, l=\footnotesize$0.4474\text{ F}$, o-*] (-4,0.5) to [C, l=\footnotesize$1\text{ F}$] (-2,0.5) to [short](opamp.+)
+        (-4,0.5) to [short] (-4,1.5) to [R,l=\footnotesize$1\text{ } \Omega$] (0,1.5)-| (opamp.out) to [C,*-*,l=\footnotesize$0.8679 \text{ F}$] (3,0) to [C, l=\footnotesize$1\text{ F}$] (5,0) to [short](op.+)
+        (3,0) to [short] (3,1) to [R,l=\footnotesize$1 \text{ }\Omega$] (7,1)-| (op.out) to [short,*-o] (8.5,-0.5) node [right] {$V_{2}$}
+        (5,0) to [R,l_=\footnotesize$1 \text{ }\Omega$] (5,-2)node[ground]{}
+        (-2,0.5) to [R,l_=\footnotesize$1 \text{ }\Omega$,*-] (-2,-1.5) node[ground]{}
+        (opamp.-) |- (-1,-1.5) to [R,l_=\footnotesize$1.2347 \text{ }\Omega$] (1,-1.5)-| (opamp.out)
+        (-1.2, -1.5) to [R,l_=\footnotesize$1 \text{ }\Omega$, *-] (-1.2,-3.5) node[ground]{}
+        (op.-) |- (6,-2) to [R,l_=\footnotesize$0.1522 \text{ }\Omega$] (8,-2)-| (op.out)
+        (5.8, -2) to [R,l_=\footnotesize$1 \text{ }\Omega$, *-] (5.8,-4) node[ground]{}
+        (-4,0.5) to [C, l_=\footnotesize$0.5526\text{ F}$] (-4,-1.5) node[ground]{}
+        (3,0) to [C, l_=\footnotesize$0.1321 \text{ F}$] (3,-2) node[ground]{}
+        ;
+    \end{circuitikz}
+}
+
+
+\newcommand{\figfourthorderhpfinal}{
+    \begin{circuitikz}[american, scale = 0.97, transform shape]
+        \draw
+        (0,0) node [op amp, noinv input up] (opamp) {}
+        (7,-0.5) node [op amp, noinv input up] (op) {}
+        (-6,0.5) node [left] {$V_{1}$} to [C, l=\footnotesize$14.913\text{ nF}$, o-*] (-4,0.5) to [C, l=\footnotesize$33.33\text{ nF}$] (-2,0.5) to [short](opamp.+)
+        (-4,0.5) to [short] (-4,1.5) to [R,l=\footnotesize$1\text{ K} \Omega$] (0,1.5)-| (opamp.out) to [C,*-*,l=\footnotesize$28.93\text{ nF}$] (3,0) to [C, l=\footnotesize$33.33\text{ nF}$] (5,0) to [short](op.+)
+        (3,0) to [short] (3,1) to [R,l=\footnotesize$1 \text{ K}\Omega$] (7,1)-| (op.out) to [short,*-o] (8.5,-0.5) node [right] {$V_{2}$}
+        (5,0) to [R,l_=\footnotesize$1 \text{ K}\Omega$] (5,-2)node[ground]{}
+        (-2,0.5) to [R,l_=\footnotesize$1 \text{ K}\Omega$,*-] (-2,-1.5) node[ground]{}
+        (opamp.-) |- (-1,-1.5) to [R,l_=\footnotesize$1.2347 \text{ K}\Omega$] (1,-1.5)-| (opamp.out)
+        (-1.2, -1.5) to [R,l_=\footnotesize$1 \text{ K}\Omega$, *-] (-1.2,-3.5) node[ground]{}
+        (op.-) |- (6,-2) to [R,l_=\footnotesize$152.2 \text{ }\Omega$] (8,-2)-| (op.out)
+        (5.8, -2) to [R,l_=\footnotesize$1 \text{ K}\Omega$, *-] (5.8,-4) node[ground]{}
+        (-4,0.5) to [C, l_=\footnotesize$18.42\text{ nF}$] (-4,-1.5) node[ground]{}
+        (3,0) to [C, l_=\footnotesize$4.4\text{ nF}$] (3,-2) node[ground]{}
+        ;
+    \end{circuitikz}
+}
