@@ -1,0 +1,86 @@
+
+\def\raa {R_{A}}
+\def\rbb {R_{B}}
+\def\vaa {V_A}
+\def\vbb {V_B}
+\def\va{V_1}
+\def\vb{V_2}
+\def\ra {R_1}
+\def\rb {R_2}
+\def\rc {R_3}
+\def\rd {R_4}
+\def\re {R_5}
+\def\rf {R_6}
+\def\ca {C_1}
+\def\cb {C_2}
+
+\def\Res #1{
+    \SI{#1}{\ohm}
+}
+
+\newcommand{\figquestion}{
+    \begin{circuitikz}
+        \draw
+        (0,0) to[R,l= \footnotesize$R_1\text{ = }1\text{ }\Omega$] (2,0) to [L,l=\footnotesize$L_1\text{ = }0.7654\text{ H}$] (4,0) to [C, *-*, l_=\footnotesize$C_1\text{ = }1.848 \text{ F}$] (4,-4)
+        (4,0) to [L,l=\footnotesize$L_2\text{ = }1.848\text{ H}$] (8,0) to [C, *-*, l_=\footnotesize$C_2\text{ = }0.7654 \text{ F}$] (8,-4)
+        (8,0) to [short] (12,0)
+        (0,0) to [esource,v_=\footnotesize$V_1$] (0,-4)
+        (0,-4) to [short] (12,-4) to[R, l=\footnotesize$R_2\text{ = }1\Omega$, v<=\footnotesize$V_2$] (12,0)
+        ;
+    \end{circuitikz}
+}
+
+
+\newcommand{\figfdnr}{
+    \begin{circuitikz}
+        \draw
+        (0,0) to[C,l= \footnotesize$Z'_{R\textsubscript{$1$}}\text{ = }1\text{ F}$] (2,0) to [R,l=\footnotesize$Z'_{L\textsubscript{$1$}}\text{ = }0.7654\text{ }\Omega$] (4,0)  to [R,l=\footnotesize$Z'_{L\textsubscript{$2$}}\text{ = }1.848\text{ }\Omega$] (8,0) to [short] (12,0)
+        (0,0) to [esource,v_=\footnotesize$V_1$] (0,-4)
+        (0,-4) to [short] (12,-4) to[C, l=\footnotesize$Z'_{R\textsubscript{$2$}}\text{ = }1\text{ F}$, v<=\footnotesize$V_2$] (12,0)
+        (4,0) to [short,*-] (4,-1.6)
+        (4,-2.2) to [short,-*] (4,-4)
+        (3.7,-2) node [left] {\footnotesize$Z'_{C\textsubscript{$1$}}\text{ = }1.848$}
+        (8,0) to [short,*-] (8,-1.6)
+        (8,-2.2) to [short,-*] (8,-4)
+        (7.7,-2) node [left] {\footnotesize$Z'_{C\textsubscript{$2$}}\text{ = }0.7654$}
+        ;
+        \draw [thick] (3.7,-1.6)-- (4.3,-1.6);
+        \draw [thick] (3.7,-1.8)-- (4.3,-1.8);
+        \draw [thick] (3.7,-2)-- (4.3,-2);
+        \draw [thick] (3.7,-2.2)-- (4.3,-2.2);
+
+        \draw [thick] (7.7,-1.6)-- (8.3,-1.6);
+        \draw [thick] (7.7,-1.8)-- (8.3,-1.8);
+        \draw [thick] (7.7,-2)-- (8.3,-2);
+        \draw [thick] (7.7,-2.2)-- (8.3,-2.2);
+
+    \end{circuitikz}
+}
+
+
+\newcommand{\fighp}{
+    \begin{circuitikz}
+        \draw
+        (0,0) to[R,l= \footnotesize$Z'_{R\textsubscript{$1$}}\text{ = }1\text{ }\Omega$] (2,0) to [C,l=\footnotesize$Z'_{L\textsubscript{$1$}}\text{ = }1.3065\text{ F}$] (4,0) to [L,l_=\footnotesize$Z'_{C\textsubscript{$1$}}\text{ = }0.5411\text{ H}$, *-*] (4,-4) (4,0) to [C,l=\footnotesize$Z'_{L\textsubscript{$2$}}\text{ = }0.5411\text{ F}$] (8,0) to [L,l_=\footnotesize$Z'_{C\textsubscript{$2$}}\text{ = }1.3065\text{ H}$, *-*] (8,-4)
+        (8,0) to [short] (12,0)
+        (0,0) to [esource,v_=\footnotesize$V_1$] (0,-4)
+        (0,-4) to [short] (12,-4) to[R, l=\footnotesize$Z'_{R\textsubscript{$2$}}\text{ = }1\text{ }\Omega$, v<=\footnotesize$V_2$] (12,0)
+        ;
+    \end{circuitikz}
+}
+
+
+\newcommand{\figleap}{
+    \begin{circuitikz}
+        \draw
+        (0,0) to[generic,l= \footnotesize$Z_1$,i_=\footnotesize$I_1$] (4,0) to [generic, *-*, l_=\footnotesize$Z_2$] (4,-4)
+        (4,0) node (v3) [anchor=south] {\footnotesize$V_3$} to [generic,l=\footnotesize$Z_3$,i_=\footnotesize$I_2$] (8,0) (8,-4) to [generic, l=\footnotesize$Z_4$,*-*] (8,0) node (v4) [anchor=south] {\footnotesize$V_4$} to [short,-o] (9,0)
+        (8,-4) to [short,-o] (9,-4)
+        (0,0) to [esource,v_=\footnotesize$V_1$] (0,-4)
+        (9,0) to [open,v^=\footnotesize$V_2$] (9,-4)
+        (0,-4) to [short] (8,-4)
+        ;
+    \end{circuitikz}
+}
+
+
