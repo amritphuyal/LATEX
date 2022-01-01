@@ -1,0 +1,385 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\include{./Matlab.tex} %%% Matlab code
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.08\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Digital Signal Processing}{Lab \#1}{Getting Started with MATLAB}
+{Anila  Kansakar}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+%\listoffigures
+% \pagebreak
+% \vspace{5em}
+\lstlistoflistings
+\vspace{10em}
+% \pagebreak
+\listoffigures
+\listoftables
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Getting Started with MATLAB }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+Familiarization with MATLAB and its basic operations.
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%Theory
+\section{Theory}
+\subsection{Variables}
+Unlike many programming languages, MATLAB does not require prior definition of the variables, instead the variables can be simply written as,
+
+\textbf{variable name = expression;}
+
+For example:
+
+\begin{verbatim}
+    a = sin(64) + 2;
+\end{verbatim}
+If the user doesn't specify the name of the variable, MATLAB automatically creates the
+variable \textbf{ans}.
+\begin{verbatim}
+    > 3+2
+    ans=5
+\end{verbatim}
+
+
+\subsection{Vectors and Matrices}
+\begin{verbatim}
+    > x=[1:10]
+    > x=[1 3 7 15]
+    > y=[1:0.1:10]
+    > z=[1:3;4:6;7:9]
+    > [m,n]=size(z)
+\end{verbatim}
+
+
+\subsection{Arithmetic Operations}
+\begin{itemize}
+    \item Arithmetic operators: \verb|+|,\verb|-|,\verb|*|,\verb|/|,\verb|\|,\verb|^|
+    \item Mathematical functions available: ABS, SQRT, LOG, SIN and COS.
+\end{itemize}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}[H]{| m{9em}|m{15em}|m{17em}|}
+        \hline
+        \rowcolor[rgb]{0.569,0.647,0.947}
+                                             & \textbf{Mathematical Function}                 & \textbf{Matlab Syntax for Function}    \\
+        \hline \hline
+        \textbf{\textbf{Arithemetic~}}       & $f_1=a_1+b_1x+c_1x^2$~                         & f1 = a1 + b1*x + c1*x\^{}2             \\
+        \hline
+        \textbf{\textbf{~and}}               & $ f_2=a_2+b_2x+c_2x^2+d_2x^3$                  & f2 = a2 + b2*x + c2*x\^{}2 + d2*x\^{}3 \\
+        \hline
+        \textbf{\textbf{Algebric Operation}} & $g=e^{At}\left(C_1\cos(Bt)+C_2\sin(Bt)\right)$ & g = exp(A*t)*(C1*cos(B*t)+C2*sin(B*t)) \\
+        \hline
+                                             & $u=2xy^2+\sin(x+y)$                            & u = 2*x*y\^{}2 + sin(x+y)
+        \\  \hline
+    \end{tabular}
+    \caption{Mathematical Functions and corresponding Matlab syntax}
+\end{table}
+
+
+\subsection{Control Flow in Matlab}
+\begin{table}[H]
+    \centering
+    \begin{tabular}[H]{| m{4em}| m{9em}|m{10em}|m{15em}|}
+        \hline
+        \rowcolor[rgb]{0.569,0.647,0.947} \textbf{Loops} & \textbf{FOR Loop} & \textbf{WHILE Loop} & \textbf{IF..ELSE..} \\
+        \hline\hline
+        \textbf{Syntax}                                  &
+        \begin{verbatim}
+for expression
+    statements
+end
+        \end{verbatim}
+                                                         &
+        \begin{verbatim}
+while expression
+    statements
+end
+        \end{verbatim}
+                                                         &
+        \begin{verbatim}
+if expression
+    statements
+elseif expression
+    statements
+else
+    statements
+end
+\end{verbatim}
+        \\
+        \hline
+    \end{tabular}
+    \caption{Control Flow in Matlab}
+\end{table}
+
+A FOR loop allows a statement to be repeated a fixed, predetermined number of times. Let’s
+look at the following problem. We would like to fill the vector b with square roots of 1 to 1000.
+One way to do so, is by using a for loop.We will calculate the time required for this operation for comparing it with the more efficient version of this calculation.
+This code written in an m-file and save it under the name \textit{tictoc.m}
+
+\MAT{./CODES/tictoc.m}{MATLAB code for FOR loop and time measurement}
+
+Above code produce following response in command window.
+
+\begin{verbatim}
+    > tictoc
+    The time required was: 0.004101
+\end{verbatim}
+
+\subsection{Some useful Task , their Commands and Examples}
+
+
+\subsubsection{User-Defined Functions}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{function [op1,op2,...]=cmd\_name(ip1,ip2,...)}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        function y = fcn(x)
+            y = sin(x.^2);  %Create in m file
+        end
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{2D Plotting}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{plot, subplot, figure, hold, stem, axis, title}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        > t=[-2:0.01:2];
+        > x=sin(t*10);
+        > plot(t,x)
+        > axis([-1 1 -1 1])
+        > zoom
+        > xlabel(`Time')
+        > title(`My first plot')
+        > specgram(x)
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Polynomial Roots}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{roots(p)}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        > p = [1 2 1]; %polynomial x^2 +2x +1
+        > r = roots(p) %roots
+        r = -1 -1
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Dealing with Sound Files}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{wavread, wavwrite, auread, auwrite, sound(y,fsamp)}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        > y=wavread('C:\sound.wav')  %file must be valid
+        > sound(y,44100);
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Complex Numbers}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{j, real, imag, abs, angle}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        > real(j)   % locate a complex number in cartesian form  
+        > imag(j)
+        > abs(j)     % locate a complex number in polar form;
+        > angle(j)
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Signal Processing and
+    Image Processing}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{fft(), dft(), con(), dither(), gray2ind(), ind2gray(), \\ind2rgb(), imread(), imwrite()}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        > A=imread('my_pic.jpg')%file must be valid
+        > whos
+        > imshow(A)
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Transfer Function Representation and Frequency Response}
+\begin{itemize}
+    \item \textbf{Commands:} \texttt{tf2zp, zp2tf, freqs(), semilogx(), bode()}
+    \item \textbf{Example:}
+          \begin{verbatim}
+        % Given H(s)=(2s+3)(s3+4s2+5)
+        > num=[2 3];
+        > den=[1 4 0 5];
+        > [z,p,k]=tf2zp(num,den);
+        > [num den]=zp2tf(z,p,k);
+        %one way of plotting
+        > T=0:0.1:1;
+        > y=step(num,den,t);
+        > plot(t,y)
+        %Another waty of plotting
+        > bode(num,den)
+        > [mag,phase]=bode(num,den,w);
+        > magdb=20*log10(mag);
+        > semilogx(w,magdb)
+        > semilogx(w,phase)
+\end{verbatim}
+\end{itemize}
+
+
+\subsection{Getting Help from Matlab}
+\begin{verbatim}
+    > doc fft
+    > help help
+    > help cos
+    > help fft
+    > lookfor filter
+\end{verbatim}
+
+
+\section {LAB Problems}
+
+
+%%%%%%%%%%%%Problem 1
+
+\subsection{Problem 1}
+\subsection*{Calculate $\left(1+\ddfrac{2}{n^2}\right)^n$ for n=3, 7}
+\MAT{./CODES/p1.m}{Matlab function for polynomial calculaton}
+
+Response of Command Window
+\begin{verbatim}
+    >> p1(3)              >> p1(7)
+    ans = 1.8258          ans = 1.3232
+\end{verbatim}
+
+%%%%%%%%%%%%Problem 2
+\subsection{Problem 2}
+\subsection*{Plot the function: $y = e^{-at}cos (\omega t)$, for $a = 2$, $\omega = 5$, and $t = 0:10$.}
+Codes:
+\MAT{./CODES/p2.m}{Matlab code for plotting the function y}
+\mobs{ecos}{Plot for exponent cosine function}
+
+
+%%%%%%%%%%%%Problem 3
+\subsection{Problem 3}
+\subsection*{Try using the WHILE and the IF statements to calculate all the Fibonacci numbers so that the sum of two consecutive numbers is smaller than 10,000. How many are even? How many are odd? Try to plot them.}
+\subsubsection*{Hints:}
+\begin{enumerate}
+    \item Matlab can increase the size of a vector as it is being created.
+    \item To determine whether a number n is even or odd you can use the function \textbf{rem(n,2)}. If
+          \textbf{rem(n,2)} equals 0 then the number is even, otherwise it is odd.
+\end{enumerate}
+
+\MAT{./CODES/p3.m}{Matlab code for calculation related to fibonacci numbers and plotting result}
+
+Response of Command Window
+\begin{verbatim}
+    >>p3
+    Total fibonacci numbers: 21 
+    Even fibonacci numbers: 7 
+    Odd fibonacci numbers: 14 
+\end{verbatim}
+
+\mobs{fibo}{Plot for fibonacci numbers with sum of two consecutive numbers smaller than 10,000}
+
+
+%%%%%%%%%%%%Problem 4
+
+\subsection{Problem 4}
+\subsection*{Given $f(x)= \ddfrac{x^2+2x+3}{x+3}$. Plot $f(x)$ for $0 \leq x \leq 100$}
+\MAT{./CODES/p4.m}{Matlab code for plotting the function f(x)}
+\mobs{fx}{Plot for given f(x) function where x is between 0 and 100}
+
+
+
+
+
+
+%%Discussion and Conclusion
+\section{Discussion and Conclusion}
+In this Lab we familiarize ourself with Programming with Matlab. We have learned how to use Matlab to solve problems in the areas like linear algebra, polynomial roots, sound files, complex numbers, signal processing and image processing. We have also learned how to use Matlab to solve problems in the areas like transfer function representation, frequency response, and plotting functions. We have also learned how to use Matlab to solve problems in the areas like calculating Fibonacci numbers and plotting them.
+
+\end{document}
