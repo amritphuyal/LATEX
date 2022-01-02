@@ -1,0 +1,23 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Title}{1}{section.1}%
+\contentsline {section}{\numberline {2}Objective}{1}{section.2}%
+\contentsline {section}{\numberline {3}Theory}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Variables}{1}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Vectors and Matrices}{1}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Arithmetic Operations}{1}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Control Flow in Matlab}{2}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Some useful Task , their Commands and Examples}{2}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}User-Defined Functions}{2}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}2D Plotting}{2}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Polynomial Roots}{3}{subsubsection.3.5.3}%
+\contentsline {subsubsection}{\numberline {3.5.4}Dealing with Sound Files}{3}{subsubsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.5}Complex Numbers}{3}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}Signal Processing and Image Processing}{3}{subsubsection.3.5.6}%
+\contentsline {subsubsection}{\numberline {3.5.7}Transfer Function Representation and Frequency Response}{3}{subsubsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.6}Getting Help from Matlab}{4}{subsection.3.6}%
+\contentsline {section}{\numberline {4}LAB Problems}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Problem 1}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Problem 2}{4}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Problem 3}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Problem 4}{7}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Discussion and Conclusion}{8}{section.5}%

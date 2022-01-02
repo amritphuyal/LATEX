@@ -1,0 +1,234 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\input{./Matlab.tex} %%% Matlab code
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.07\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Digital Signal Processing}{Lab \#2}{Familiarization with basic CT/DT functions}
+{Anila  Kansakar}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+%\listoffigures
+% \pagebreak
+% \vspace{5em}
+\lstlistoflistings
+\vspace{10em}
+% \pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Familiarization with basic CT/DT functions }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+Familiarization with basic CT/DT functions
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+%Theory
+\section{Theory}
+
+
+
+\begin{verbatim}
+    who         >> List variables in workspace
+    whos        >> List variables in workspace, with sizes and types
+    input()     >> Read input from user
+    disp()      >> Display value of variable
+    subplot()   >> Plot multiple graphs in one figure
+    figure()    >> Create new figure window
+    clear all   >> Clear all variables from workspace, freeing up system memory
+    close all   >> Close all figures
+    home        >> Send cursor to home position
+    hold on     >> Retain plot data for multiple plots in one figure
+    grid on     >> Turn on grid lines
+    grid off    >> Turn off grid lines 
+    grid        >> Turn on and off grid lines and set grid spacing
+    demo        >> Access product examples in Help browser
+    ver         >> Display version of Matlab and operating system information 
+    lookfor     >> Search for keyword in all help files
+    length()    >> Length of largest dimension of array
+    pause       >> Stop MATLAB execution temporarily 
+    plot()      >> 2-D line  plotting 
+    stem()      >> Plot discrete data as stems
+    real()      >> Return real part of complex number
+    imag()      >> Return imaginary part of complex number
+    zeros()     >> Create array of all zeros 
+    ones()      >> Create array of  all ones 
+    exp()       >> Return exponential of complex number
+    for         >> Loop to repeat specified numbers of times
+    end         >> End  For loop 
+    if-else     >> If-else statement execute if statement is true
+\end{verbatim}
+
+\section {Lab Problems}
+%%%%%%%%%%%%Problem 1
+
+\subsection{Problem 1}
+\subsection*{Plot the basic signal using Matlab}
+
+%%%%%%%%%%%%% Problem 1aaaaaaaaaaaaaa
+\subsubsection{Impulse response}
+Codes:
+\MAT{./CODES/p1a.m}{Matlab code for plotting Impulse function }
+\mobs{impulse}{Plot for Impulse function }
+
+
+%%%%%%%%%%%%% Problem 1bbbbbbbbbbbb
+\subsubsection{Unit step response}
+\MAT{./CODES/p1b.m}{Matlab code for plotting Unit Step function }
+\mobs{unit}{Plot for Unit Step function }
+
+
+%%%%%%%%%%%%% Problem 1ccccccccccccccc
+\subsubsection{Ramp response}
+\MAT{./CODES/p1c.m}{Matlab code for plotting Ramp function }
+\mobs{ramp}{Plot for Ramp function}
+
+
+%%%%%%%%%%%% Problem 1dddddddddddddd
+\subsubsection{ Rectangular pulse response}
+\MAT{./CODES/p1d.m}{Matlab code for plotting  Rectangular pulse function }
+\mobs{rect}{Plot for Rectangular pulse function}
+
+%%%%%%%%%%%%Problem 2
+\subsection{Problem 2}
+\subsection*{Plot the following continuous-time signals}
+
+
+%%%%%%%%%%%%% Problem 2aaaa
+\subsubsection*{$x(t)=Ce^{at}$ where $C$ and $a$ are real numbers and choose $C$ and $a$ both positive and negative.}
+\MAT{./CODES/p2a.m}{Matlab code for C and a  Both real }
+\mobs{ca_real}{Plot for for C and a  Both real}
+
+%%%%%%%%%%%%% Problem 2bbbbbb
+\subsubsection*{Plot the same signal taking $a$ as pure imaginary number}
+\MAT{./CODES/p2b.m}{Matlab code for C real a Imaginary }
+\mobs{a_imag}{Plot for C real a Imaginary}
+
+
+%%%%%%%%%%%%% Problem 2ccccc
+\subsubsection*{Consider complex exponential signal as specified in b) where $C$ is expressed in polar form i.e., $C=|C|e^{j\theta}$ and $a$ in rectangular form i.e., $a=r+j\omega_o$. Then function $x(t)$, on simplification, becomes $$ x(t)= |C|e^{rt}[\cos(\omega_o t+\theta)+j\sin(\omega_o t+\theta)]$$
+Now, plot the signal for different values of r and comment on the results.\\
+i. r=0 \quad \quad ii. r$<$ 0 \quad \quad iii. r$>$0}
+\MAT{./CODES/p2c.m}{Matlab code for different value of r}
+
+
+\subsubsection{For r=0}
+\mobs{r0}{Plot for r=0}
+
+\subsubsection{For r$<$0}
+\mobs{rm1}{Plot for r$<$0}
+
+\subsubsection{For r$>$0}
+\mobs{r1}{Plot for r$>$0}
+
+
+%%%%%%%%%%%%Problem 3
+\subsection{Problem 3}
+\subsection*{Plot the DT exponential function $x[n]=a^n$, $a=|a|e^{j\theta}$. Choose the suitable value of $|a|$ and $\theta$.}
+
+\MAT{./CODES/p3.m}{Matlab code for calculation and plot DT exponential function}
+
+\mobs{dt}{Plot for DT exponential function}
+
+
+% %%%%%%%%%%%%Problem 4
+
+\subsection{Problem 4}
+\subsection*{Synthesize the signal from the FS coefficients as $C_0=1$, $C_1=C_{-1}=\ddfrac{1}{4}$, $C_2=C_{-2}=\ddfrac{1}{2}$, $C_3=C_{-3}=\ddfrac{1}{3}$.}
+\MAT{./CODES/p4.m}{Matlab code for synthesizing and plotting signal}
+\mobs{syn}{Plot for synthesized signal}
+
+
+% %%%%%%%%%%%%Problem 5
+
+\subsection{Problem 5}
+\subsection*{Plot fundamental sinusoidal signal, its higher harmonics up to 5\textsuperscript{th} harmonics and add all of them to see the result. Comment on the result.}
+\MAT{./CODES/p5.m}{Matlab code for calculation and plot of Sinusoidal harmonics and thier sum}
+\mobs{harmonics}{Plot for Sinusoidal harmonics and thier sum}
+
+
+
+
+%%Discussion and Conclusion
+\section{Discussion and Conclusion}
+In this Lab we familiarize ourself with Matlab Programming with basic of Continous time and Discrete time signals. We also learn about their basic operations in Matlab including  plotting and analyzing the signals. We learn to use online help for different commands and use them to calculate different DT and CT functions and plot them.
+
+
+\end{document}
