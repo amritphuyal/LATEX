@@ -1,7 +1,7 @@
 n=-5:5;
 t=-5:0.01:5;
-y=rectangular_response(t);
-z=rectangular_response(n);
+y=rectangular_response(t/2);
+z=rectangular_response(n/2);
 l=tiledlayout(2,1);
 title(l,{sprintf('%s',['Plot for Rectangular function'])})
 nexttile

@@ -1,0 +1,58 @@
+
+
+
+%%%%%%%%% use  \input{Matlab.tex}
+%%%%%%%%% use \MAT{###filename}{##Caption}
+\usepackage{listings}
+
+\usepackage{mdframed}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0.1,0.9,0.2}
+\definecolor{num}{rgb}{0.1,0.2,0.6}
+\definecolor{keyword}{rgb}{0.1,0.1,0.99}
+\definecolor{blackcolour}{rgb}{0,0,0}
+\definecolor{string}{rgb}{0.9078,0.2,0.32}
+
+
+\definecolor{front}{RGB}{8,39,20}
+\definecolor{back}{RGB}{10,45,98}
+
+% \renewcommand{\lstlistlistingname}{List of MATLAB codes}
+% \renewcommand{\lstlistingname}{Code}
+
+\renewcommand{\lstlistlistingname}{List of Matlab and Python codes}
+\renewcommand{\lstlistingname}{Code}
+
+
+\lstdefinestyle{customa}{
+    language=Matlab,
+    % morekeywords={zeros,length},
+    keywordstyle=\color{keyword},
+    numberstyle=\tiny\color{num},
+    stringstyle=\color{string},
+    commentstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize\color{front},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=15pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\newcommand {\MAT}[2]{
+
+    \begin{mdframed}[innerbottommargin=-2.3em,innertopmargin=-0.1em]
+        \lstinputlisting[style=customa,caption={#2}]{#1}
+    \end{mdframed}
+}
+
+
+% backgroundcolor=blueback,
+
+%   innerbottommargin=-2.3em,innertopmargin=-0.1em,
+%%     [outermargin =+1cm,]
