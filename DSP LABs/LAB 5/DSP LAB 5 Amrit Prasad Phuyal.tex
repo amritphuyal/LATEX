@@ -1,0 +1,268 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+ \usepackage{enumerate}
+ \usepackage{amsmath}
+ \usepackage{siunitx}
+ \usepackage{multirow}
+\usepackage{colortbl}
+ \usepackage{hhline}
+
+ \usepackage{lipsum}  %%% Lorem ipsum
+
+\setlength{\headheight}{30.0pt}
+\setlength{\footskip}{20pt}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=True,
+    linkcolor={blue!20!black},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+
+ \usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textit{Pul074BEX004}}
+\lhead{\textit{Amrit Prasad Phuyal}}
+\rfoot{\thepage}
+
+
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx}
+\usepackage{float}
+
+
+\input{./CoverPage.tex} %%% cover page
+\input{./Matlab.tex} %%% Matlab code
+
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}} 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%for matlab observation #1 fig name #2 Caption
+\newcommand{\mobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.07\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+% New command for Figure
+\newcommand{\fig}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.95\linewidth]{./FIG/#1}
+        \caption{#2}
+    \end{figure}
+}
+
+ %%%%%%%%%%% for Python observation #1 fig name #2 Caption
+
+\newcommand{\pobs}[2]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.07\linewidth]{./FIG/#1.eps}
+        \caption{#2}
+    \end{figure}
+   
+}
+
+
+
+
+\begin{document}
+
+
+%%%%  COver page 
+\CP{Digital Signal Processing}{Lab \#5}{Design of IIR Digital Filters}
+{Anila  Kansakar}
+%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{gobble}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+
+\pagebreak
+%\listoffigures
+% \pagebreak
+% \vspace{5em}
+\lstlistoflistings
+\vspace{10em}
+% \pagebreak
+\listoffigures
+\pagebreak
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Title} {\large Design of IIR Digital Filters}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objective}
+\begin {itemize}
+\item To design IIR filter using different methods.
+\item To study response of IIR filter.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%
+
+
+%Theory
+\section{Theory}
+
+\section{Background Theory}
+There are several methods that can be used to design digital filters having an infinite duration unit sample response. One of the popular methods is based on converting an analog filter into a digital filter. In this method we begin the design of digital filter in the analog domain and then convert the design into the digital domain. For this purpose, depending on the specifications of the required digital filter the various approximations like butterworth, chebyshev I, chebyshev II and elliptic filters are used.\\
+Among the different approaches used in the design of digital IIR filters this lab experiment deals with impulse invariance method and bi-linear transformation.
+\subsection{Impulse Invariance Method}
+In impulse invariance method, the objective is to design an IIR filter having an unit sample response $h[n]$ that is the sampled version of the impulse response of the analog filter.
+\begin{equation*}
+    h[n]=h[nT] \quad \quad n=0,1,2,\dots\dots, \text{where } T\text{ is the sampling interval}
+\end{equation*}
+\subsection{Bi-Linear Transformation}
+In bi-linear transformation a conformal mapping from s-plane to z-plane is carried out with the relation given as,
+\begin{equation*}
+    s=\frac{2}{T}\left(\frac{1-z^{-1}}{1+z^{-1}}\right)
+\end{equation*}
+
+For the design of IIR digital filters, there are built-in functions in MATLAB such as \texttt{Impinvar(..),
+    bilinear(..), butter(..), cheby1(..), cheby2(..), ellip(..), buttord(..), cheb1ord(..), cheb2ord(..),
+    ellipord(..)} etc. For plotting the impulse responses for analog and digital filters refer to the
+functions \texttt{impulse(..)} and \texttt{dimpulse(..)}.  For further information on the above functions, please refer to the MATLAB \texttt{‘help’}.
+
+
+\section {Lab Problems}
+
+%%%%%%%%%%%%Problem 1
+
+\subsection{Problem 1}
+
+
+
+\subsection*{Convert the analog filter $H_a(s)=\ddfrac{s+0.1}{(s+0.1)^2+9}$ into a digital IIR filter by means of the impulse invariance method. Plot the frequency response (magnitude) of the designed filter taking sampling interval $(T)$ of 0.1, 0.5 seconds. Compare the response of the filter designed to that of the analog one. Comment on the effect of $T$ on the response.}
+
+\MAT{./CODES/p1.m}{Matlab code for converting Analog filter to Digital IIR and plotting the magnitude response}
+\mobs{p1}{Plot for magnitude response of the designed filter}
+
+The response for $T_s=0.1$ is slightly shifted  to the left while the one for $T_s=0.5$ is slightly shifted to the right.
+
+
+% %%%%%%%%%%%Problem 2
+
+\subsection{Problem 2}
+\subsection*{Compare the unit sample response of the designed digital IIR filter with the impulse response of analog filter for $T$=0.1 and 0.5.}
+\MAT{./CODES/p2.m}{Matlab code for Comapring Unit sample response of digital IIR with Impulse response of analog filter}
+\mobs{p2}{Plot of Unit sample response of digital IIR filter and  Impulse response of analog filter}
+
+
+
+% %%%%%%%%%%%Problem 3
+
+\subsection{Problem 3}
+\subsection*{Convert the above analog filter in to a digital IIR filter by means of bilinear transformation and repeat all the procedures as specified in Problem 1}
+
+\MAT{./CODES/p3.m}{Matlab code for converting Analog filter to Digital IIR by using bilinear transformation  and plotting and comparing different responses}
+
+\mobs{p3a}{Plot for magnitude response of the designed filter}
+
+
+\mobs{p3b}{Plot for Unit sample response of digital IIR filter and  Impulse response of analog filter }
+
+
+
+
+%%%%%%%%%%%Problem 4
+
+\subsection{Problem 4}
+\subsection*{An IIR digital low pass filter is required to meet the following specifications:
+    \begin{itemize}
+        \item Pass band ripple (or peak to peak ripple):$ \leq $ 0.5 dB
+        \item Passband edge: 1.2 kHz
+        \item Stopband attenuation:$\geq $ 40 dB
+        \item Stopband edge: 2.0 kHz
+        \item Sample rate: 8.0 kHz
+    \end{itemize} Use the MATLAB Signal Processing functions to determine
+    \begin{itemize}
+        \item  The required filter order,
+        \item The cutoff frequency,
+        \item The numerator and the denominator coefficients
+    \end{itemize}for the digital Butterwoth, digital Chebyshev and digital Elliptic filters. Also plot their frequency
+    responses. Describe the nature of each response.
+}
+
+\MAT{./CODES/p4.m}{Matlab code for determining filter order, cutoff frequency, numerator and denominator and plotting the frequency response}
+\mobs{p4a}{Plot of frequency response of Butterworth filter}
+
+\begin{verbatim}
+    Order of Butterworth filter: 9
+    Cutoff frequencies:
+        0.3438
+    
+    Numerator coefficients of Butterworth Filter: 
+        0.0004    0.0032    0.0129    0.0302    0.0453    0.0453    0.0302    0.0129    0.0032    0.0004
+    
+    Denominator coefficients of Butterworth Filter: : 
+        1.0000   -2.7996    4.4582   -4.5412    3.2404   -1.6330    0.5780   -0.1370    0.0197   -0.0013
+\end{verbatim}
+
+\mobs{p4b}{Plot of frequency response of Chebyshev-I filter}
+\begin{verbatim}
+    Order of Chebyshev 1 filter: 5
+    Cutoff frequencies:
+        0.3000
+    
+    Numerator coefficients of Chebyshev-1 Filter: 
+        0.0026    0.0132    0.0264    0.0264    0.0132    0.0026
+    
+    Denominator coefficients of Chebyshev-1 Filter: 
+        1.0000   -2.9775    4.2932   -3.5124    1.6145   -0.3334
+\end{verbatim}
+
+\mobs{p4c}{Plot of frequancy response of Chebyshev-II filter}
+\begin{verbatim}
+    Order of Chebyshev 2 filter: 5
+Cutoff frequencies:
+    0.5000
+
+Numerator coefficients of Chebyshev-2 Filter: 
+    0.0524    0.1086    0.1661    0.1661    0.1086    0.0524
+
+Denominator coefficients of Chebyshev-2 Filter: 
+    1.0000   -1.2056    1.2136   -0.4984    0.1583   -0.0136
+
+\end{verbatim}
+
+\mobs{p4d}{Plot of frequency response of Elliptic filter}
+\begin{verbatim}
+    Order of Elliptic Filter: 4
+    Cutoff frequencies:
+        0.3000
+    
+    Numerator coefficients of Elliptic Filter: 
+        0.0389    0.0363    0.0665    0.0363    0.0389
+    
+    Denominator coefficients of Elliptic Filter: 
+        1.0000   -2.1444    2.3658   -1.3250    0.3332 
+\end{verbatim}
+
+
+
+%Discussion and Conclusion
+\section{Discussion and Conclusion}
+In this lab we familiarize ourself with Matlab and its signal processing toolbox and some useful functions like \texttt{Impinvar(..),bilinear(..), butter(..), cheby1(..), cheby2(..), ellip(..), buttord(..),cheb1ord(..), cheb2ord(..), ellipord(..)}. We design Digital IIR filter from anaolg filter using impulse varience method and bilinear transformation. We compare the response of the designed digital IIR filter with the response of the analog filter. We also compare the unit sample response of the designed digital IIR filter with the impulse response of analog filter and comared with different values of the sampling rate Ts.
+
+\end{document}
